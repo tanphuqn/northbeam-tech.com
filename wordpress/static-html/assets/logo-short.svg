@@ -1,0 +1,14 @@
+<svg width="330" height="88" viewBox="0 0 330 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="nbt-grad-short" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0EA5E9"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+  </defs>
+  <rect x="6" y="6" width="72" height="72" rx="16" fill="#0B1220"/>
+  <path d="M22 58V26" stroke="url(#nbt-grad-short)" stroke-width="6.5" stroke-linecap="round"/>
+  <path d="M22 26L50 58" stroke="url(#nbt-grad-short)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M50 58V26" stroke="#22D3EE" stroke-width="6.5" stroke-linecap="round"/>
+  <text x="92" y="38" fill="#0F172A" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="800">Northbeam</text>
+  <text x="92" y="60" fill="#1D4ED8" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">Tech</text>
+</svg>

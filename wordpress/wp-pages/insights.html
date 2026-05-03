@@ -1,0 +1,65 @@
+<!--
+  NORTHBEAM — Insights page (Query Loop)
+
+  Before publishing:
+  1) Posts → Categories — create category "Insights" with slug `insights`.
+  2) Paste this file into a new Page (Code editor), slug: `insights`.
+  3) Click the **Query Loop** block → sidebar **Block** tab → **Filters** (or Advanced) →
+     **Taxonomies** → Category → select **Insights**.
+     (If you do not see Filters, open List View, select the Query Loop parent block.)
+  4) Publish. Link your menu item "Insights" to this page.
+
+  Requires WordPress 5.8+ (block editor). WP 6.2+ recommended.
+-->
+
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"56px","bottom":"24px","left":"24px","right":"24px"},"blockGap":"12px"}},"backgroundColor":"background","layout":{"type":"constrained","contentSize":"1120px"}} -->
+<div class="wp-block-group alignfull has-background-background-color has-background" style="padding-top:56px;padding-right:24px;padding-bottom:24px;padding-left:24px">
+  <!-- wp:paragraph {"textColor":"secondary"} -->
+  <p class="has-secondary-color has-text-color">Insights</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"44px","lineHeight":"1.15"}}} -->
+  <h1 style="font-size:44px;line-height:1.15">Articles &amp; updates</h1>
+  <!-- /wp:heading -->
+
+  <!-- wp:paragraph {"style":{"typography":{"fontSize":"18px"}},"textColor":"secondary"} -->
+  <p class="has-secondary-color has-text-color" style="font-size:18px">Practical notes on software, marketing, and growth. After pasting, set the Query Loop to show only the <strong>Insights</strong> category (see comment at top of this file).</p>
+  <!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"8px","bottom":"64px","left":"24px","right":"24px"}}},"backgroundColor":"background","layout":{"type":"constrained","contentSize":"1120px"}} -->
+<div class="wp-block-group alignfull has-background-background-color has-background" style="padding-top:8px;padding-right:24px;padding-bottom:64px;padding-left:24px">
+
+<!-- wp:query {"queryId":1,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false},"displayLayout":{"type":"list"},"layout":{"type":"default"}} -->
+<div class="wp-block-query">
+  <!-- wp:post-template {"layout":{"type":"default"}} -->
+    <!-- wp:group {"style":{"spacing":{"padding":{"top":"20px","bottom":"20px"}},"border":{"bottom":{"color":"var:preset|color|contrast-3","width":"1px"}}},"layout":{"type":"default"}} -->
+    <div class="wp-block-group" style="border-bottom-color:var(--wp--preset--color--contrast-3);border-bottom-width:1px;padding-top:20px;padding-bottom:20px">
+      <!-- wp:post-title {"isLink":true,"style":{"typography":{"fontSize":"1.35rem","fontWeight":"600"}}} /-->
+
+      <!-- wp:post-date {"textColor":"secondary","fontSize":"small"} /-->
+
+      <!-- wp:post-excerpt {"moreText":"Read more","excerptLength":28} /-->
+    </div>
+    <!-- /wp:group -->
+  <!-- /wp:post-template -->
+
+  <!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"margin":{"top":"24px"}}}} -->
+  <div class="wp-block-query-pagination is-content-justification-center" style="margin-top:24px">
+    <!-- wp:query-pagination-previous {"label":"Newer"} /-->
+    <!-- wp:query-pagination-numbers /-->
+    <!-- wp:query-pagination-next {"label":"Older"} /-->
+  </div>
+  <!-- /wp:query-pagination -->
+
+  <!-- wp:query-no-results -->
+    <!-- wp:paragraph -->
+    <p>No posts yet. Add posts under <strong>Posts</strong>, assign the <strong>Insights</strong> category, then set this Query Loop’s category filter to <strong>Insights</strong>.</p>
+    <!-- /wp:paragraph -->
+  <!-- /wp:query-no-results -->
+</div>
+<!-- /wp:query -->
+
+</div>
+<!-- /wp:group -->

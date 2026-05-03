@@ -1,0 +1,166 @@
+`
+### wp-core ###
+
+version: 6.9.4
+site_language: en_US
+user_language: en_US
+timezone: +07:00
+permalink: /%postname%/
+https_status: true
+multisite: false
+user_registration: false
+blog_public: 1
+default_comment_status: open
+environment_type: production
+user_count: 3
+dotorg_communication: true
+
+### wp-paths-sizes ###
+
+wordpress_path: /home/nortzexb/public_html
+wordpress_size: 60.13 MB (63053724 bytes)
+uploads_path: /home/nortzexb/public_html/wp-content/uploads
+uploads_size: 30.00 MB (31452814 bytes)
+themes_path: /home/nortzexb/public_html/wp-content/themes
+themes_size: 33.10 MB (34708245 bytes)
+plugins_path: /home/nortzexb/public_html/wp-content/plugins
+plugins_size: 131.22 MB (137594609 bytes)
+fonts_path: /home/nortzexb/public_html/wp-content/uploads/fonts
+fonts_size: directory not found
+database_size: 6.94 MB (7274496 bytes)
+total_size: 261.39 MB (274083888 bytes)
+
+### wp-active-theme ###
+
+name: Northbeam Technologies (northbeam-technologies)
+version: 1.2.2
+author: Northbeam Technologies
+author_website: (undefined)
+parent_theme: none
+theme_features: core-block-patterns, widgets-block-editor, block-templates, title-tag, post-thumbnails, custom-logo, align-wide, wp-block-styles, menus
+theme_path: /home/nortzexb/public_html/wp-content/themes/northbeam-technologies
+auto_update: Disabled
+
+### wp-themes-inactive (6) ###
+
+Blocksy: version: 2.1.38, author: CreativeThemes, Auto-updates disabled
+Extendable: version: 2.1.4, author: Extendify, Auto-updates disabled
+IT Company: version: 1.6.3, author: Themesglance, Auto-updates disabled
+Twenty Twenty-Five: version: 1.4, author: the WordPress team, Auto-updates disabled
+Twenty Twenty-Four: version: 1.4, author: the WordPress team, Auto-updates disabled
+Twenty Twenty-Three: version: 1.6, author: the WordPress team, Auto-updates disabled
+
+### wp-plugins-active (12) ###
+
+Contact Form 7: version: 6.1.5, author: Rock Lobster Inc., Auto-updates disabled
+CookieAdmin - Cookie Consent Banner: version: 1.1.7, author: Softaculous, Auto-updates disabled
+CookieAdmin Pro: version: 1.1.7, author: Softaculous, Auto-updates disabled
+Extendify WordPress Onboarding and AI Assistant: version: 3.0.2, author: Extendify, Auto-updates disabled
+Fullscreen Background: version: 2.0.6, author: Enweby, Auto-updates disabled
+LiteSpeed Cache: version: 7.8.1, author: LiteSpeed Technologies, Auto-updates disabled
+Loginizer: version: 2.0.6, author: Softaculous, Auto-updates disabled
+Loginizer Pro: version: 2.0.6, author: Softaculous, Auto-updates disabled
+Really Simple Security: version: 9.5.9, author: Really Simple Security, Auto-updates disabled
+Site Assistant: author: (undefined), version: 1.0.0, Auto-updates disabled
+WP Mail SMTP: version: 4.7.1, author: WP Mail SMTP, Auto-updates disabled
+Yoast SEO: version: 27.4, author: Team Yoast, Auto-updates disabled
+
+### wp-plugins-inactive (3) ###
+
+Akismet Anti-spam: Spam Protection: version: 5.6, author: Automattic - Anti-spam Team, Auto-updates disabled
+Google Analytics for WordPress by MonsterInsights: version: 10.1.2, author: MonsterInsights, Auto-updates disabled
+Hello Dolly: version: 1.7.2, author: Matt Mullenweg, Auto-updates disabled
+
+### wp-media ###
+
+image_editor: WP_Image_Editor_Imagick
+imagick_module_version: 1810
+imagemagick_version: ImageMagick 7.1.2-15 Q16-HDRI x86_64 23686 https://imagemagick.org
+imagick_version: 3.8.0
+file_uploads: 1
+post_max_size: 1024M
+upload_max_filesize: 1024M
+max_effective_size: 1 GB
+max_file_uploads: 20
+imagick_limits: 
+	imagick::RESOURCETYPE_AREA: 283 GB
+	imagick::RESOURCETYPE_DISK: 9.2233720368548E+18
+	imagick::RESOURCETYPE_FILE: 196608
+	imagick::RESOURCETYPE_MAP: 141 GB
+	imagick::RESOURCETYPE_MEMORY: 71 GB
+	imagick::RESOURCETYPE_THREAD: 1
+	imagick::RESOURCETYPE_TIME: 9.2233720368548E+18
+imagemagick_file_formats: 3FR, 3G2, 3GP, A, AAI, AI, APNG, ART, ARW, ASHLAR, AVCI, AVI, AVIF, AVS, B, BAYER, BAYERA, BGR, BGRA, BGRO, BIE, BMP, BMP2, BMP3, BRF, C, CAL, CALS, CANVAS, CAPTION, CIN, CIP, CLIP, CMYK, CMYKA, CR2, CR3, CRW, CUBE, CUR, CUT, DATA, DCM, DCR, DCRAW, DCX, DDS, DFONT, DNG, DOT, DPX, DXT1, DXT5, EPDF, EPI, EPS, EPS2, EPS3, EPSF, EPSI, EPT, EPT2, EPT3, ERF, EXR, FARBFELD, FAX, FF, FFF, FILE, FITS, FL32, FLV, FRACTAL, FTP, FTS, FTXT, G, G3, G4, GIF, GIF87, GRADIENT, GRAY, GRAYA, GROUP4, GV, HALD, HDR, HEIC, HEIF, HISTOGRAM, HRZ, HTM, HTML, HTTP, HTTPS, ICB, ICN, ICO, ICON, IIQ, INFO, INLINE, IPL, ISOBRL, ISOBRL6, J2C, J2K, JBG, JBIG, JNG, JNX, JP2, JPC, JPE, JPEG, JPG, JPM, JPS, JPT, JSON, K, K25, KDC, LABEL, M, M2V, M4V, MAC, MAP, MASK, MAT, MATTE, MDC, MEF, MIFF, MKV, MNG, MONO, MOS, MOV, MP4, MPC, MPEG, MPG, MPO, MRW, MSL, MSVG, MTV, MVG, NEF, NRW, NULL, O, ORA, ORF, OTB, OTF, PAL, PALM, PAM, PANGO, PATTERN, PBM, PCD, PCDS, PCL, PCT, PCX, PDB, PDF, PDFA, PEF, PES, PFA, PFB, PFM, PGM, PGX, PHM, PICON, PICT, PIX, PJPEG, PLASMA, PNG, PNG00, PNG24, PNG32, PNG48, PNG64, PNG8, PNM, POCKETMOD, PPM, PS, PS2, PS3, PSB, PSD, PTIF, PWP, QOI, R, RADIAL-GRADIENT, RAF, RAS, RAW, RGB, RGB565, RGBA, RGBO, RGF, RLA, RLE, RMF, RSVG, RW2, RWL, SCR, SCREENSHOT, SCT, SF3, SFW, SGI, SHTML, SIX, SIXEL, SPARSE-COLOR, SR2, SRF, SRW, STEGANO, STI, STRIMG, SUN, SVG, SVGZ, TEXT, TGA, THUMBNAIL, TIFF, TIFF64, TILE, TIM, TM2, TTC, TTF, TXT, UBRL, UBRL6, UIL, UYVY, VDA, VICAR, VID, VIFF, VIPS, VST, WBMP, WEBM, WEBP, WMF, WMV, WMZ, WPG, X, X3F, XBM, XC, XCF, XPM, XPS, XV, XWD, Y, YAML, YCBCR, YCBCRA, YUV
+image_format_transforms: image/heic → image/jpeg, image/heif → image/jpeg, image/heic-sequence → image/jpeg, image/heif-sequence → image/jpeg
+gd_version: 2.3.3
+gd_formats: GIF, JPEG, PNG, WebP, BMP, AVIF, XPM
+ghostscript_version: 9.27
+
+### wp-server ###
+
+server_architecture: Linux 4.18.0-553.80.1.lve.el8.x86_64 x86_64
+httpd_software: LiteSpeed
+php_version: 8.2.30 64bit
+php_sapi: litespeed
+max_input_variables: 2000
+time_limit: 1500
+memory_limit: 1024M
+max_input_time: 1500
+upload_max_filesize: 1024M
+php_post_max_size: 1024M
+curl_version: 8.19.0 OpenSSL/OpenSSL 1.1.1w  11 Sep 2023
+suhosin: false
+imagick_availability: true
+pretty_permalinks: true
+htaccess_extra_rules: true
+static_robotstxt_file: false
+current: 2026-04-15T04:09:17+00:00
+utc-time: Wednesday, 15-Apr-26 04:09:17 UTC
+server-time: 2026-04-15T11:09:16+07:00
+
+### wp-database ###
+
+extension: mysqli
+server_version: 11.4.10-MariaDB-cll-lve
+client_version: mysqlnd 8.2.30
+max_allowed_packet: 268435456
+max_connections: 500
+
+### wp-constants ###
+
+WP_HOME: undefined
+WP_SITEURL: undefined
+WP_CONTENT_DIR: /home/nortzexb/public_html/wp-content
+WP_PLUGIN_DIR: /home/nortzexb/public_html/wp-content/plugins
+WP_MEMORY_LIMIT: 40M
+WP_MAX_MEMORY_LIMIT: 1024M
+WP_DEBUG: false
+WP_DEBUG_DISPLAY: true
+WP_DEBUG_LOG: false
+SCRIPT_DEBUG: false
+WP_CACHE: true
+CONCATENATE_SCRIPTS: undefined
+COMPRESS_SCRIPTS: undefined
+COMPRESS_CSS: undefined
+WP_ENVIRONMENT_TYPE: undefined
+WP_DEVELOPMENT_MODE: undefined
+DB_CHARSET: utf8mb4
+DB_COLLATE: undefined
+
+### wp-filesystem ###
+
+wordpress: writable
+wp-content: writable
+uploads: writable
+plugins: writable
+themes: writable
+fonts: does not exist
+
+### wp_mail_smtp ###
+
+version: 4.7.1
+license_key_type: lite
+debug: No debug notices found.
+lite_install_date: Apr 10, 2026 @ 5:02pm
+
+`
