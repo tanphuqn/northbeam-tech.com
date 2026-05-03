@@ -127,6 +127,43 @@
     </div>
   </div>
 </footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuOverlay = document.getElementById('menu-overlay');
+
+  if (!hamburger || !mobileMenu || !menuOverlay) return;
+
+  function closeMenu() {
+    hamburger.classList.remove('active');
+    mobileMenu.classList.remove('active');
+    menuOverlay.classList.remove('active');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  function toggleMenu() {
+    const isOpen = mobileMenu.classList.contains('active');
+    if (isOpen) {
+      closeMenu();
+    } else {
+      hamburger.classList.add('active');
+      mobileMenu.classList.add('active');
+      menuOverlay.classList.add('active');
+      hamburger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  hamburger.addEventListener('click', toggleMenu);
+  menuOverlay.addEventListener('click', closeMenu);
+
+  mobileMenu.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', closeMenu);
+  });
+});
+</script>
 <?php wp_footer(); ?>
 </body>
 </html>

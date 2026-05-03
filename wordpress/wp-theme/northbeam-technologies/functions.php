@@ -64,7 +64,7 @@ function northbeam_assets() {
         'northbeam-style',
         get_stylesheet_uri(),
         array(),
-        '1.2.2'
+        wp_get_theme()->get('Version')
     );
 }
 add_action('wp_enqueue_scripts', 'northbeam_assets');
