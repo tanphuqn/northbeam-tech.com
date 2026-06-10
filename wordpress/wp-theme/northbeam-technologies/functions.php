@@ -59,6 +59,38 @@ function northbeam_body_class( $classes ) {
 }
 add_filter( 'body_class', 'northbeam_body_class' );
 
+function northbeam_category_nav_current_class( $classes, $menu_item ) {
+    if ( ! is_category() ) {
+        return $classes;
+    }
+
+    $category = get_queried_object();
+    if ( ! $category || empty( $category->slug ) ) {
+        return $classes;
+    }
+
+    $category_to_page = array(
+        'blog'     => 'blog',
+        'insights' => 'insights',
+    );
+
+    if ( empty( $category_to_page[ $category->slug ] ) ) {
+        return $classes;
+    }
+
+    $page_slug = $category_to_page[ $category->slug ];
+    $item_path = untrailingslashit( wp_parse_url( $menu_item->url, PHP_URL_PATH ) );
+    $item_slug = trim( $item_path, '/' );
+
+    if ( $item_slug === $page_slug || sanitize_title( $menu_item->title ) === $page_slug ) {
+        $classes[] = 'current-menu-item';
+        $classes[] = 'current_page_item';
+    }
+
+    return $classes;
+}
+add_filter( 'nav_menu_css_class', 'northbeam_category_nav_current_class', 10, 2 );
+
 function northbeam_assets() {
     wp_enqueue_style(
         'northbeam-style',
@@ -125,4 +157,3 @@ function northbeam_social_icon_linkedin_svg() {
 function northbeam_social_icon_x_svg() {
     return '<svg class="footer-social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>';
 }
-
