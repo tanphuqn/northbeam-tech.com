@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>WordPress Post — Building an RTL Hebrew Video Platform with Nuxt 2 and Video.js</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 860px; margin: 40px auto; padding: 0 24px; color: #333; }
+    .instructions { background: #fffbe6; border: 1px solid #f0c000; border-radius: 6px; padding: 20px 24px; margin-bottom: 32px; }
+    .instructions h2 { margin-top: 0; font-size: 16px; color: #7a5c00; }
+    .instructions ol { margin: 0; padding-left: 20px; line-height: 2; }
+    .instructions code { background: #f5f5f5; padding: 2px 6px; border-radius: 3px; font-size: 13px; }
+    .divider { border: none; border-top: 2px dashed #ddd; margin: 36px 0; }
+    .meta { background: #f9f9f9; border: 1px solid #eee; border-radius: 6px; padding: 16px 20px; margin-bottom: 24px; font-size: 14px; }
+    .meta h3, .thumbnail-box h3, .prompt-box h3 { margin-top: 0; font-size: 15px; }
+    .meta table, .thumbnail-box table { border-collapse: collapse; width: 100%; }
+    .meta td, .thumbnail-box td { padding: 4px 12px 4px 0; vertical-align: top; }
+    .meta td:first-child, .thumbnail-box td:first-child { font-weight: bold; color: #555; width: 160px; }
+    .highlight { background: #fff8e1; padding: 2px 6px; border-radius: 3px; font-weight: bold; color: #7a5c00; }
+    .thumbnail-box { background: #f9f9f9; border: 1px solid #eee; border-radius: 6px; padding: 16px 20px; margin-bottom: 24px; font-size: 14px; }
+    .prompt-box { background: #f0f4ff; border: 1px solid #c0d0ff; border-radius: 6px; padding: 20px 24px; margin-bottom: 32px; font-size: 14px; }
+    .prompt-box h3 { color: #2a3f9f; }
+    .prompt-box pre { background: #fff; border: 1px solid #dde4ff; border-radius: 4px; padding: 14px 16px; font-size: 13px; line-height: 1.7; white-space: pre-wrap; word-break: break-word; margin: 0; }
+    .post-content { line-height: 1.8; font-size: 16px; }
+    .post-content h1 { font-size: 30px; font-weight: 800; margin-bottom: 8px; }
+    .post-content .tagline { color: #777; font-size: 15px; margin-bottom: 32px; }
+    .post-content h2 { font-size: 20px; font-weight: 700; margin-top: 40px; border-left: 4px solid #222; padding-left: 12px; }
+    .post-content h3 { font-size: 16px; font-weight: 700; margin-top: 28px; }
+    .post-content ul, .post-content ol { padding-left: 20px; }
+    .post-content li { margin-bottom: 8px; }
+    .post-content .diagram-wrap { text-align: center; margin: 32px 0; }
+    .post-content figcaption { font-size: 13px; color: #888; margin-top: 8px; }
+    .post-content pre { background: #1e1e1e; color: #d4d4d4; padding: 18px 20px; border-radius: 6px; font-size: 13px; line-height: 1.7; overflow-x: auto; white-space: pre; }
+    .post-content code { background: #f0f0f0; padding: 2px 6px; border-radius: 3px; font-size: 13px; font-family: monospace; }
+    .post-content pre code { background: none; padding: 0; color: inherit; }
+    .post-content .stack-box { background: #f5f5f5; border-left: 4px solid #222; padding: 14px 18px; font-family: monospace; font-size: 14px; }
+    .post-content blockquote { border-left: 4px solid #ccc; margin: 0; padding: 8px 16px; color: #555; font-style: italic; }
+  </style>
+</head>
+<body>
+
+<div class="instructions">
+  <h2>📋 Instructions for Marketing</h2>
+  <ol>
+    <li>WordPress → <strong>Posts → Add New</strong>, set category to <code>Insights</code></li>
+    <li>Paste the title below</li>
+    <li>Switch to <strong>Code editor</strong>, paste content between <code>&lt;!-- POST CONTENT START --&gt;</code> markers</li>
+    <li>Upload <code>kolel-logo.png</code> → replace <code>src="kolel-logo.png"</code> with WordPress URL</li>
+    <li>Upload <code>kolel-video-player-screenshot.png</code> → replace <code>src="kolel-video-player-screenshot.png"</code> with WordPress URL</li>
+    <li>Upload <code>kolel-nuxt-ssr-hebrew-rtl-video-platform-flow-diagram.png</code> → replace <code>src="kolel-nuxt-ssr-hebrew-rtl-video-platform-flow-diagram.png"</code> with WordPress URL</li>
+    <li>Upload <code>kolel-nuxt-ssr-hebrew-rtl-video-platform-thumbnail.png</code> → set as <strong>Featured Image</strong></li>
+    <li>Fill Yoast/Rank Math with Focus Keyword, Slug, Meta Description below</li>
+    <li>Category: <code>Insights</code> · Tags below · Add Excerpt → Preview → Publish</li>
+  </ol>
+</div>
+
+<div class="meta">
+  <h3>Post Details</h3>
+  <table>
+    <tr><td>Post Title</td><td>Building an RTL Hebrew Video Platform with Nuxt 2 SSR and Video.js</td></tr>
+    <tr><td>Slug</td><td><span class="highlight">kolel-nuxt-ssr-hebrew-rtl-video-platform</span></td></tr>
+    <tr><td>Focus Keyword</td><td><span class="highlight">Nuxt SSR Hebrew RTL</span></td></tr>
+    <tr><td>Meta Description</td><td><span class="highlight">How we built kolel.org — a Hebrew-first RTL video streaming site with Nuxt 2 SSR, Vuetify RTL mode, vue-i18n, and a Video.js player with watch-position tracking.</span><br/><small style="color:#888">(157 characters)</small></td></tr>
+    <tr><td>Category</td><td><strong>Insights</strong></td></tr>
+    <tr><td>Tags</td><td>Nuxt, Vue, Vuetify, RTL, Hebrew, i18n, Video.js, SSR, SEO, Kolel</td></tr>
+    <tr><td>Excerpt</td><td>How we configured Nuxt 2 universal SSR with Vuetify RTL mode, Hebrew as the default locale, and a Video.js player with server-synced watch-position tracking for kolel.org.</td></tr>
+  </table>
+</div>
+
+<div class="thumbnail-box">
+  <h3>Images</h3>
+  <table>
+    <tr><td>Kolel logo</td><td><code>kolel-logo.png</code> — shown above H1 · height 48px</td></tr>
+    <tr><td>Thumbnail</td><td><code>kolel-nuxt-ssr-hebrew-rtl-video-platform-thumbnail.png</code> — 1200×628 · Featured Image</td></tr>
+    <tr><td>Video page screenshot</td><td><code>kolel-video-player-screenshot.png</code> — 1440×900 · live video player page · inline in What We Built</td></tr>
+    <tr><td>Flow diagram</td><td><code>kolel-nuxt-ssr-hebrew-rtl-video-platform-flow-diagram.png</code> — ~700px wide · inline in How It Works</td></tr>
+    <tr><td>Thumbnail alt</td><td><em>Nuxt SSR Hebrew RTL video platform — kolel.org built with Nuxt 2 and Vuetify cover image</em></td></tr>
+    <tr><td>Diagram alt</td><td><em>Nuxt 2 SSR RTL Hebrew architecture — request flow from browser through SSR to Video.js player</em></td></tr>
+  </table>
+</div>
+
+<div class="prompt-box">
+  <h3>AI Rewrite Prompt</h3>
+  <pre>You are a technical content writer for Northbeam Tech (northbeam-tech.com/insights/).
+
+CONTEXT:
+- Project: kolel.org — a Hebrew-first Jewish video streaming platform
+- Integration: Nuxt 2 SSR + Vuetify RTL + vue-i18n + Video.js
+- What it does: serves a full Hebrew right-to-left video platform with server-side rendering
+  for SEO, Vuetify global RTL mode, Hebrew as the default locale with English fallback,
+  and a Video.js player that syncs watch position back to the Rails API every few seconds
+- Key config: vuetify.options.js rtl:true, i18n defaultLocale:'he', strategy:'no_prefix',
+  videojs player in mounted() with ratechange/play/pause/ended events, storeVideoPosition()
+  on a setInterval
+- Tech stack: Nuxt 2.15, Vue 2, Vuetify 2, @nuxtjs/i18n, Video.js 7, Axios, Rails 7 API
+- Focus keyword: "Nuxt SSR Hebrew RTL"
+- Target audience: frontend developers building internationalized or RTL web applications
+
+CURRENT POST TITLE:
+Building an RTL Hebrew Video Platform with Nuxt 2 SSR and Video.js
+
+CURRENT POST CONTENT:
+[paste post HTML here]
+
+MY INSTRUCTIONS:
+[describe changes]</pre>
+</div>
+
+<hr class="divider"/>
+
+<!-- POST CONTENT START -->
+<!-- wp:html -->
+<div class="post-content">
+
+<div style="margin-bottom:24px;"><img src="kolel-logo.png" alt="Kolel logo" style="height:48px;width:auto;"/></div>
+<h1>Building an RTL Hebrew Video Platform with Nuxt 2 SSR and Video.js</h1>
+<p class="tagline">How we configured Nuxt 2 universal SSR with Vuetify's RTL mode, Hebrew as the default locale, and a Video.js player that syncs watch position back to the server — for kolel.org.</p>
+
+<hr class="wp-block-separator"/>
+
+<h2>The Problem</h2>
+<p>
+  Hebrew is a right-to-left language. Building a video platform where Hebrew is the <em>primary</em> language — not an afterthought — means RTL has to be the default at every layer: layout, navigation, text direction, input alignment, and icon mirroring.
+  On top of that, the site needed server-side rendering for SEO (video titles, channel names, and category pages all need to be crawlable), and a player that remembers exactly where a user left off across sessions and devices.
+</p>
+
+<h2>What We Built</h2>
+
+<div class="diagram-wrap">
+  <figure>
+    <img src="kolel-video-player-screenshot.png"
+         alt="kolel.org video player page — Hebrew RTL layout with Video.js player and sidebar playlist"
+         style="max-width:100%;height:auto;border:1px solid #eee;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,0.08);"/>
+    <figcaption>kolel.org video page — RTL Hebrew layout, Video.js player, sidebar playlist, and watch/share actions.</figcaption>
+  </figure>
+</div>
+
+<p>
+  kolel.org is a Nuxt 2 universal app — SSR on first load, client-side navigation thereafter.
+  Vuetify 2 handles the UI with RTL enabled globally. <code>@nuxtjs/i18n</code> manages locale detection with Hebrew (<code>he</code>) as the default and English (<code>en</code>) as a fallback.
+  Video playback uses Video.js 7 with a custom Vue wrapper that tracks position and syncs it to the Rails API on a 5-second interval.
+</p>
+
+<h2>How It Works</h2>
+
+<div class="diagram-wrap">
+  <figure>
+    <img src="kolel-nuxt-ssr-hebrew-rtl-video-platform-flow-diagram.png"
+         alt="Nuxt 2 SSR RTL Hebrew architecture — request flow from browser through SSR to Video.js player"
+         style="max-width:100%;height:auto;"/>
+    <figcaption>Request flow: Nuxt SSR renders Hebrew RTL HTML → Video.js hydrates on client → watch position syncs to Rails API.</figcaption>
+  </figure>
+</div>
+
+<h2>Key Technical Decisions</h2>
+
+<h3>1. Vuetify RTL enabled globally</h3>
+<p>
+  Setting <code>rtl: true</code> in <code>vuetify.options.js</code> flips all Vuetify components — navigation drawers open from the right, icons mirror, flex directions invert, and text aligns right by default. One flag, entire UI:
+</p>
+<pre><code>// vuetify.options.js
+export default {
+  defaultAssets: {
+    font: false,
+    icons: 'mdi'
+  },
+  theme: {
+    themes: {
+      light: { primary: '#1e88e5' },
+      dark:  { primary: '#1e88e5' }
+    }
+  },
+  rtl: true  // flips the entire Vuetify UI to right-to-left
+}</code></pre>
+
+<h3>2. Hebrew as the default locale, no URL prefix</h3>
+<p>
+  <code>@nuxtjs/i18n</code> is configured with <code>strategy: 'no_prefix'</code> so Hebrew URLs are clean (e.g. <code>/video/123</code> not <code>/he/video/123</code>).
+  Browser language detection is disabled — every visitor gets Hebrew first, with English available via a manual toggle:
+</p>
+<pre><code>// config/i18n.js
+const messages = {
+  en: { ...require('../locales/en.json'), $vuetify: en, dir: 'ltr' },
+  he: { ...require('../locales/he.json'), $vuetify: he, dir: 'rtl' },
+}
+
+export default {
+  locale: 'he',
+  fallbackLocale: 'en',
+  messages
+}
+
+// nuxt.config.js
+i18n: {
+  locales: ['en', 'he'],
+  defaultLocale: 'he',
+  localeDetection: false,
+  detectBrowserLanguage: false,
+  strategy: 'no_prefix',
+  vueI18n: i18n
+}</code></pre>
+
+<h3>3. Video.js player with watch-position tracking</h3>
+<p>
+  The player is a Vue component that mounts Video.js imperatively in <code>mounted()</code>.
+  A <code>setInterval</code> running every 5 seconds calls <code>storeVideoPosition()</code>, which sends the current playback time to the Rails API — so a user who closes the tab resumes from the exact second on any device:
+</p>
+<pre><code>import videojs from 'video.js';
+
+// mounted()
+this.player = videojs(this.$refs.videoPlayer, this.playerOptions);
+
+this.player.ready(() => {
+  this.playVideo(this.videoUrl);
+});
+
+this.player.on('ratechange', this.playerRateChanged);
+this.player.on('play',  this.playing);
+this.player.on('pause', this.stopInterval);
+this.player.on('ended', this.stopInterval);
+
+// watch-position sync — fires every 5 s while playing
+storeVideoPosition() {
+  const payload = {
+    id: this.video.id,
+    position: Math.ceil(this.player.currentTime()),
+  };
+  this.video.user_watch = {
+    ...(this.video.user_watch || {}),
+    position: payload.position,
+  };
+  this.markWatch(payload); // Vuex action → Rails API PATCH /watches/:id
+}</code></pre>
+
+<h3>4. SSR + hydration without layout shift</h3>
+<p>
+  Because Video.js requires a real DOM, the player component is wrapped in a <code>&lt;client-only&gt;</code> tag in Nuxt.
+  The server renders the video metadata, title, and channel info (crawlable by search engines) while the player hydrates client-side after JavaScript loads — no layout shift because the player slot is sized with CSS before hydration.
+</p>
+
+<h2>Results / What Changed</h2>
+<ul>
+  <li>Full Hebrew RTL layout across every page — no per-component <code>dir</code> overrides needed</li>
+  <li>Video titles, channel pages, and category routes are indexed by search engines via SSR</li>
+  <li>Watch position resumes cross-device — creators report viewers completing more long-form lessons</li>
+  <li>English toggle works without a page reload — Vuetify + i18n switch both layout direction and copy simultaneously</li>
+</ul>
+
+<h2>Stack</h2>
+<div class="stack-box">Nuxt 2.15 · Vue 2 · Vuetify 2 (RTL) · @nuxtjs/i18n · Video.js 7 · Axios · Rails 7 API · Google Cloud Storage</div>
+
+<hr class="wp-block-separator"/>
+
+<blockquote>Building an internationalized or RTL web platform? <a href="/contact">Get in touch →</a></blockquote>
+
+</div>
+<!-- /wp:html -->
+<!-- POST CONTENT END -->
+
+<hr class="divider"/>
+<p style="text-align:center;color:#aaa;font-size:13px">— End of post file — send the entire folder to marketing —</p>
+</body>
+</html>

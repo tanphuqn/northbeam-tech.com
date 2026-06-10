@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>WordPress Post — Offline Video Downloads &amp; Background Audio in React Native with Expo</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 860px; margin: 40px auto; padding: 0 24px; color: #333; }
+    .instructions { background: #fffbe6; border: 1px solid #f0c000; border-radius: 6px; padding: 20px 24px; margin-bottom: 32px; }
+    .instructions h2 { margin-top: 0; font-size: 16px; color: #7a5c00; }
+    .instructions ol { margin: 0; padding-left: 20px; line-height: 2; }
+    .instructions code { background: #f5f5f5; padding: 2px 6px; border-radius: 3px; font-size: 13px; }
+    .divider { border: none; border-top: 2px dashed #ddd; margin: 36px 0; }
+    .meta { background: #f9f9f9; border: 1px solid #eee; border-radius: 6px; padding: 16px 20px; margin-bottom: 24px; font-size: 14px; }
+    .meta h3, .thumbnail-box h3, .prompt-box h3 { margin-top: 0; font-size: 15px; }
+    .meta table, .thumbnail-box table { border-collapse: collapse; width: 100%; }
+    .meta td, .thumbnail-box td { padding: 4px 12px 4px 0; vertical-align: top; }
+    .meta td:first-child, .thumbnail-box td:first-child { font-weight: bold; color: #555; width: 160px; }
+    .highlight { background: #fff8e1; padding: 2px 6px; border-radius: 3px; font-weight: bold; color: #7a5c00; }
+    .thumbnail-box { background: #f9f9f9; border: 1px solid #eee; border-radius: 6px; padding: 16px 20px; margin-bottom: 24px; font-size: 14px; }
+    .prompt-box { background: #f0f4ff; border: 1px solid #c0d0ff; border-radius: 6px; padding: 20px 24px; margin-bottom: 32px; font-size: 14px; }
+    .prompt-box h3 { color: #2a3f9f; }
+    .prompt-box pre { background: #fff; border: 1px solid #dde4ff; border-radius: 4px; padding: 14px 16px; font-size: 13px; line-height: 1.7; white-space: pre-wrap; word-break: break-word; margin: 0; }
+    .post-content { line-height: 1.8; font-size: 16px; }
+    .post-content h1 { font-size: 30px; font-weight: 800; margin-bottom: 8px; }
+    .post-content .tagline { color: #777; font-size: 15px; margin-bottom: 32px; }
+    .post-content h2 { font-size: 20px; font-weight: 700; margin-top: 40px; border-left: 4px solid #222; padding-left: 12px; }
+    .post-content h3 { font-size: 16px; font-weight: 700; margin-top: 28px; }
+    .post-content ul, .post-content ol { padding-left: 20px; }
+    .post-content li { margin-bottom: 8px; }
+    .post-content .diagram-wrap { text-align: center; margin: 32px 0; }
+    .post-content figcaption { font-size: 13px; color: #888; margin-top: 8px; }
+    .post-content pre { background: #1e1e1e; color: #d4d4d4; padding: 18px 20px; border-radius: 6px; font-size: 13px; line-height: 1.7; overflow-x: auto; white-space: pre; }
+    .post-content code { background: #f0f0f0; padding: 2px 6px; border-radius: 3px; font-size: 13px; font-family: monospace; }
+    .post-content pre code { background: none; padding: 0; color: inherit; }
+    .post-content .stack-box { background: #f5f5f5; border-left: 4px solid #222; padding: 14px 18px; font-family: monospace; font-size: 14px; }
+    .post-content blockquote { border-left: 4px solid #ccc; margin: 0; padding: 8px 16px; color: #555; font-style: italic; }
+  </style>
+</head>
+<body>
+
+<div class="instructions">
+  <h2>📋 Instructions for Marketing</h2>
+  <ol>
+    <li>WordPress → <strong>Posts → Add New</strong>, set category to <code>Insights</code></li>
+    <li>Paste the title below</li>
+    <li>Switch to <strong>Code editor</strong>, paste content between <code>&lt;!-- POST CONTENT START --&gt;</code> markers</li>
+    <li>Upload <code>kolel-logo.png</code> → replace <code>src="kolel-logo.png"</code> with WordPress URL</li>
+    <li>Upload <code>kolel-mobile-ios-screenshot.png</code> → replace <code>src="kolel-mobile-ios-screenshot.png"</code> with WordPress URL</li>
+    <li>Upload <code>kolel-mobile-android-screenshot.png</code> → replace <code>src="kolel-mobile-android-screenshot.png"</code> with WordPress URL</li>
+    <li>Upload <code>kolel-react-native-offline-video-background-audio-flow-diagram.png</code> → replace <code>src="kolel-react-native-offline-video-background-audio-flow-diagram.png"</code> with WordPress URL</li>
+    <li>Upload <code>kolel-react-native-offline-video-background-audio-thumbnail.png</code> → set as <strong>Featured Image</strong></li>
+    <li>Fill Yoast/Rank Math with Focus Keyword, Slug, Meta Description below</li>
+    <li>Category: <code>Insights</code> · Tags below · Add Excerpt → Preview → Publish</li>
+  </ol>
+</div>
+
+<div class="meta">
+  <h3>Post Details</h3>
+  <table>
+    <tr><td>Post Title</td><td>Offline Video Downloads &amp; Background Audio in React Native with Expo</td></tr>
+    <tr><td>Slug</td><td><span class="highlight">kolel-react-native-offline-video-background-audio</span></td></tr>
+    <tr><td>Focus Keyword</td><td><span class="highlight">React Native offline video download</span></td></tr>
+    <tr><td>Meta Description</td><td><span class="highlight">How we implemented offline video downloads and lock-screen audio controls in the Kolel React Native app using Expo FileSystem, react-native-track-player, and a service factory pattern.</span><br/><small style="color:#888">(182 characters — trim to 160 if needed)</small></td></tr>
+    <tr><td>Category</td><td><strong>Insights</strong></td></tr>
+    <tr><td>Tags</td><td>React Native, Expo, TypeScript, Offline, TrackPlayer, Audio, iOS, Android, Mobile, Kolel</td></tr>
+    <tr><td>Excerpt</td><td>How we built offline video downloads and background audio with lock-screen controls in the Kolel iOS/Android app — using Expo FileSystem, react-native-track-player, and a typed service factory.</td></tr>
+  </table>
+</div>
+
+<div class="thumbnail-box">
+  <h3>Images</h3>
+  <table>
+    <tr><td>Kolel logo</td><td><code>kolel-logo.png</code> — shown above H1 · height 48px</td></tr>
+    <tr><td>Thumbnail</td><td><code>kolel-react-native-offline-video-background-audio-thumbnail.png</code> — 1200×628 · Featured Image</td></tr>
+    <tr><td>iOS screenshot</td><td><code>kolel-mobile-ios-screenshot.png</code> — App Store listing · inline in What We Built</td></tr>
+    <tr><td>Android screenshot</td><td><code>kolel-mobile-android-screenshot.png</code> — Play Store listing · inline in What We Built</td></tr>
+    <tr><td>Flow diagram</td><td><code>kolel-react-native-offline-video-background-audio-flow-diagram.png</code> — ~700px wide · inline in How It Works</td></tr>
+    <tr><td>Thumbnail alt</td><td><em>React Native offline video download and background audio — Kolel iOS Android app cover image</em></td></tr>
+    <tr><td>Diagram alt</td><td><em>Kolel React Native offline download and TrackPlayer background audio flow diagram</em></td></tr>
+  </table>
+</div>
+
+<div class="prompt-box">
+  <h3>AI Rewrite Prompt</h3>
+  <pre>You are a technical content writer for Northbeam Tech (northbeam-tech.com/insights/).
+
+CONTEXT:
+- Project: kolel.org — a Jewish video streaming platform
+- Integration: Expo FileSystem (downloadAsync) for offline storage + react-native-track-player for background audio
+- Platform: React Native (Expo) app for iOS and Android
+- What it does: users download videos for offline viewing (JSON metadata + thumbnail + video file
+  stored in Expo's document directory); the video player registers a TrackPlayer track so audio
+  continues playing when the screen locks, and lock-screen / notification controls work via
+  Remote Play/Pause/Stop events
+- Key code: DownloadService.downloadVideo() orchestrates the 3-file download sequence;
+  VideoPlayer.setupBackgroundPlayer() adds the track to TrackPlayer at volume 0;
+  TrackPlayer.addEventListener(Event.RemotePlay/Pause/Stop/Duck) syncs state; VideoScreenWrapper
+  initializes TrackPlayer only when the app is in the foreground
+- Tech stack: React Native, Expo 53, TypeScript, react-native-track-player, Expo FileSystem,
+  Redux Thunk, ServiceFactory pattern, Rails 7 API
+- Focus keyword: "React Native offline video download"
+- Target audience: React Native developers building video or audio apps with offline support
+
+CURRENT POST TITLE:
+Offline Video Downloads &amp; Background Audio in React Native with Expo
+
+CURRENT POST CONTENT:
+[paste post HTML here]
+
+MY INSTRUCTIONS:
+[describe changes]</pre>
+</div>
+
+<hr class="divider"/>
+
+<!-- POST CONTENT START -->
+<!-- wp:html -->
+<div class="post-content">
+
+<div style="margin-bottom:24px;"><img src="kolel-logo.png" alt="Kolel logo" style="height:48px;width:auto;"/></div>
+<h1>Offline Video Downloads &amp; Background Audio in React Native with Expo</h1>
+<p class="tagline">How we built offline video downloads and lock-screen audio controls in the Kolel iOS/Android app — using Expo FileSystem, react-native-track-player, and a typed service factory that keeps UI components out of the storage and audio logic.</p>
+
+<hr class="wp-block-separator"/>
+
+<h2>The Problem</h2>
+<p>
+  The Kolel app serves long-form Torah lessons — shiurim that run anywhere from 20 minutes to several hours.
+  Many users listen while commuting, in synagogue, or in areas with unreliable connectivity.
+  Two things were non-negotiable: users needed to download videos for offline playback, and audio needed to keep playing when the screen locked — with working lock-screen controls.
+</p>
+<p>
+  On React Native, both features touch platform-specific APIs that sit outside the standard React component model.
+  The challenge was implementing them cleanly so that UI components stay unaware of where the file came from or how audio focus is managed.
+</p>
+
+<h2>What We Built</h2>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:28px 0;">
+  <figure style="margin:0;text-align:center;">
+    <img src="kolel-mobile-ios-screenshot.png"
+         alt="Kolel iOS app on the Apple App Store — React Native offline video and background audio"
+         style="max-width:100%;height:auto;border:1px solid #eee;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,0.08);"/>
+    <figcaption style="font-size:13px;color:#888;margin-top:8px;">App Store — Kolel iOS app (4.9★ · 100K+ downloads)</figcaption>
+  </figure>
+  <figure style="margin:0;text-align:center;">
+    <img src="kolel-mobile-android-screenshot.png"
+         alt="Kolel Android app on Google Play — React Native offline video and background audio"
+         style="max-width:100%;height:auto;border:1px solid #eee;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,0.08);"/>
+    <figcaption style="font-size:13px;color:#888;margin-top:8px;">Google Play — Kolel Android app (4.9★ · 100K+ downloads)</figcaption>
+  </figure>
+</div>
+
+<p>
+  We implemented a <code>DownloadService</code> that handles the full offline asset pipeline — JSON metadata, thumbnail, and video file — stored in Expo's document directory.
+  For background audio, we use <code>react-native-track-player</code>: the video player registers a silent track with the OS audio session so that lock-screen controls (play, pause, stop) and audio interruption events (phone call, other app) are handled correctly.
+  Both are accessed through a typed service factory so components call <code>ServiceFactory.createDownloadService()</code> and never import platform APIs directly.
+</p>
+
+<h2>How It Works</h2>
+
+<div class="diagram-wrap">
+  <figure>
+    <img src="kolel-react-native-offline-video-background-audio-flow-diagram.png"
+         alt="Kolel React Native offline download and TrackPlayer background audio flow diagram"
+         style="max-width:100%;height:auto;"/>
+    <figcaption>Download flow (left) and background audio registration flow (right) in the Kolel React Native app.</figcaption>
+  </figure>
+</div>
+
+<h2>Key Technical Decisions</h2>
+
+<h3>1. DownloadService — 3-file download sequence</h3>
+<p>
+  Each downloaded video stores three assets: a JSON file with metadata, a thumbnail, and the video itself. The service creates directory structure on first run and uses Expo's <code>downloadAsync</code> with authenticated headers:
+</p>
+<pre><code>// DownloadService.ts
+async downloadVideo(video: Video) {
+  const store = StoreService.getStore();
+  await store.dispatch(apologize('Added to Downloads'));
+
+  // 1. Write a pending record to AsyncStorage immediately
+  const request: StoredData = {
+    type: 'video',
+    id: video.id,
+    durationInSeconds: video.durationInSeconds,
+    title: video.title,
+    startTimeInSeconds: 0,
+    done: false,
+  };
+  await this.addToStorage(request);
+
+  // 2. Download all 3 assets in sequence
+  await this.downloadJsonFile(video.id);
+  const thumb = await this.downloadThumbFile(video.id, video.thumbnail);
+  const videoFile = await this.downloadVideoFile(video.id, video.videoUrl);
+
+  // 3. Mark complete with local file URIs
+  await this.updateInStorage(video.id, {
+    done: true,
+    thumbnail: thumb.uri,
+    videoUrl: videoFile.uri,
+  });
+
+  await AnalyticsService.event('Video', 'Download', video.id.toString());
+}
+
+private async downloadVideoFile(videoId: number, videoUrl: string) {
+  const videos = new Directory(`${this.baseDir}videos`);
+  if (!videos.exists) videos.create();
+
+  return await downloadAsync(
+    videoUrl,
+    `${this.baseDir}videos/${videoId}.${DownloadService.getFileType(videoUrl)}`,
+    { headers: await this.getAuthHeaders() },
+  );
+}</code></pre>
+
+<h3>2. TrackPlayer initialised only when the app is foregrounded</h3>
+<p>
+  <code>TrackPlayer.setupPlayer()</code> must run in the foreground. <code>VideoScreenWrapper</code> listens to <code>AppState</code> and defers initialisation until the app is active — preventing crashes on cold start in the background:
+</p>
+<pre><code>// VideoScreenWrapper.tsx
+const systemService = ServiceFactory.createSystemService();
+
+useEffect(() => {
+  const setupWhenForeground = async () => {
+    if (AppState.currentState === 'active') {
+      await systemService.initTrackPlayer();
+      setHasInitTrackPlayer(true);
+    } else {
+      const sub = AppState.addEventListener('change', async (state) => {
+        if (state === 'active') {
+          await systemService.initTrackPlayer();
+          setHasInitTrackPlayer(true);
+          sub.remove();
+        }
+      });
+    }
+  };
+  setupWhenForeground();
+}, [hasInitTrackPlayer]);
+
+// SystemService.ts
+async initTrackPlayer(): Promise&lt;void&gt; {
+  await TrackPlayer.setupPlayer();
+  await TrackPlayer.updateOptions({
+    capabilities: [Capability.Play, Capability.Pause],
+    compactCapabilities: [Capability.Play, Capability.Pause],
+    android: {
+      appKilledPlaybackBehavior:
+        AppKilledPlaybackBehavior.StopPlaybackAndRemoveNotification,
+    },
+  });
+}</code></pre>
+
+<h3>3. Video player registers a silent TrackPlayer track for OS audio session</h3>
+<p>
+  The video player adds a track to TrackPlayer at volume 0. This registers the app with the OS audio session so lock-screen controls appear and <code>RemotePlay</code> / <code>RemotePause</code> / <code>RemoteDuck</code> events fire correctly — even though the actual audio comes from the video renderer:
+</p>
+<pre><code>// VideoPlayer.tsx
+async setupBackgroundPlayer() {
+  await TrackPlayer.reset();
+  await TrackPlayer.add({
+    id: this.props.videoId,
+    url: this.props.videoURL,
+    title: this.props.videoTitle,
+    artwork: this.props.videoThumbnail,
+    artist: this.props.channelName,
+    duration: this.props.videoDurationMillis,
+  });
+  await TrackPlayer.seekTo(this.props.startVideoPos);
+  await TrackPlayer.setVolume(0); // silent — real audio from the video player
+  await TrackPlayer.pause();
+}
+
+async componentDidMount() {
+  await this.setupBackgroundPlayer();
+
+  // sync lock-screen controls → video player state
+  this.remotePlayRef.current  = TrackPlayer.addEventListener(Event.RemotePlay,  () => this.play());
+  this.remotePauseRef.current = TrackPlayer.addEventListener(Event.RemotePause, () => this.pause());
+  this.remoteStopRef.current  = TrackPlayer.addEventListener(Event.RemoteStop,  () => this.pause());
+
+  // handle audio interruptions (phone calls, other apps)
+  this.remoteDuckRef.current  = TrackPlayer.addEventListener(Event.RemoteDuck, (event) => {
+    if (!this.state.isVideoLoaded) return;
+    event.paused ? this.pause() : this.play();
+  });
+}</code></pre>
+
+<h3>4. Hook-based player keeps play/pause/seek decoupled</h3>
+<p>
+  The functional video player component uses <code>useCallback</code> hooks that call both the native video ref and TrackPlayer in lockstep, ensuring the OS audio session state always matches what's on screen:
+</p>
+<pre><code>// ui/video-player/index.tsx
+const pause = useCallback(async () => {
+  setIsVideoPaused(true);
+  deactivateKeepAwake();
+  TrackPlayer.pause();
+}, [deactivateKeepAwake]);
+
+const play = useCallback(async (reload?: boolean) => {
+  setIsVideoPaused(false);
+  activateKeepAwake(); // keep screen on during playback
+  TrackPlayer.play();
+}, [isVideoFinished, activateKeepAwake]);
+
+const seek = useCallback(async (seekTo: number) => {
+  await TrackPlayer.seekTo(seekTo);
+  videoRef.current?.seek(seekTo, 100); // native video seek
+  if (isVideoPaused) play();
+}, [isVideoPaused, play]);</code></pre>
+
+<h2>Results / What Changed</h2>
+<ul>
+  <li>Users can download full lessons and watch them on flights, in synagogue, or on the subway — no connection required</li>
+  <li>Lock-screen controls (play, pause) work correctly on both iOS and Android</li>
+  <li>Audio resumes after a phone call interruption without user action</li>
+  <li>The service factory pattern means no component imports <code>expo-file-system</code> or <code>react-native-track-player</code> directly — swap the implementation without touching UI</li>
+  <li>App Store rating: 4.9★ with 100K+ downloads across iOS and Android</li>
+</ul>
+
+<h2>Stack</h2>
+<div class="stack-box">React Native · Expo 53 · TypeScript · react-native-track-player · Expo FileSystem (downloadAsync) · Redux Thunk · AsyncStorage · ServiceFactory pattern · Rails 7 API · Firebase FCM</div>
+
+<hr class="wp-block-separator"/>
+
+<blockquote>Building a React Native video or audio app? <a href="/contact">Get in touch →</a></blockquote>
+
+</div>
+<!-- /wp:html -->
+<!-- POST CONTENT END -->
+
+<hr class="divider"/>
+<p style="text-align:center;color:#aaa;font-size:13px">— End of post file — send the entire folder to marketing —</p>
+</body>
+</html>

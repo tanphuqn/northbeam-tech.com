@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>WordPress Post — Client-Side Video Transcoding with FFmpeg.wasm</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 860px; margin: 40px auto; padding: 0 24px; color: #333; }
+    .instructions { background: #fffbe6; border: 1px solid #f0c000; border-radius: 6px; padding: 20px 24px; margin-bottom: 32px; }
+    .instructions h2 { margin-top: 0; font-size: 16px; color: #7a5c00; }
+    .instructions ol { margin: 0; padding-left: 20px; line-height: 2; }
+    .instructions code { background: #f5f5f5; padding: 2px 6px; border-radius: 3px; font-size: 13px; }
+    .divider { border: none; border-top: 2px dashed #ddd; margin: 36px 0; }
+    .meta { background: #f9f9f9; border: 1px solid #eee; border-radius: 6px; padding: 16px 20px; margin-bottom: 24px; font-size: 14px; }
+    .meta h3, .thumbnail-box h3, .prompt-box h3 { margin-top: 0; font-size: 15px; }
+    .meta table, .thumbnail-box table { border-collapse: collapse; width: 100%; }
+    .meta td, .thumbnail-box td { padding: 4px 12px 4px 0; vertical-align: top; }
+    .meta td:first-child, .thumbnail-box td:first-child { font-weight: bold; color: #555; width: 160px; }
+    .highlight { background: #fff8e1; padding: 2px 6px; border-radius: 3px; font-weight: bold; color: #7a5c00; }
+    .thumbnail-box { background: #f9f9f9; border: 1px solid #eee; border-radius: 6px; padding: 16px 20px; margin-bottom: 24px; font-size: 14px; }
+    .prompt-box { background: #f0f4ff; border: 1px solid #c0d0ff; border-radius: 6px; padding: 20px 24px; margin-bottom: 32px; font-size: 14px; }
+    .prompt-box h3 { color: #2a3f9f; }
+    .prompt-box pre { background: #fff; border: 1px solid #dde4ff; border-radius: 4px; padding: 14px 16px; font-size: 13px; line-height: 1.7; white-space: pre-wrap; word-break: break-word; margin: 0; }
+    .post-content { line-height: 1.8; font-size: 16px; }
+    .post-content h1 { font-size: 30px; font-weight: 800; margin-bottom: 8px; }
+    .post-content .tagline { color: #777; font-size: 15px; margin-bottom: 32px; }
+    .post-content h2 { font-size: 20px; font-weight: 700; margin-top: 40px; border-left: 4px solid #222; padding-left: 12px; }
+    .post-content h3 { font-size: 16px; font-weight: 700; margin-top: 28px; }
+    .post-content ul, .post-content ol { padding-left: 20px; }
+    .post-content li { margin-bottom: 8px; }
+    .post-content .diagram-wrap { text-align: center; margin: 32px 0; }
+    .post-content figcaption { font-size: 13px; color: #888; margin-top: 8px; }
+    .post-content pre { background: #1e1e1e; color: #d4d4d4; padding: 18px 20px; border-radius: 6px; font-size: 13px; line-height: 1.7; overflow-x: auto; white-space: pre; }
+    .post-content code { background: #f0f0f0; padding: 2px 6px; border-radius: 3px; font-size: 13px; font-family: monospace; }
+    .post-content pre code { background: none; padding: 0; color: inherit; }
+    .post-content .stack-box { background: #f5f5f5; border-left: 4px solid #222; padding: 14px 18px; font-family: monospace; font-size: 14px; }
+    .post-content blockquote { border-left: 4px solid #ccc; margin: 0; padding: 8px 16px; color: #555; font-style: italic; }
+  </style>
+</head>
+<body>
+
+<div class="instructions">
+  <h2>📋 Instructions for Marketing</h2>
+  <ol>
+    <li>WordPress → <strong>Posts → Add New</strong>, set category to <code>Insights</code></li>
+    <li>Paste the title below</li>
+    <li>Switch to <strong>Code editor</strong>, paste content between <code>&lt;!-- POST CONTENT START --&gt;</code> markers</li>
+    <li>Upload <code>kolel-logo.png</code> → replace <code>src="kolel-logo.png"</code> with WordPress URL</li>
+    <li>Upload <code>kolel-creator-dashboard-screenshot.png</code> → replace <code>src="kolel-creator-dashboard-screenshot.png"</code> with WordPress URL</li>
+    <li>Upload <code>kolel-creator-upload-real-screenshot.png</code> → replace <code>src="kolel-creator-upload-real-screenshot.png"</code> with WordPress URL</li>
+    <li>Upload <code>kolel-ffmpeg-wasm-browser-video-transcoding-flow-diagram.png</code> → replace <code>src="kolel-ffmpeg-wasm-browser-video-transcoding-flow-diagram.png"</code> with WordPress URL</li>
+    <li>Upload <code>kolel-ffmpeg-wasm-browser-video-transcoding-thumbnail.png</code> → set as <strong>Featured Image</strong></li>
+    <li>Fill Yoast/Rank Math with Focus Keyword, Slug, Meta Description below</li>
+    <li>Category: <code>Insights</code> · Tags below · Add Excerpt → Preview → Publish</li>
+  </ol>
+</div>
+
+<div class="meta">
+  <h3>Post Details</h3>
+  <table>
+    <tr><td>Post Title</td><td>Client-Side Video Transcoding with FFmpeg.wasm in a Vue Creator Dashboard</td></tr>
+    <tr><td>Slug</td><td><span class="highlight">kolel-ffmpeg-wasm-browser-video-transcoding</span></td></tr>
+    <tr><td>Focus Keyword</td><td><span class="highlight">FFmpeg WebAssembly video transcoding</span></td></tr>
+    <tr><td>Meta Description</td><td><span class="highlight">How we used FFmpeg.wasm to transcode videos directly in the browser inside the Kolel creator dashboard, eliminating a dedicated pre-upload server.</span><br/><small style="color:#888">(152 characters)</small></td></tr>
+    <tr><td>Category</td><td><strong>Insights</strong></td></tr>
+    <tr><td>Tags</td><td>FFmpeg, WebAssembly, Vue, JavaScript, Video, Google Cloud, Creator Dashboard, Kolel</td></tr>
+    <tr><td>Excerpt</td><td>How we ran FFmpeg inside the browser with WebAssembly to transcode creator uploads client-side before sending them to Google Cloud Storage — no transcoding server required.</td></tr>
+  </table>
+</div>
+
+<div class="thumbnail-box">
+  <h3>Images</h3>
+  <table>
+    <tr><td>Kolel logo</td><td><code>kolel-logo.png</code> — shown above H1 · height 48px</td></tr>
+    <tr><td>Thumbnail</td><td><code>kolel-ffmpeg-wasm-browser-video-transcoding-thumbnail.png</code> — 1200×628 · Featured Image</td></tr>
+    <tr><td>Dashboard screenshot</td><td><code>kolel-creator-dashboard-screenshot.png</code> — real creator dashboard · inline in What We Built</td></tr>
+    <tr><td>Upload form screenshot</td><td><code>kolel-creator-upload-real-screenshot.png</code> — real upload form · inline in What We Built</td></tr>
+    <tr><td>Flow diagram</td><td><code>kolel-ffmpeg-wasm-browser-video-transcoding-flow-diagram.png</code> — ~700px wide · inline in How It Works</td></tr>
+    <tr><td>Thumbnail alt</td><td><em>FFmpeg WebAssembly video transcoding in browser — Vue creator dashboard cover image</em></td></tr>
+    <tr><td>Diagram alt</td><td><em>FFmpeg.wasm browser video transcoding flow — Vue dashboard to Google Cloud Storage pipeline</em></td></tr>
+  </table>
+</div>
+
+<div class="prompt-box">
+  <h3>AI Rewrite Prompt</h3>
+  <pre>You are a technical content writer for Northbeam Tech (northbeam-tech.com/insights/).
+
+CONTEXT:
+- Project: kolel.org — a Jewish video streaming platform
+- Integration: FFmpeg.wasm (@ffmpeg/ffmpeg) for in-browser video transcoding
+- Platform: Vue 2 creator dashboard (publish.kolel.org)
+- What it does: when a creator uploads a non-MP4 video (e.g. .mov, .webm), the browser
+  loads FFmpeg via WebAssembly, transcodes the file to MP4 client-side, then uploads
+  the output to a Google Cloud Storage signed URL — no server-side transcoding step needed
+- Key code: createFFmpeg(), ffmpeg.load(), ffmpeg.FS('writeFile'), ffmpeg.run('-i', input, output),
+  ffmpeg.FS('readFile', output), then axios.put(signedUrl, blob)
+- Tech stack: Vue 2, @ffmpeg/ffmpeg 0.10, @ffmpeg/core, Google Cloud Storage signed URLs, Rails API
+- Focus keyword: "FFmpeg WebAssembly video transcoding"
+- Target audience: frontend and full-stack developers building video upload pipelines
+
+CURRENT POST TITLE:
+Client-Side Video Transcoding with FFmpeg.wasm in a Vue Creator Dashboard
+
+CURRENT POST CONTENT:
+[paste post HTML here]
+
+MY INSTRUCTIONS:
+[describe changes]</pre>
+</div>
+
+<hr class="divider"/>
+
+<!-- POST CONTENT START -->
+<!-- wp:html -->
+<div class="post-content">
+
+<div style="margin-bottom:24px;"><img src="kolel-logo.png" alt="Kolel logo" style="height:48px;width:auto;"/></div>
+<h1>Client-Side Video Transcoding with FFmpeg.wasm in a Vue Creator Dashboard</h1>
+<p class="tagline">How we eliminated a pre-upload transcoding server by running FFmpeg entirely in the browser using WebAssembly — inside the Kolel creator dashboard.</p>
+
+<hr class="wp-block-separator"/>
+
+<h2>The Problem</h2>
+<p>
+  The Kolel creator dashboard (<a href="https://publish.kolel.org/" target="_blank">publish.kolel.org</a>) lets educators and rabbis upload video lessons directly from their browser.
+  Creators record on phones, tablets, and cameras — producing files in every format imaginable: <code>.mov</code>, <code>.webm</code>, <code>.avi</code>, <code>.mkv</code>.
+  Our Google Cloud Video Transcoder pipeline expects MP4 input. Running a dedicated server to re-encode every upload before it reaches cloud storage added latency, infrastructure cost, and an extra moving part to maintain.
+</p>
+<p>
+  We needed a way to normalize the format before the file ever left the creator's machine.
+</p>
+
+<h2>What We Built</h2>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:28px 0;">
+  <figure style="margin:0;text-align:center;">
+    <img src="kolel-creator-dashboard-screenshot.png"
+         alt="Kolel creator dashboard — publish.kolel.org channel analytics and video management"
+         style="max-width:100%;height:auto;border:1px solid #eee;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,0.08);"/>
+    <figcaption style="font-size:13px;color:#888;margin-top:8px;">publish.kolel.org — creator dashboard with channel analytics and video library.</figcaption>
+  </figure>
+  <figure style="margin:0;text-align:center;">
+    <img src="kolel-creator-upload-real-screenshot.png"
+         alt="Kolel creator dashboard — video upload form with file picker, thumbnail, title and scheduling"
+         style="max-width:100%;height:auto;border:1px solid #eee;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,0.08);"/>
+    <figcaption style="font-size:13px;color:#888;margin-top:8px;">Video upload form — file picker (קובץ), Google Drive, thumbnail, title, tags, and scheduling.</figcaption>
+  </figure>
+</div>
+
+<p>
+  We integrated <code>@ffmpeg/ffmpeg</code> into the Vue 2 upload component — making FFmpeg run entirely in the browser via WebAssembly.
+  When a creator picks a non-MP4 file, the browser downloads the FFmpeg WASM core (~30 MB, cached after first load), transcodes the file to MP4 in a Web Worker, and only then uploads the resulting blob to a Google Cloud Storage signed URL.
+  The Rails API and the downstream transcoding pipeline never see anything other than a clean MP4.
+</p>
+
+<h2>How It Works</h2>
+
+<div class="diagram-wrap">
+  <figure>
+    <img src="kolel-ffmpeg-wasm-browser-video-transcoding-flow-diagram.png"
+         alt="FFmpeg.wasm browser video transcoding flow — Vue dashboard to Google Cloud Storage pipeline"
+         style="max-width:100%;height:auto;"/>
+    <figcaption>Upload flow: format check → FFmpeg.wasm transcode → signed URL → GCS → Cloud Transcoder.</figcaption>
+  </figure>
+</div>
+
+<p>The full upload sequence:</p>
+<ol>
+  <li>Creator selects a video file in the Vue component</li>
+  <li><code>convertToMp4()</code> checks the MIME type — skips transcoding if already MP4/MOV/M4V</li>
+  <li>FFmpeg WASM core is loaded (cached in browser after first run)</li>
+  <li>The source file is written to FFmpeg's virtual filesystem</li>
+  <li><code>ffmpeg.run('-i', input, 'output.mp4')</code> transcodes to MP4</li>
+  <li>The output bytes are read back and wrapped in a <code>Blob</code></li>
+  <li>The component calls the Rails API to get a GCS signed URL</li>
+  <li>The MP4 blob is PUT directly to GCS — no server in the middle</li>
+  <li>The Rails API records the video and triggers the Cloud Transcoder job</li>
+</ol>
+
+<h2>Key Technical Decisions</h2>
+
+<h3>1. Loading FFmpeg with a pinned CDN core</h3>
+<p>
+  The WASM binary is large. We pin a specific version of <code>@ffmpeg/core</code> from unpkg so the core is cached by the browser after the first upload session, and creators on a repeat visit pay no load cost:
+</p>
+<pre><code>import { createFFmpeg, fetchFile } from '@ffmpeg/ffmpeg';
+
+async convertToMp4(file) {
+  const supportedTypes = ['video/mp4', 'video/mov', 'video/m4v'];
+  if (supportedTypes.includes(file.type)) {
+    return; // already a compatible format, skip transcoding
+  }
+
+  const ffmpeg = createFFmpeg({
+    log: true,
+    corePath: 'https://unpkg.com/@ffmpeg/core@0.10.0/dist/ffmpeg-core.js',
+  });
+
+  if (!ffmpeg.isLoaded()) {
+    await ffmpeg.load();
+  }
+
+  const fileName = file.name;
+  const outputFileName = 'output.mp4';
+
+  ffmpeg.FS('writeFile', fileName, await fetchFile(file));
+  await ffmpeg.run('-i', fileName, outputFileName);
+
+  const data = ffmpeg.FS('readFile', outputFileName);
+  this.selectedFile = new Blob([data.buffer], { type: 'video/mp4' });
+}</code></pre>
+
+<h3>2. Signed URL upload — no credentials in the browser</h3>
+<p>
+  The browser never holds GCS credentials. The Rails API generates a short-lived signed URL for the specific file path, then the browser PUTs directly to GCS with the correct <code>Content-Type</code>:
+</p>
+<pre><code>async uploadFileToSignedUrl(signedUrl, selectedFile) {
+  await axios.put(signedUrl, selectedFile, {
+    headers: { 'Content-Type': selectedFile.type },
+  });
+}
+
+async prepareVideoUpload() {
+  this.loading = true;
+  // convertToMp4 has already replaced this.selectedFile with the MP4 blob
+  await this.getSignedUrl();
+  await this.uploadFileToSignedUrl(this.signedUrl, this.selectedFile);
+
+  if (this.pickedThumbnail) {
+    await this.getImageSignedUrl();
+    await this.uploadFileToSignedUrl(this.thumbnailSignedUrl, this.pickedThumbnail);
+  }
+
+  this.addVideo(); // notify Rails API to create the video record
+}</code></pre>
+
+<h3>3. Format allow-list instead of always transcoding</h3>
+<p>
+  Running FFmpeg.wasm on a file that is already MP4 wastes time and memory.
+  We check the MIME type first and bail early for the common formats the transcoder already accepts (<code>video/mp4</code>, <code>video/mov</code>, <code>video/m4v</code>).
+  Only exotic formats go through the WASM path.
+</p>
+
+<h2>Results / What Changed</h2>
+<ul>
+  <li>Removed the pre-upload transcoding microservice entirely — one less server to maintain</li>
+  <li>Creators uploading common formats (MP4, MOV) see no change in upload speed</li>
+  <li>Exotic formats are handled transparently — creators never see a format error</li>
+  <li>The Rails API and downstream Google Cloud Transcoder always receive well-formed MP4 input</li>
+  <li>No credentials leave the server — the signed URL pattern keeps GCS access tightly scoped</li>
+</ul>
+
+<h2>Stack</h2>
+<div class="stack-box">Vue 2 · @ffmpeg/ffmpeg 0.10 · @ffmpeg/core (WebAssembly) · Google Cloud Storage · GCS Signed URLs · Google Cloud Video Transcoder · Rails 7 API · Axios</div>
+
+<hr class="wp-block-separator"/>
+
+<blockquote>Building a video upload pipeline? <a href="/contact">Get in touch →</a></blockquote>
+
+</div>
+<!-- /wp:html -->
+<!-- POST CONTENT END -->
+
+<hr class="divider"/>
+<p style="text-align:center;color:#aaa;font-size:13px">— End of post file — send the entire folder to marketing —</p>
+</body>
+</html>
