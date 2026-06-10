@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="628" viewBox="0 0 1200 628" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#fff" stroke-width="0.3" opacity="0.05"/>
+    </pattern>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#6366f1"/>
+    </linearGradient>
+    <linearGradient id="lf" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#0f172a;stop-opacity:0"/>
+    </linearGradient>
+    <linearGradient id="rf" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:0"/>
+      <stop offset="100%" style="stop-color:#0f172a;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="628" fill="url(#bgGrad)"/>
+  <rect width="1200" height="628" fill="url(#grid)"/>
+  <!-- Top accent bar -->
+  <rect x="0" y="0" width="1200" height="5" fill="url(#accentGrad)"/>
+  <!-- Bottom accent bar -->
+  <rect x="0" y="623" width="1200" height="5" fill="url(#accentGrad)"/>
+
+  <!-- Glow orb right side -->
+  <ellipse cx="900" cy="314" rx="350" ry="260" fill="#3b82f6" opacity="0.04"/>
+  <ellipse cx="900" cy="314" rx="200" ry="150" fill="#6366f1" opacity="0.05"/>
+
+  <!-- LEFT CONTENT -->
+  <!-- Tag chip -->
+  <rect x="60" y="88" width="110" height="28" rx="14" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1" opacity="0.8"/>
+  <text x="115" y="107" text-anchor="middle" fill="#60a5fa" font-size="12" font-weight="600" letter-spacing="1.5">PROJECT</text>
+
+  <!-- Title -->
+  <text x="60" y="188" fill="#f8fafc" font-size="56" font-weight="800" letter-spacing="-2">fac4fac</text>
+  <text x="60" y="248" fill="#94a3b8" font-size="28" font-weight="400">CRM Platform</text>
+
+  <!-- Divider line -->
+  <line x1="60" y1="272" x2="500" y2="272" stroke="url(#accentGrad)" stroke-width="2" opacity="0.6"/>
+
+  <!-- Subtitle -->
+  <text x="60" y="308" fill="#cbd5e1" font-size="16">Custom SugarCRM for student management,</text>
+  <text x="60" y="330" fill="#cbd5e1" font-size="16">WhatsApp automation &amp; reporting</text>
+
+  <!-- Tags -->
+  <rect x="60" y="358" width="104" height="28" rx="14" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="112" y="377" text-anchor="middle" fill="#94a3b8" font-size="12">SugarCRM</text>
+
+  <rect x="174" y="358" width="84" height="28" rx="14" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="216" y="377" text-anchor="middle" fill="#94a3b8" font-size="12">WhatsApp</text>
+
+  <rect x="268" y="358" width="60" height="28" rx="14" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="298" y="377" text-anchor="middle" fill="#94a3b8" font-size="12">Twilio</text>
+
+  <rect x="338" y="358" width="56" height="28" rx="14" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="366" y="377" text-anchor="middle" fill="#94a3b8" font-size="12">TCPDF</text>
+
+  <rect x="404" y="358" width="50" height="28" rx="14" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="429" y="377" text-anchor="middle" fill="#94a3b8" font-size="12">PHP</text>
+
+  <!-- Live badge -->
+  <circle cx="74" cy="462" r="5" fill="#22c55e"/>
+  <text x="86" y="467" fill="#22c55e" font-size="13" font-weight="600">Live at fac4fac.com</text>
+
+  <!-- Footer -->
+  <text x="60" y="568" fill="#475569" font-size="14">northbeam-tech.com/projects</text>
+
+  <!-- RIGHT CONTENT: module grid visual -->
+  <!-- Main CRM box -->
+  <rect x="640" y="110" width="460" height="420" rx="8" fill="#111827" stroke="#1e3a5f" stroke-width="1.5"/>
+  <rect x="640" y="110" width="460" height="36" rx="8" fill="#1e3a5f"/>
+  <rect x="640" y="128" width="460" height="18" rx="0" fill="#1e3a5f"/>
+  <text x="870" y="133" text-anchor="middle" fill="#60a5fa" font-size="11" font-weight="700">fac4fac.com — SugarCRM Custom Platform</text>
+
+  <!-- Module boxes: row 1 -->
+  <rect x="660" y="160" width="120" height="44" rx="4" fill="#0f172a" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="720" y="179" text-anchor="middle" fill="#60a5fa" font-size="9" font-weight="700">STUDENTS</text>
+  <text x="720" y="193" text-anchor="middle" fill="#64748b" font-size="8">isa_students</text>
+
+  <rect x="790" y="160" width="120" height="44" rx="4" fill="#0f172a" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="850" y="179" text-anchor="middle" fill="#a78bfa" font-size="9" font-weight="700">WORKERS</text>
+  <text x="850" y="193" text-anchor="middle" fill="#64748b" font-size="8">isa_workers</text>
+
+  <rect x="920" y="160" width="160" height="44" rx="4" fill="#0f172a" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="1000" y="179" text-anchor="middle" fill="#34d399" font-size="9" font-weight="700">WHATSAPP</text>
+  <text x="1000" y="193" text-anchor="middle" fill="#64748b" font-size="8">wsf_whatsapp_follow_up</text>
+
+  <!-- Module boxes: row 2 -->
+  <rect x="660" y="216" width="120" height="44" rx="4" fill="#0f172a" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="720" y="235" text-anchor="middle" fill="#fbbf24" font-size="9" font-weight="700">FOLLOW-UPS</text>
+  <text x="720" y="249" text-anchor="middle" fill="#64748b" font-size="8">isa_followups</text>
+
+  <rect x="790" y="216" width="120" height="44" rx="4" fill="#0f172a" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="850" y="235" text-anchor="middle" fill="#fb923c" font-size="9" font-weight="700">CONNECTNOW</text>
+  <text x="850" y="249" text-anchor="middle" fill="#64748b" font-size="8">htp_connectnow</text>
+
+  <rect x="920" y="216" width="160" height="44" rx="4" fill="#0f172a" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="1000" y="235" text-anchor="middle" fill="#e879f9" font-size="9" font-weight="700">WA TEMPLATES</text>
+  <text x="1000" y="249" text-anchor="middle" fill="#64748b" font-size="8">wsmt_whatsapp_message_template</text>
+
+  <!-- Module boxes: row 3 -->
+  <rect x="660" y="272" width="120" height="44" rx="4" fill="#0f172a" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="720" y="291" text-anchor="middle" fill="#38bdf8" font-size="9" font-weight="700">ACTIVITIES</text>
+  <text x="720" y="305" text-anchor="middle" fill="#64748b" font-size="8">isa_activities</text>
+
+  <rect x="790" y="272" width="120" height="44" rx="4" fill="#0f172a" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="850" y="291" text-anchor="middle" fill="#f472b6" font-size="9" font-weight="700">DONATIONS</text>
+  <text x="850" y="305" text-anchor="middle" fill="#64748b" font-size="8">isa_donation</text>
+
+  <rect x="920" y="272" width="160" height="44" rx="4" fill="#0f172a" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="1000" y="291" text-anchor="middle" fill="#4ade80" font-size="9" font-weight="700">AVREICHEM F/U</text>
+  <text x="1000" y="305" text-anchor="middle" fill="#64748b" font-size="8">htp_avreichem_followup</text>
+
+  <!-- Divider -->
+  <line x1="660" y1="330" x2="1070" y2="330" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="760" y="344" text-anchor="middle" fill="#475569" font-size="8" font-weight="700">INTEGRATIONS &amp; EXPORTS</text>
+
+  <!-- Integration row -->
+  <rect x="660" y="352" width="100" height="36" rx="4" fill="#0f172a" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="710" y="366" text-anchor="middle" fill="#60a5fa" font-size="8" font-weight="700">Twilio API</text>
+  <text x="710" y="379" text-anchor="middle" fill="#64748b" font-size="7">WhatsApp / SMS</text>
+
+  <rect x="770" y="352" width="100" height="36" rx="4" fill="#0f172a" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="820" y="366" text-anchor="middle" fill="#34d399" font-size="8" font-weight="700">TCPDF</text>
+  <text x="820" y="379" text-anchor="middle" fill="#64748b" font-size="7">RTL PDF Export</text>
+
+  <rect x="880" y="352" width="100" height="36" rx="4" fill="#0f172a" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="930" y="366" text-anchor="middle" fill="#fbbf24" font-size="8" font-weight="700">Excel Writer</text>
+  <text x="930" y="379" text-anchor="middle" fill="#64748b" font-size="7">Weekly Reports</text>
+
+  <rect x="990" y="352" width="90" height="36" rx="4" fill="#0f172a" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="1035" y="366" text-anchor="middle" fill="#e879f9" font-size="8" font-weight="700">AWS EC2+RDS</text>
+  <text x="1035" y="379" text-anchor="middle" fill="#64748b" font-size="7">Hosting</text>
+
+  <!-- Divider -->
+  <line x1="660" y1="402" x2="1070" y2="402" stroke="#1e3a5f" stroke-width="1"/>
+
+  <!-- Stats row -->
+  <text x="720" y="424" text-anchor="middle" fill="#f8fafc" font-size="22" font-weight="800">15+</text>
+  <text x="720" y="440" text-anchor="middle" fill="#64748b" font-size="9">Custom Modules</text>
+
+  <text x="850" y="424" text-anchor="middle" fill="#f8fafc" font-size="22" font-weight="800">5</text>
+  <text x="850" y="440" text-anchor="middle" fill="#64748b" font-size="9">Integrations</text>
+
+  <text x="980" y="424" text-anchor="middle" fill="#f8fafc" font-size="22" font-weight="800">RTL</text>
+  <text x="980" y="440" text-anchor="middle" fill="#64748b" font-size="9">Hebrew Support</text>
+
+  <!-- Footer of card -->
+  <rect x="640" y="494" width="460" height="36" rx="8" fill="#1e3a5f" opacity="0.5"/>
+  <circle cx="666" cy="512" r="5" fill="#22c55e"/>
+  <text x="680" y="516" fill="#94a3b8" font-size="10">Live Production · fac4fac.com · SugarCRM 6.5.23 on AWS</text>
+
+  <!-- Edge fades -->
+  <rect x="600" y="0" width="80" height="628" fill="url(#lf)"/>
+  <rect x="1150" y="0" width="50" height="628" fill="url(#rf)"/>
+</svg>

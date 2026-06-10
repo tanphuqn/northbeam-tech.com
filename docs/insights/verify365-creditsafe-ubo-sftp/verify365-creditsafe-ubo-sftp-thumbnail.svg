@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="628" viewBox="0 0 1200 628" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#fff" stroke-width="0.3" opacity="0.04"/>
+    </pattern>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#021020"/>
+      <stop offset="100%" style="stop-color:#051a2c"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0891b2"/>
+      <stop offset="100%" style="stop-color:#0284c7"/>
+    </linearGradient>
+    <linearGradient id="lf" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#021020;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#021020;stop-opacity:0"/>
+    </linearGradient>
+    <linearGradient id="rf" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#021020;stop-opacity:0"/>
+      <stop offset="100%" style="stop-color:#021020;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="628" fill="url(#bgGrad)"/>
+  <rect width="1200" height="628" fill="url(#grid)"/>
+  <rect x="0" y="0" width="1200" height="5" fill="url(#accentGrad)"/>
+  <rect x="0" y="623" width="1200" height="5" fill="url(#accentGrad)"/>
+  <ellipse cx="880" cy="314" rx="360" ry="260" fill="#0891b2" opacity="0.05"/>
+
+  <!-- Left -->
+  <rect x="60" y="88" width="100" height="28" rx="14" fill="#082030" stroke="#0891b2" stroke-width="1"/>
+  <text x="110" y="107" text-anchor="middle" fill="#67e8f9" font-size="12" font-weight="600" letter-spacing="1.5">INSIGHTS</text>
+
+  <text x="60" y="182" fill="#ecfeff" font-size="40" font-weight="800" letter-spacing="-1">Company Verification</text>
+  <text x="60" y="232" fill="#ecfeff" font-size="40" font-weight="800" letter-spacing="-1">&amp; UBO Data via SFTP</text>
+  <text x="60" y="278" fill="#67e8f9" font-size="26" font-weight="700">with CreditSafe in Go</text>
+
+  <line x1="60" y1="298" x2="460" y2="298" stroke="url(#accentGrad)" stroke-width="2" opacity="0.6"/>
+
+  <text x="60" y="334" fill="#a5f3fc" font-size="15">Auto token refresh (55 min TTL) · SFTP with</text>
+  <text x="60" y="356" fill="#a5f3fc" font-size="15">host key pinning · Gzip-streamed UBO CSV files</text>
+
+  <rect x="60" y="386" width="80" height="28" rx="14" fill="#021020" stroke="#374151" stroke-width="1"/>
+  <text x="100" y="405" text-anchor="middle" fill="#9ca3af" font-size="12">Go</text>
+  <rect x="150" y="386" width="96" height="28" rx="14" fill="#021020" stroke="#374151" stroke-width="1"/>
+  <text x="198" y="405" text-anchor="middle" fill="#9ca3af" font-size="12">CreditSafe</text>
+  <rect x="256" y="386" width="62" height="28" rx="14" fill="#021020" stroke="#374151" stroke-width="1"/>
+  <text x="287" y="405" text-anchor="middle" fill="#9ca3af" font-size="12">SFTP</text>
+  <rect x="328" y="386" width="82" height="28" rx="14" fill="#021020" stroke="#374151" stroke-width="1"/>
+  <text x="369" y="405" text-anchor="middle" fill="#9ca3af" font-size="12">KYB / UBO</text>
+
+  <text x="60" y="568" fill="#082030" font-size="14">northbeam-tech.com/insights</text>
+
+  <!-- Right: token + SFTP visual -->
+  <rect x="670" y="90" width="480" height="420" rx="8" fill="#010d1a" stroke="#082030" stroke-width="1.5"/>
+  <rect x="670" y="90" width="480" height="36" rx="8" fill="#082030"/>
+  <rect x="670" y="108" width="480" height="18" rx="0" fill="#082030"/>
+  <text x="910" y="113" text-anchor="middle" fill="#67e8f9" font-size="11" font-weight="700">CreditSafe — Token Lifecycle &amp; UBO SFTP</text>
+
+  <!-- Token lifecycle -->
+  <rect x="700" y="140" width="420" height="60" rx="4" fill="#0a1a28" stroke="#082030" stroke-width="1"/>
+  <text x="910" y="160" text-anchor="middle" fill="#22d3ee" font-size="10" font-weight="700">Token Cache (sync.Mutex protected)</text>
+  <text x="910" y="176" text-anchor="middle" fill="#94a3b8" font-size="9">if token != "" &amp;&amp; time.Now().Before(tokenExpiry) → reuse</text>
+  <text x="910" y="192" text-anchor="middle" fill="#475569" font-size="8">else → POST /authenticate → cache for 55 minutes</text>
+
+  <!-- API request -->
+  <rect x="700" y="214" width="420" height="50" rx="4" fill="#0a1a28" stroke="#082030" stroke-width="1"/>
+  <text x="910" y="234" text-anchor="middle" fill="#67e8f9" font-size="10" font-weight="700">API Requests — Auto Bearer Token</text>
+  <text x="910" y="250" text-anchor="middle" fill="#94a3b8" font-size="9">Search companies · Get reports · Download images</text>
+  <text x="910" y="263" text-anchor="middle" fill="#475569" font-size="8">APIError struct preserves raw JSON for caller proxy</text>
+
+  <line x1="700" y1="276" x2="1120" y2="276" stroke="#082030" stroke-width="1"/>
+  <text x="790" y="292" text-anchor="middle" fill="#475569" font-size="8" font-weight="700">SFTP UBO (monthly cron)</text>
+
+  <!-- SFTP steps -->
+  <rect x="700" y="298" width="420" height="42" rx="4" fill="#0a1a28" stroke="#082030" stroke-width="1"/>
+  <text x="910" y="316" text-anchor="middle" fill="#22d3ee" font-size="9" font-weight="700">NewUBOSFTPSession — SSH dial + sftp.NewClient</text>
+  <text x="910" y="330" text-anchor="middle" fill="#475569" font-size="8">Host key pinning (CreditSafeSFTPHostKey) or TOFU fallback</text>
+
+  <rect x="700" y="352" width="420" height="42" rx="4" fill="#0a1a28" stroke="#082030" stroke-width="1"/>
+  <text x="910" y="370" text-anchor="middle" fill="#22d3ee" font-size="9" font-weight="700">ListUBOFiles — Walk "Controlling Owners V2/Monthly"</text>
+  <text x="910" y="386" text-anchor="middle" fill="#475569" font-size="8">Sort: .dsv.gz preferred · newest-first</text>
+
+  <rect x="700" y="406" width="420" height="42" rx="4" fill="#0a1a28" stroke="#082030" stroke-width="1"/>
+  <text x="910" y="424" text-anchor="middle" fill="#22d3ee" font-size="9" font-weight="700">OpenLocalFile — gzipReadCloser on-the-fly</text>
+  <text x="910" y="440" text-anchor="middle" fill="#475569" font-size="8">Decompresses .gz in stream · underlying + gzip both closed</text>
+
+  <rect x="670" y="462" width="480" height="36" rx="4" fill="#082030" opacity="0.5"/>
+  <text x="910" y="476" text-anchor="middle" fill="#9ca3af" font-size="9">Cron: 1st of month 14:00 · Session reused across files</text>
+  <text x="910" y="491" text-anchor="middle" fill="#6b7280" font-size="8">UBO = Ultimate Beneficial Ownership · CSV/DSV format</text>
+
+  <rect x="630" y="0" width="80" height="628" fill="url(#lf)"/>
+  <rect x="1150" y="0" width="50" height="628" fill="url(#rf)"/>
+</svg>

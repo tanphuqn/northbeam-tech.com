@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="628" viewBox="0 0 1200 628" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#fff" stroke-width="0.3" opacity="0.06"/>
+    </pattern>
+    <linearGradient id="purpleGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c3aed"/>
+      <stop offset="100%" style="stop-color:#4f46e5"/>
+    </linearGradient>
+    <linearGradient id="lf" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0d0d1a;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#0d0d1a;stop-opacity:0"/>
+    </linearGradient>
+    <linearGradient id="rf" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0d0d1a;stop-opacity:0"/>
+      <stop offset="100%" style="stop-color:#0d0d1a;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="628" fill="#0d0d1a"/>
+  <rect width="1200" height="628" fill="url(#grid)"/>
+  <rect x="0" y="0" width="6" height="628" fill="url(#purpleGlow)"/>
+  <ellipse cx="880" cy="314" rx="320" ry="250" fill="#7c3aed" opacity="0.05"/>
+
+  <!-- Left text -->
+  <rect x="60" y="90" width="130" height="28" rx="14" fill="#7c3aed" opacity="0.2"/>
+  <text x="125" y="109" text-anchor="middle" fill="#a78bfa" font-size="13" font-weight="600" letter-spacing="1">INSIGHTS</text>
+  <text x="60" y="190" fill="#fff" font-size="48" font-weight="800" letter-spacing="-1">Auto-Sync WhatsApp</text>
+  <text x="60" y="248" fill="#fff" font-size="48" font-weight="800" letter-spacing="-1">Template Approvals</text>
+  <text x="60" y="296" fill="#fff" font-size="48" font-weight="800" letter-spacing="-1">
+    <tspan fill="#a78bfa">with Twilio</tspan>
+    <tspan fill="#fff"> in SugarCRM</tspan>
+  </text>
+  <line x1="60" y1="322" x2="460" y2="322" stroke="#7c3aed" stroke-width="2" opacity="0.6"/>
+  <text x="60" y="354" fill="#aaa" font-size="17">Logic Hooks · Content API · Webhooks · PHP</text>
+  <rect x="60" y="380" width="110" height="28" rx="14" fill="#1a1a2e" stroke="#333" stroke-width="1"/>
+  <text x="115" y="399" text-anchor="middle" fill="#888" font-size="12">SugarCRM</text>
+  <rect x="182" y="380" width="80" height="28" rx="14" fill="#1a1a2e" stroke="#333" stroke-width="1"/>
+  <text x="222" y="399" text-anchor="middle" fill="#888" font-size="12">Twilio</text>
+  <rect x="274" y="380" width="100" height="28" rx="14" fill="#1a1a2e" stroke="#333" stroke-width="1"/>
+  <text x="324" y="399" text-anchor="middle" fill="#888" font-size="12">WhatsApp</text>
+  <text x="60" y="540" fill="#444" font-size="14">northbeam-tech.com/insights</text>
+
+  <!-- Right visual: approval flow cards -->
+  <rect x="700" y="100" width="200" height="60" rx="8" fill="#1a1030" stroke="#4f46e5" stroke-width="1.5"/>
+  <text x="800" y="126" text-anchor="middle" fill="#a78bfa" font-size="11" font-weight="600">Template saved in SugarCRM</text>
+  <text x="800" y="143" text-anchor="middle" fill="#666" font-size="10">Hi {student_name}, see you tomorrow!</text>
+
+  <line x1="800" y1="160" x2="800" y2="185" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <rect x="700" y="186" width="200" height="50" rx="8" fill="#1a1030" stroke="#4f46e5" stroke-width="1.5"/>
+  <text x="800" y="207" text-anchor="middle" fill="#a78bfa" font-size="10">Convert placeholders</text>
+  <text x="800" y="222" text-anchor="middle" fill="#555" font-size="10">{student_name} → {{1}}</text>
+
+  <line x1="800" y1="236" x2="800" y2="261" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <rect x="700" y="262" width="200" height="50" rx="8" fill="#1a1030" stroke="#4f46e5" stroke-width="1.5"/>
+  <text x="800" y="283" text-anchor="middle" fill="#a78bfa" font-size="10">POST → Twilio Content API</text>
+  <text x="800" y="298" text-anchor="middle" fill="#555" font-size="10">Receive SID + approval URL</text>
+
+  <line x1="800" y1="312" x2="800" y2="337" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <rect x="700" y="338" width="200" height="50" rx="8" fill="#1a1030" stroke="#4f46e5" stroke-width="1.5"/>
+  <text x="800" y="359" text-anchor="middle" fill="#a78bfa" font-size="10">Submit for WA approval</text>
+  <text x="800" y="374" text-anchor="middle" fill="#555" font-size="10">category: UTILITY</text>
+
+  <line x1="800" y1="388" x2="800" y2="413" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- Status badges -->
+  <rect x="690" y="414" width="70" height="28" rx="14" fill="#1a2030"/>
+  <text x="725" y="432" text-anchor="middle" fill="#888" font-size="10">pending</text>
+  <rect x="770" y="414" width="70" height="28" rx="14" fill="#0d3320"/>
+  <text x="805" y="432" text-anchor="middle" fill="#25D366" font-size="10">approved</text>
+  <rect x="850" y="414" width="70" height="28" rx="14" fill="#3a0010"/>
+  <text x="885" y="432" text-anchor="middle" fill="#f87171" font-size="10">rejected</text>
+
+  <line x1="805" y1="442" x2="805" y2="462" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <rect x="700" y="462" width="200" height="40" rx="8" fill="#0d1a10" stroke="#25D366" stroke-width="1.5"/>
+  <text x="800" y="486" text-anchor="middle" fill="#25D366" font-size="10" font-weight="600">✓ Status synced to SugarCRM</text>
+
+  <rect x="640" y="0" width="80" height="628" fill="url(#lf)"/>
+  <rect x="1150" y="0" width="50" height="628" fill="url(#rf)"/>
+  <rect x="0" y="622" width="1200" height="6" fill="url(#purpleGlow)"/>
+</svg>

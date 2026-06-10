@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>WordPress Post — Exporting Student Records to PDF from SugarCRM with TCPDF</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 860px; margin: 40px auto; padding: 0 24px; color: #333; }
+    .instructions { background: #fffbe6; border: 1px solid #f0c000; border-radius: 6px; padding: 20px 24px; margin-bottom: 32px; }
+    .instructions h2 { margin-top: 0; font-size: 16px; color: #7a5c00; }
+    .instructions ol { margin: 0; padding-left: 20px; line-height: 2; }
+    .instructions code { background: #f5f5f5; padding: 2px 6px; border-radius: 3px; font-size: 13px; }
+    .divider { border: none; border-top: 2px dashed #ddd; margin: 36px 0; }
+    .meta { background: #f9f9f9; border: 1px solid #eee; border-radius: 6px; padding: 16px 20px; margin-bottom: 24px; font-size: 14px; }
+    .meta h3, .thumbnail-box h3, .prompt-box h3 { margin-top: 0; font-size: 15px; }
+    .meta table, .thumbnail-box table { border-collapse: collapse; width: 100%; }
+    .meta td, .thumbnail-box td { padding: 4px 12px 4px 0; vertical-align: top; }
+    .meta td:first-child, .thumbnail-box td:first-child { font-weight: bold; color: #555; width: 160px; }
+    .highlight { background: #fff8e1; padding: 2px 6px; border-radius: 3px; font-weight: bold; color: #7a5c00; }
+    .thumbnail-box { background: #f9f9f9; border: 1px solid #eee; border-radius: 6px; padding: 16px 20px; margin-bottom: 24px; font-size: 14px; }
+    .prompt-box { background: #f0f4ff; border: 1px solid #c0d0ff; border-radius: 6px; padding: 20px 24px; margin-bottom: 32px; font-size: 14px; }
+    .prompt-box h3 { color: #2a3f9f; }
+    .prompt-box pre { background: #fff; border: 1px solid #dde4ff; border-radius: 4px; padding: 14px 16px; font-size: 13px; line-height: 1.7; white-space: pre-wrap; word-break: break-word; margin: 0; }
+    .post-content { line-height: 1.8; font-size: 16px; }
+    .post-content h1 { font-size: 28px; font-weight: 800; margin-bottom: 8px; }
+    .post-content .tagline { color: #777; font-size: 15px; margin-bottom: 32px; }
+    .post-content h2 { font-size: 20px; font-weight: 700; margin-top: 40px; border-left: 4px solid #222; padding-left: 12px; }
+    .post-content h3 { font-size: 16px; font-weight: 700; margin-top: 24px; }
+    .post-content ul, .post-content ol { padding-left: 20px; }
+    .post-content li { margin-bottom: 8px; }
+    .post-content .diagram-wrap { text-align: center; margin: 32px 0; }
+    .post-content figcaption { font-size: 13px; color: #888; margin-top: 8px; }
+    .post-content pre { background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 6px; font-size: 13px; line-height: 1.7; overflow-x: auto; white-space: pre; }
+    .post-content code { background: #f0f0f0; padding: 2px 6px; border-radius: 3px; font-size: 13px; font-family: monospace; }
+    .post-content pre code { background: none; padding: 0; font-size: 13px; }
+    .post-content .stack-box { background: #f5f5f5; border-left: 4px solid #222; padding: 14px 18px; font-family: monospace; font-size: 14px; }
+    .post-content blockquote { border-left: 4px solid #ccc; margin: 0; padding: 8px 16px; color: #555; font-style: italic; }
+  </style>
+</head>
+<body>
+
+<div class="instructions">
+  <h2>📋 Instructions for Marketing</h2>
+  <ol>
+    <li>WordPress → <strong>Posts → Add New</strong>, paste the title</li>
+    <li>Switch to <strong>Code editor</strong>, paste content between <code>&lt;!-- POST CONTENT START --&gt;</code> markers</li>
+    <li>Upload <code>sugarcrm-pdf-student-export-flow-diagram.png</code> → replace <code>src="sugarcrm-pdf-student-export-flow-diagram.png"</code> with WordPress URL</li>
+    <li>Upload <code>sugarcrm-pdf-student-export-thumbnail.png</code> → set as <strong>Featured Image</strong></li>
+    <li>Fill Yoast/Rank Math with Focus Keyword, Slug, Meta Description below</li>
+    <li>Category: <code>Insights</code> · Add Tags · Add Excerpt → Preview → Publish</li>
+  </ol>
+</div>
+
+<div class="meta">
+  <h3>Post Details</h3>
+  <table>
+    <tr><td>Post Title</td><td>Exporting Student Records to Multi-Page PDF from SugarCRM with TCPDF</td></tr>
+    <tr><td>Slug</td><td><span class="highlight">sugarcrm-pdf-student-export-tcpdf</span></td></tr>
+    <tr><td>Focus Keyword</td><td><span class="highlight">SugarCRM PDF export TCPDF</span></td></tr>
+    <tr><td>Meta Description</td><td><span class="highlight">How we generate a multi-page student PDF from SugarCRM using TCPDF — with RTL Hebrew support, HTML templates, and linked follow-up history per page, triggered by a bulk action.</span><br/><small style="color:#888">(177 characters — trim if needed)</small></td></tr>
+    <tr><td>Category</td><td>Insights</td></tr>
+    <tr><td>Tags</td><td>SugarCRM, PDF, TCPDF, PHP, RTL, Hebrew, Export, Custom Modules</td></tr>
+    <tr><td>Excerpt</td><td>How we generate a multi-page student PDF from SugarCRM using TCPDF — with RTL Hebrew support, HTML templates, and linked follow-up history per page.</td></tr>
+  </table>
+</div>
+
+<div class="thumbnail-box">
+  <h3>Images</h3>
+  <table>
+    <tr><td>Thumbnail</td><td><code>sugarcrm-pdf-student-export-thumbnail.png</code> — 1200×628 · teal branded · Featured Image</td></tr>
+    <tr><td>Flow diagram</td><td><code>sugarcrm-pdf-student-export-flow-diagram.png</code> — 700×780 · inline in post</td></tr>
+    <tr><td>Thumbnail alt</td><td><em>SugarCRM PDF student export TCPDF multi-page cover image</em></td></tr>
+    <tr><td>Diagram alt</td><td><em>SugarCRM multi-student PDF export flow diagram using TCPDF and HTML templates</em></td></tr>
+  </table>
+</div>
+
+<div class="prompt-box">
+  <h3>AI Rewrite Prompt</h3>
+  <pre>You are a technical content writer for Northbeam Tech (northbeam-tech.com/insights/).
+
+CONTEXT:
+- Platform: SugarCRM with custom PHP modules
+- Feature: A bulk action on the isa_students list view exports selected students (or the entire
+  filtered set) to a single multi-page PDF. Each student gets one page. The PDF is generated using
+  TCPDF configured for RTL Hebrew text (DejaVu font, UTF-8). An HTML template
+  (contact_information.html) holds the page layout; a helper controller replaces named placeholders
+  (#first_name#, #age#, etc.) and appends linked follow-up records, ConnectNow records, and tasks
+  as HTML table rows. TCPDF renders each page via WriteHTML(), and the final file is force-downloaded
+  to the browser via Output('file.pdf', 'D').
+- Tech stack: PHP, SugarCRM, TCPDF, HTML templates, MySQL
+- Focus keyword: "SugarCRM PDF export TCPDF"
+- Target audience: SugarCRM developers needing bulk PDF generation with RTL language support
+
+CURRENT POST TITLE:
+Exporting Student Records to Multi-Page PDF from SugarCRM with TCPDF
+
+CURRENT POST CONTENT:
+[paste post HTML here]
+
+MY INSTRUCTIONS:
+[describe changes]</pre>
+</div>
+
+<hr class="divider"/>
+
+<!-- POST CONTENT START -->
+<!-- wp:html -->
+<div class="post-content">
+
+<h1>Exporting Student Records to Multi-Page PDF from SugarCRM with TCPDF</h1>
+<p class="tagline">How a SugarCRM bulk action generates a complete multi-page PDF — one student per page — with RTL Hebrew support, HTML-templated layouts, and linked follow-up history.</p>
+
+<hr class="wp-block-separator"/>
+
+<h2>The Problem</h2>
+<p>
+  Staff needed to print student files for case reviews — each file including personal details, follow-up history, and ConnectNow records.
+  Exporting one student at a time from SugarCRM and formatting it manually wasn't viable at scale.
+  We built a bulk PDF export: select any number of students (or all), click export, and receive a single PDF with one formatted page per student.
+</p>
+
+<h2>What We Built</h2>
+<p>
+  A custom controller action on <code>isa_students</code> that handles both "selected records" and "select all" bulk modes.
+  It initializes a single TCPDF instance configured for right-to-left Hebrew text, then loops through each student, renders their data into an HTML template, and writes each page into the PDF.
+  The final file downloads directly to the browser.
+</p>
+
+<h2>How It Works</h2>
+
+<div class="diagram-wrap">
+  <figure>
+    <img src="sugarcrm-pdf-student-export-flow-diagram.png"
+         alt="SugarCRM multi-student PDF export flow diagram using TCPDF and HTML templates"
+         style="max-width:100%;height:auto;border:1px solid #eee;border-radius:4px;"/>
+    <figcaption>From bulk selection to force-download: the full PDF export flow.</figcaption>
+  </figure>
+</div>
+
+<h2>The Code</h2>
+
+<h3>Step 1 — Handle both "select all" and individual selection</h3>
+<p>
+  SugarCRM's list-view mass actions pass either a <code>uid</code> param (specific records) or a <code>current_query_by_page</code>
+  param (the current filter). We handle both:
+</p>
+<pre><code>public function action_export_avreichem_followup()
+{
+    require_once('custom/modules/htp_avreichem_followup/controller.php');
+    require_once('vendor/tecnickcom/tcpdf/tcpdf_include.php');
+
+    $student_ids = [];
+
+    if (isset($_REQUEST['massupdate']) && $_REQUEST['massupdate'] === 'true'
+        && isset($_REQUEST['current_query_by_page'])) {
+        // "Select all" mode: rebuild the list query and collect all IDs
+        parse_str($_REQUEST['current_query_by_page'], $params);
+        $seed  = BeanFactory::getBean('isa_students');
+        $query = $seed->create_new_list_query('', $params['searchFormTab'] ?? '');
+        $res   = $GLOBALS['db']->query($query);
+        while ($row = $GLOBALS['db']->fetchByAssoc($res)) {
+            $student_ids[] = $row['id'];
+        }
+    } elseif (!empty($_REQUEST['uid'])) {
+        // Specific selection: comma-separated IDs from the checkbox selection
+        $student_ids = explode(',', $_REQUEST['uid']);
+    }
+
+    if (empty($student_ids)) {
+        sugar_cleanup();
+        exit('No students selected.');
+    }
+
+    // ... PDF generation follows
+}</code></pre>
+
+<h3>Step 2 — Initialize TCPDF with RTL Hebrew support</h3>
+<p>Hebrew text requires right-to-left direction, UTF-8 encoding, and the DejaVu font family (which has full Unicode coverage):</p>
+<pre><code>// Configure TCPDF language settings for Hebrew RTL
+$lg = [];
+$lg['a_meta_charset']  = 'UTF-8';
+$lg['a_meta_dir']      = 'rtl';        // right-to-left direction
+$lg['a_meta_language'] = 'he';         // Hebrew language code
+
+// Initialize PDF: Portrait, millimeters, A4
+$pdf = new TCPDF('P', 'mm', 'A4', true, 'UTF-8', false);
+$pdf->setLanguageArray($lg);
+
+// Remove default header/footer
+$pdf->setPrintHeader(false);
+$pdf->setPrintFooter(false);
+
+// Tight margins for maximum content area (left, top, right)
+$pdf->SetMargins(5, 3, 5);
+$pdf->SetAutoPageBreak(true, 3);
+
+// DejaVu Sans supports Hebrew Unicode characters
+$pdf->SetFont('dejavusans', '', 9, '', true);</code></pre>
+
+<h3>Step 3 — Load the HTML template once</h3>
+<p>The HTML template file contains the page layout with named placeholders. We load it once outside the loop:</p>
+<pre><code>$template_path = 'custom/modules/htp_avreichem_followup/contact_information.html';
+$template_html = file_get_contents($template_path);
+
+// We'll clone the template string per student inside the loop
+// so the original remains unmodified for the next iteration</code></pre>
+
+<h3>Step 4 — Loop: one page per student</h3>
+<p>
+  For each student, we retrieve the full bean (which loads all CRM field data),
+  pass it to the helper controller to fill in placeholders and append linked records,
+  then add a new PDF page and render the HTML:
+</p>
+<pre><code>$htp_avreichem = new htp_avreichem_followupController();
+$focus         = BeanFactory::getBean('isa_students');
+
+foreach ($student_ids as $student_id) {
+    // Load the full student record with all custom fields
+    $focus->retrieve($student_id);
+
+    // Start a fresh copy of the template for this student
+    $contact_html = $template_html;
+
+    // Fill in placeholders and append linked record tables
+    $htp_avreichem->write_student($focus, $contact_html);
+
+    // Add a new page to the PDF and render the filled HTML
+    $pdf->AddPage();
+    $pdf->WriteHTML($contact_html, true, 0, true, 0);
+}
+
+// Force-download the finished PDF to the browser
+$pdf->Output('Avreichem follow-up.pdf', 'D');
+sugar_cleanup();
+exit();</code></pre>
+
+<h3>Step 5 — The template helper: placeholder replacement and linked records</h3>
+<p>
+  The <code>write_student()</code> method in the helper controller does two things: replaces named placeholders with live field values,
+  and loads linked relationship beans (follow-ups, ConnectNow records, tasks) to build HTML table rows:
+</p>
+<pre><code>// In htp_avreichem_followup/controller.php
+public function write_student($student, &$contact_html)
+{
+    // Simple named-placeholder replacement for student fields
+    $replacements = [
+        '#first_name#'     => $student->first_name,
+        '#last_name#'      => $student->last_name,
+        '#age#'            => $student->age_c,
+        '#phone_mobile#'   => $student->phone_mobile,
+        '#email_address#'  => $student->email1,
+        '#status#'         => $student->status_c,
+        '#admission_date#' => $student->admission_date_c,
+        '#city#'           => $student->billing_address_city,
+    ];
+    foreach ($replacements as $placeholder => $value) {
+        $contact_html = str_replace($placeholder, htmlspecialchars((string)$value), $contact_html);
+    }
+
+    // Load linked ConnectNow records and append as table rows
+    $connectnow_beans = $student->get_linked_beans(
+        'isa_students_htp_connectnow_1',
+        'htp_connectnow'
+    );
+    $rows_html = '';
+    foreach ($connectnow_beans as $cn) {
+        $rows_html .= '<tr>'
+            . '<td>' . htmlspecialchars($cn->date_entered) . '</td>'
+            . '<td>' . htmlspecialchars($cn->notes_c)      . '</td>'
+            . '<td>' . htmlspecialchars($cn->status_c)     . '</td>'
+            . '</tr>';
+    }
+    $contact_html = str_replace('#connectnow_rows#', $rows_html, $contact_html);
+
+    // Load follow-up records, sort by date, append as table rows
+    $followup_beans = $student->get_linked_beans(
+        'isa_students_htp_avreichem_followup_1',
+        'htp_avreichem_followup'
+    );
+    usort($followup_beans, fn($a, $b) => strcmp($a->date_entered, $b->date_entered));
+    $fu_rows = '';
+    foreach ($followup_beans as $fu) {
+        $fu_rows .= '<tr>'
+            . '<td>' . htmlspecialchars($fu->date_entered) . '</td>'
+            . '<td>' . htmlspecialchars($fu->description)  . '</td>'
+            . '</tr>';
+    }
+    $contact_html = str_replace('#followup_rows#', $fu_rows, $contact_html);
+}</code></pre>
+
+<h2>Key Points</h2>
+<ul>
+  <li><strong>Select-all handled correctly.</strong> When the user clicks "Select All" in the list view, SugarCRM passes the current filter query rather than individual IDs. We rebuild the query server-side to collect all matching IDs — so the export always matches exactly what the user sees on screen.</li>
+  <li><strong>Single TCPDF instance, many pages.</strong> We initialize TCPDF once and call <code>AddPage()</code> per student. This keeps memory usage flat — there's no PDF-per-student merging step.</li>
+  <li><strong>Template loaded once, cloned per student.</strong> The HTML template string is read from disk once before the loop. Each iteration gets a fresh copy so placeholders don't bleed between students.</li>
+  <li><strong>RTL with DejaVu font.</strong> TCPDF's built-in DejaVu Sans has full Unicode coverage including Hebrew. Setting <code>a_meta_dir = 'rtl'</code> makes <code>WriteHTML()</code> handle bidirectional text automatically.</li>
+  <li><strong>Linked records via <code>get_linked_beans()</code>.</strong> We use SugarCRM's native relationship API rather than raw SQL, so the export works regardless of how the underlying relationship tables are named.</li>
+</ul>
+
+<h2>Stack</h2>
+<div class="stack-box">PHP &nbsp;·&nbsp; SugarCRM Custom Controller &nbsp;·&nbsp; TCPDF &nbsp;·&nbsp; HTML Templates &nbsp;·&nbsp; MySQL</div>
+
+<hr class="wp-block-separator"/>
+<blockquote>Need bulk PDF generation from SugarCRM? <a href="/contact">Get in touch →</a></blockquote>
+
+</div>
+<!-- /wp:html -->
+<!-- POST CONTENT END -->
+
+<hr class="divider"/>
+<p style="text-align:center;color:#aaa;font-size:13px">— End of post file — send the entire folder to marketing —</p>
+</body>
+</html>

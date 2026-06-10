@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>WordPress Post — Auto-Sync WhatsApp Template Approvals with Twilio in SugarCRM</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 860px; margin: 40px auto; padding: 0 24px; color: #333; }
+    .instructions { background: #fffbe6; border: 1px solid #f0c000; border-radius: 6px; padding: 20px 24px; margin-bottom: 32px; }
+    .instructions h2 { margin-top: 0; font-size: 16px; color: #7a5c00; }
+    .instructions ol { margin: 0; padding-left: 20px; line-height: 2; }
+    .instructions code { background: #f5f5f5; padding: 2px 6px; border-radius: 3px; font-size: 13px; }
+    .divider { border: none; border-top: 2px dashed #ddd; margin: 36px 0; }
+    .meta { background: #f9f9f9; border: 1px solid #eee; border-radius: 6px; padding: 16px 20px; margin-bottom: 24px; font-size: 14px; }
+    .meta h3, .thumbnail-box h3, .prompt-box h3 { margin-top: 0; font-size: 15px; }
+    .meta table, .thumbnail-box table { border-collapse: collapse; width: 100%; }
+    .meta td, .thumbnail-box td { padding: 4px 12px 4px 0; vertical-align: top; }
+    .meta td:first-child, .thumbnail-box td:first-child { font-weight: bold; color: #555; width: 160px; }
+    .highlight { background: #fff8e1; padding: 2px 6px; border-radius: 3px; font-weight: bold; color: #7a5c00; }
+    .thumbnail-box { background: #f9f9f9; border: 1px solid #eee; border-radius: 6px; padding: 16px 20px; margin-bottom: 24px; font-size: 14px; }
+    .prompt-box { background: #f0f4ff; border: 1px solid #c0d0ff; border-radius: 6px; padding: 20px 24px; margin-bottom: 32px; font-size: 14px; }
+    .prompt-box h3 { color: #2a3f9f; }
+    .prompt-box pre { background: #fff; border: 1px solid #dde4ff; border-radius: 4px; padding: 14px 16px; font-size: 13px; line-height: 1.7; white-space: pre-wrap; word-break: break-word; margin: 0; }
+    .post-content { line-height: 1.8; font-size: 16px; }
+    .post-content h1 { font-size: 28px; font-weight: 800; margin-bottom: 8px; }
+    .post-content .tagline { color: #777; font-size: 15px; margin-bottom: 32px; }
+    .post-content h2 { font-size: 20px; font-weight: 700; margin-top: 40px; border-left: 4px solid #222; padding-left: 12px; }
+    .post-content h3 { font-size: 16px; font-weight: 700; margin-top: 24px; }
+    .post-content ul, .post-content ol { padding-left: 20px; }
+    .post-content li { margin-bottom: 8px; }
+    .post-content .diagram-wrap { text-align: center; margin: 32px 0; }
+    .post-content figcaption { font-size: 13px; color: #888; margin-top: 8px; }
+    .post-content pre { background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 6px; font-size: 13px; line-height: 1.7; overflow-x: auto; white-space: pre; }
+    .post-content code { background: #f0f0f0; padding: 2px 6px; border-radius: 3px; font-size: 13px; font-family: monospace; }
+    .post-content pre code { background: none; padding: 0; font-size: 13px; }
+    .post-content .stack-box { background: #f5f5f5; border-left: 4px solid #222; padding: 14px 18px; font-family: monospace; font-size: 14px; }
+    .post-content blockquote { border-left: 4px solid #ccc; margin: 0; padding: 8px 16px; color: #555; font-style: italic; }
+  </style>
+</head>
+<body>
+
+<div class="instructions">
+  <h2>📋 Instructions for Marketing</h2>
+  <ol>
+    <li>WordPress → <strong>Posts → Add New</strong>, paste the title</li>
+    <li>Switch to <strong>Code editor</strong>, paste content between <code>&lt;!-- POST CONTENT START --&gt;</code> markers</li>
+    <li>Upload <code>whatsapp-template-approval-sync-flow-diagram.png</code> → replace <code>src="whatsapp-template-approval-sync-flow-diagram.png"</code> with WordPress URL</li>
+    <li>Upload <code>whatsapp-template-approval-sync-thumbnail.png</code> → set as <strong>Featured Image</strong></li>
+    <li>Fill Yoast/Rank Math with Focus Keyword, Slug, Meta Description below</li>
+    <li>Category: <code>Insights</code> · Add Tags · Add Excerpt → Preview → Publish</li>
+  </ol>
+</div>
+
+<div class="meta">
+  <h3>Post Details</h3>
+  <table>
+    <tr><td>Post Title</td><td>Auto-Sync WhatsApp Template Approvals with Twilio in SugarCRM</td></tr>
+    <tr><td>Slug</td><td><span class="highlight">whatsapp-template-approval-sync-sugarcrm</span></td></tr>
+    <tr><td>Focus Keyword</td><td><span class="highlight">WhatsApp template approval SugarCRM</span></td></tr>
+    <tr><td>Meta Description</td><td><span class="highlight">How we auto-sync WhatsApp template approvals between Twilio and SugarCRM using a logic hook — including placeholder conversion, approval submission, and webhook-based status updates.</span><br/><small style="color:#888">(158 characters)</small></td></tr>
+    <tr><td>Category</td><td>Insights</td></tr>
+    <tr><td>Tags</td><td>SugarCRM, WhatsApp, Twilio, Logic Hooks, PHP, API Integration, Templates</td></tr>
+    <tr><td>Excerpt</td><td>How we auto-sync WhatsApp template approvals between Twilio and SugarCRM using a logic hook — including placeholder conversion, approval submission, and webhook-based status updates.</td></tr>
+  </table>
+</div>
+
+<div class="thumbnail-box">
+  <h3>Images</h3>
+  <table>
+    <tr><td>Thumbnail</td><td><code>whatsapp-template-approval-sync-thumbnail.png</code> — 1200×628 · purple branded · Featured Image</td></tr>
+    <tr><td>Flow diagram</td><td><code>whatsapp-template-approval-sync-flow-diagram.png</code> — 700×900 · inline in post</td></tr>
+    <tr><td>Thumbnail alt</td><td><em>WhatsApp template approval SugarCRM auto-sync with Twilio cover image</em></td></tr>
+    <tr><td>Diagram alt</td><td><em>WhatsApp template approval sync flow diagram — SugarCRM and Twilio</em></td></tr>
+  </table>
+</div>
+
+<div class="prompt-box">
+  <h3>AI Rewrite Prompt</h3>
+  <pre>You are a technical content writer for Northbeam Tech (northbeam-tech.com/insights/).
+
+CONTEXT:
+- Platform: SugarCRM with custom PHP modules
+- Integration: Twilio Content API + WhatsApp Business
+- Feature: When an admin saves a WhatsApp message template in SugarCRM, a beforeSave logic hook
+  automatically: deletes the old Twilio template (if exists), converts named placeholders like
+  {student_name} to Twilio's indexed format {{1}}, POSTs to Twilio Content API to create the template,
+  submits it for WhatsApp approval (category: UTILITY), fetches the initial approval status, and saves
+  the SID + status back to the CRM record. A second sync happens via Twilio's AppMonitorTriggerSid
+  webhook, which re-fetches approval status for all pending templates.
+- Tech stack: PHP, SugarCRM logic hooks, Twilio Content API, cURL, MySQL
+- Focus keyword: "WhatsApp template approval SugarCRM"
+- Target audience: SugarCRM developers and businesses sending WhatsApp messages at scale
+
+CURRENT POST TITLE:
+Auto-Sync WhatsApp Template Approvals with Twilio in SugarCRM
+
+CURRENT POST CONTENT:
+[paste post HTML here]
+
+MY INSTRUCTIONS:
+[describe changes]</pre>
+</div>
+
+<hr class="divider"/>
+
+<!-- POST CONTENT START -->
+<!-- wp:html -->
+<div class="post-content">
+
+<h1>Auto-Sync WhatsApp Template Approvals with Twilio in SugarCRM</h1>
+<p class="tagline">How a SugarCRM logic hook handles the full WhatsApp template lifecycle — from placeholder conversion to Twilio approval — automatically on save.</p>
+
+<hr class="wp-block-separator"/>
+
+<h2>The Problem</h2>
+<p>
+  WhatsApp Business requires pre-approved message templates for outbound messages sent outside the 24-hour reply window.
+  Managing these templates manually — creating them in Twilio, waiting for approval, then copying the SID back into SugarCRM — was slow and error-prone.
+  Admins had to context-switch between systems every time a template was added or updated.
+</p>
+
+<h2>What We Built</h2>
+<p>
+  A <strong>SugarCRM <code>beforeSave</code> logic hook</strong> on the <code>wsmt_whatsapp_message_template</code> module that handles the entire Twilio template lifecycle automatically.
+  When an admin saves a template in SugarCRM, the hook: converts named placeholders, calls the Twilio Content API, submits the template for WhatsApp approval, and writes the approval status back — all without leaving the CRM.
+  A second sync path uses Twilio's <code>AppMonitorTriggerSid</code> webhook to refresh statuses in bulk.
+</p>
+
+<h2>How It Works</h2>
+
+<div class="diagram-wrap">
+  <figure>
+    <img src="whatsapp-template-approval-sync-flow-diagram.png"
+         alt="WhatsApp template approval sync flow diagram — SugarCRM and Twilio"
+         style="max-width:100%;height:auto;border:1px solid #eee;border-radius:4px;"/>
+    <figcaption>Top: on-save flow. Bottom: webhook-triggered bulk sync.</figcaption>
+  </figure>
+</div>
+
+<h2>The Code</h2>
+
+<h3>Step 1 — Convert named placeholders to Twilio's indexed format</h3>
+<p>
+  Twilio's Content API uses <code>{{1}}</code>, <code>{{2}}</code> style placeholders, but writing templates
+  with <code>{student_name}</code> is much more readable for admins. The hook converts them automatically:
+</p>
+<pre><code>// Admin writes:  "Hi {student_name}, your interview is on {date}."
+// Twilio needs:  "Hi {{1}}, your interview is on {{2}}."
+
+preg_match_all('/\{(\w+)\}/', $description, $matches);
+$placeholders = $matches[1]; // ['student_name', 'date']
+
+$named_to_index_map = [];
+foreach ($placeholders as $index => $named) {
+    $named_to_index_map[$named] = $index + 1;
+}
+
+// Replace each named placeholder with its Twilio index
+foreach ($named_to_index_map as $named => $index) {
+    $wa_template = preg_replace(
+        '/\{' . $named . '\}/',
+        '{{' . $index . '}}',
+        $wa_template
+    );
+}
+
+// $wa_template is now: "Hi {{1}}, your interview is on {{2}}."
+// $variables = [1 => 'student_name', 2 => 'date']</code></pre>
+
+<h3>Step 2 — Create the template in Twilio Content API</h3>
+<p>The hook POSTs the converted template to Twilio's Content API and stores the returned SID:</p>
+<pre><code>$data = [
+    'friendly_name' => $bean->name,
+    'language'      => 'he',           // Hebrew — change per your language
+    'types' => [
+        'twilio/text' => [
+            'body' => $wa_template     // "Hi {{1}}, your interview is on {{2}}."
+        ]
+    ],
+    'variables' => $variables          // [1 => 'student_name', 2 => 'date']
+];
+
+$ch = curl_init('https://content.twilio.com/v1/Content');
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+curl_setopt($ch, CURLOPT_USERPWD, "$account_sid:$auth_token");
+
+$response      = curl_exec($ch);
+$response_data = json_decode($response, true);
+
+// Store SID and approval URLs back on the CRM record
+$bean->msg_template_sid_c   = $response_data['sid'];
+$bean->approval_fetch_c     = $response_data['links']['approval_fetch'];
+$bean->approval_create_c    = $response_data['links']['approval_create'];</code></pre>
+
+<h3>Step 3 — Submit for WhatsApp approval</h3>
+<p>Twilio requires a separate call to submit the template for Meta/WhatsApp review:</p>
+<pre><code>public function approval_create($url, $name)
+{
+    $data = [
+        'name'     => $name,
+        'category' => 'UTILITY'   // Options: UTILITY, MARKETING, AUTHENTICATION
+    ];
+
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+    curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+    curl_setopt($ch, CURLOPT_USERPWD, "$account_sid:$auth_token");
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_exec($ch);
+    curl_close($ch);
+}</code></pre>
+
+<h3>Step 4 — Fetch initial approval status</h3>
+<p>After a short delay, the hook checks the initial status so it's immediately visible in SugarCRM:</p>
+<pre><code>sleep(5); // give Twilio a moment to process the submission
+
+public function fetch_status($url)
+{
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_HTTPGET, true);
+    curl_setopt($ch, CURLOPT_USERPWD, "$account_sid:$auth_token");
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $response = curl_exec($ch);
+    curl_close($ch);
+
+    $res = json_decode($response, true);
+    return [
+        'status'           => $res['whatsapp']['status'],          // pending, approved, rejected
+        'rejection_reason' => $res['whatsapp']['rejection_reason']
+    ];
+}
+
+// Save back to the CRM record
+$rs = $this->fetch_status($bean->approval_fetch_c);
+$bean->msg_template_wastatus_c = $rs['status'];
+$bean->rejection_reason_c      = $rs['rejection_reason'];</code></pre>
+
+<h3>Step 5 — Bulk status sync via Twilio webhook</h3>
+<p>
+  Twilio fires an <code>AppMonitorTriggerSid</code> event when template statuses change in bulk (e.g. after a platform-wide review cycle).
+  The webhook handler catches this and re-fetches every pending template's status:
+</p>
+<pre><code>// In handleWebhook_twilio.php
+if (isset($data['AppMonitorTriggerSid'])) {
+
+    // Find all templates that are not yet approved or rejected
+    $sql = "SELECT approval_fetch_c, msg_template_sid_c
+            FROM wsmt_whatsapp_message_template t1
+            JOIN wsmt_whatsapp_message_template_cstm t2 ON t1.id = t2.id_c
+            WHERE t1.deleted = 0
+              AND NULLIF(msg_template_sid_c, '') IS NOT NULL
+              AND msg_template_wastatus_c NOT IN ('approved', 'rejected')";
+
+    $result = mysqli_query($conn, $sql);
+    while ($row = mysqli_fetch_assoc($result)) {
+        // Fetch current status from Twilio
+        $ch = curl_init($row['approval_fetch_c']);
+        curl_setopt($ch, CURLOPT_USERPWD, "$account_sid:$auth_token");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec($ch);
+        curl_close($ch);
+
+        $res    = json_decode($response, true);
+        $status = $res['whatsapp']['status'];
+
+        // Update CRM status
+        $update = "UPDATE wsmt_whatsapp_message_template_cstm
+                   SET msg_template_wastatus_c = '$status'
+                   WHERE id_c = (
+                       SELECT id FROM wsmt_whatsapp_message_template
+                       WHERE msg_template_sid_c = '{$row['msg_template_sid_c']}'
+                   )";
+        mysqli_query($conn, $update);
+    }
+}</code></pre>
+
+<h2>Key Points</h2>
+<ul>
+  <li><strong>No manual SID management.</strong> Admins write templates with readable <code>{variable}</code> names. The hook handles all the Twilio indexing and API calls invisibly.</li>
+  <li><strong>Delete-before-recreate.</strong> When a template is edited and re-saved, the old Twilio Content object is deleted first to avoid orphaned templates accumulating in the account.</li>
+  <li><strong>Two sync paths.</strong> On-save gives immediate feedback; the <code>AppMonitorTriggerSid</code> webhook catches batch status changes that happen asynchronously on Twilio's side.</li>
+  <li><strong>Rejection reason stored.</strong> If WhatsApp rejects a template, the reason is written back to <code>rejection_reason_c</code> so the admin knows exactly what to fix.</li>
+</ul>
+
+<h2>Stack</h2>
+<div class="stack-box">PHP &nbsp;·&nbsp; SugarCRM Logic Hooks &nbsp;·&nbsp; Twilio Content API &nbsp;·&nbsp; cURL &nbsp;·&nbsp; MySQL</div>
+
+<hr class="wp-block-separator"/>
+<blockquote>Need WhatsApp template management integrated into your CRM? <a href="/contact">Get in touch →</a></blockquote>
+
+</div>
+<!-- /wp:html -->
+<!-- POST CONTENT END -->
+
+<hr class="divider"/>
+<p style="text-align:center;color:#aaa;font-size:13px">— End of post file — send the entire folder to marketing —</p>
+</body>
+</html>

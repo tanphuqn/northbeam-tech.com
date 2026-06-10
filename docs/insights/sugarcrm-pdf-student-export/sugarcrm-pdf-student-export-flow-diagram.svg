@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="700" height="780" viewBox="0 0 700 780" xmlns="http://www.w3.org/2000/svg" font-family="'Courier New', Courier, monospace">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#222"/>
+    </marker>
+  </defs>
+  <rect width="700" height="780" fill="#fff"/>
+  <text x="350" y="28" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">Multi-Student PDF Export — TCPDF + HTML Templates</text>
+  <line x1="60" y1="36" x2="640" y2="36" stroke="#222" stroke-width="1"/>
+
+  <!-- START -->
+  <rect x="215" y="52" width="270" height="34" rx="17" fill="#222"/>
+  <text x="350" y="64" text-anchor="middle" fill="white" font-size="10" font-weight="bold">START</text>
+  <text x="350" y="78" text-anchor="middle" fill="white" font-size="11">Admin selects students → Export PDF</text>
+  <line x1="350" y1="86" x2="350" y2="108" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- DECISION: select all or selected? -->
+  <polygon points="350,112 460,134 350,156 240,134" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="350" y="130" text-anchor="middle" fill="#111" font-size="11">Select entire</text>
+  <text x="350" y="144" text-anchor="middle" fill="#111" font-size="11">list?</text>
+  <!-- YES: run query -->
+  <line x1="460" y1="134" x2="528" y2="134" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="491" y="127" text-anchor="middle" fill="#444" font-size="10">YES</text>
+  <rect x="530" y="118" width="110" height="34" rx="4" fill="#f0f0f0" stroke="#222" stroke-width="1.5"/>
+  <text x="585" y="133" text-anchor="middle" fill="#111" font-size="10">Build export</text>
+  <text x="585" y="145" text-anchor="middle" fill="#111" font-size="10">query (MassUpdate)</text>
+  <line x1="585" y1="152" x2="585" y2="190" stroke="#222" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="585" y1="190" x2="516" y2="190" stroke="#222" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+  <!-- NO: use uid list -->
+  <line x1="350" y1="156" x2="350" y2="178" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="361" y="172" fill="#444" font-size="10">NO</text>
+
+  <!-- PROCESS: collect IDs -->
+  <rect x="185" y="180" width="330" height="38" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="215" y="196" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="210" text-anchor="middle" fill="#111" font-size="11">Collect student IDs (uid param or query result)</text>
+  <line x1="350" y1="218" x2="350" y2="240" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- PROCESS: init TCPDF -->
+  <rect x="185" y="242" width="330" height="38" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="215" y="258" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="272" text-anchor="middle" fill="#111" font-size="11">Init TCPDF (RTL, Hebrew UTF-8, DejaVu font)</text>
+  <line x1="350" y1="280" x2="350" y2="302" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- PROCESS: load template -->
+  <rect x="185" y="304" width="330" height="38" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="215" y="320" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="334" text-anchor="middle" fill="#111" font-size="11">Load HTML template (contact_information.html)</text>
+  <line x1="350" y1="342" x2="350" y2="364" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- loop label -->
+  <text x="135" y="404" text-anchor="middle" fill="#aaa" font-size="9" font-style="italic">← loop</text>
+
+  <!-- PROCESS: retrieve student bean -->
+  <rect x="185" y="366" width="330" height="38" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="215" y="382" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="396" text-anchor="middle" fill="#111" font-size="11">Retrieve student bean (focus→retrieve($id))</text>
+  <line x1="350" y1="404" x2="350" y2="426" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- PROCESS: load linked records -->
+  <rect x="185" y="428" width="330" height="38" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="215" y="444" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="458" text-anchor="middle" fill="#111" font-size="11">Load linked: connectnow, followups, tasks</text>
+  <line x1="350" y1="466" x2="350" y2="488" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- PROCESS: replace placeholders -->
+  <rect x="185" y="490" width="330" height="38" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="215" y="506" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="520" text-anchor="middle" fill="#111" font-size="11">Replace #first_name#, #age#, #status# in template</text>
+  <line x1="350" y1="528" x2="350" y2="550" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- PROCESS: AddPage + WriteHTML -->
+  <rect x="185" y="552" width="330" height="38" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="215" y="568" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="582" text-anchor="middle" fill="#111" font-size="11">pdf→AddPage() + pdf→WriteHTML($contact_html)</text>
+
+  <!-- loop back -->
+  <line x1="185" y1="571" x2="110" y2="571" stroke="#222" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="110" y1="571" x2="110" y2="385" stroke="#222" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="110" y1="385" x2="184" y2="385" stroke="#222" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+
+  <!-- DECISION: more students? -->
+  <polygon points="350,604 460,622 350,640 240,622" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="350" y="618" text-anchor="middle" fill="#111" font-size="11">More</text>
+  <text x="350" y="632" text-anchor="middle" fill="#111" font-size="11">students?</text>
+  <!-- YES: repeat loop -->
+  <line x1="240" y1="622" x2="110" y2="622" stroke="#222" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="172" y="615" text-anchor="middle" fill="#444" font-size="10">YES</text>
+  <!-- NO: down -->
+  <line x1="350" y1="640" x2="350" y2="662" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="361" y="656" fill="#444" font-size="10">NO</text>
+
+  <!-- END -->
+  <rect x="215" y="664" width="270" height="34" rx="17" fill="#222"/>
+  <text x="350" y="676" text-anchor="middle" fill="white" font-size="10" font-weight="bold">END</text>
+  <text x="350" y="690" text-anchor="middle" fill="white" font-size="11">pdf→Output('file.pdf', 'D') — download to browser</text>
+
+  <text x="350" y="760" text-anchor="middle" font-size="10" fill="#aaa">fac4fac · SugarCRM + TCPDF — Multi-Student PDF Export</text>
+</svg>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="628" viewBox="0 0 1200 628" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#fff" stroke-width="0.3" opacity="0.06"/>
+    </pattern>
+    <linearGradient id="tealGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d9488"/>
+      <stop offset="100%" style="stop-color:#0f766e"/>
+    </linearGradient>
+    <linearGradient id="lf" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#050f0e;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#050f0e;stop-opacity:0"/>
+    </linearGradient>
+    <linearGradient id="rf" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#050f0e;stop-opacity:0"/>
+      <stop offset="100%" style="stop-color:#050f0e;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="628" fill="#050f0e"/>
+  <rect width="1200" height="628" fill="url(#grid)"/>
+  <rect x="0" y="0" width="6" height="628" fill="url(#tealGlow)"/>
+  <ellipse cx="880" cy="314" rx="320" ry="250" fill="#0d9488" opacity="0.05"/>
+
+  <!-- Left text -->
+  <rect x="60" y="90" width="130" height="28" rx="14" fill="#0d9488" opacity="0.2"/>
+  <text x="125" y="109" text-anchor="middle" fill="#5eead4" font-size="13" font-weight="600" letter-spacing="1">INSIGHTS</text>
+  <text x="60" y="190" fill="#fff" font-size="48" font-weight="800" letter-spacing="-1">Exporting Student</text>
+  <text x="60" y="248" fill="#fff" font-size="48" font-weight="800" letter-spacing="-1">Records to PDF</text>
+  <text x="60" y="296" fill="#fff" font-size="48" font-weight="800" letter-spacing="-1">
+    <tspan fill="#5eead4">from SugarCRM</tspan>
+  </text>
+  <line x1="60" y1="322" x2="460" y2="322" stroke="#0d9488" stroke-width="2" opacity="0.6"/>
+  <text x="60" y="354" fill="#aaa" font-size="17">TCPDF · HTML Templates · RTL · Multi-page</text>
+  <rect x="60" y="380" width="110" height="28" rx="14" fill="#0a1a18" stroke="#333" stroke-width="1"/>
+  <text x="115" y="399" text-anchor="middle" fill="#888" font-size="12">SugarCRM</text>
+  <rect x="182" y="380" width="70" height="28" rx="14" fill="#0a1a18" stroke="#333" stroke-width="1"/>
+  <text x="217" y="399" text-anchor="middle" fill="#888" font-size="12">TCPDF</text>
+  <rect x="264" y="380" width="50" height="28" rx="14" fill="#0a1a18" stroke="#333" stroke-width="1"/>
+  <text x="289" y="399" text-anchor="middle" fill="#888" font-size="12">PHP</text>
+  <text x="60" y="540" fill="#444" font-size="14">northbeam-tech.com/insights</text>
+
+  <!-- Right visual: PDF page mockup -->
+  <rect x="700" y="80" width="180" height="250" rx="4" fill="#111" stroke="#1a2e2c" stroke-width="1.5"/>
+  <rect x="700" y="80" width="180" height="28" rx="4" fill="#0d2420"/>
+  <text x="790" y="98" text-anchor="middle" fill="#5eead4" font-size="10" font-weight="700">Student Record — PDF</text>
+  <text x="714" y="122" fill="#666" font-size="8">Name</text>
+  <rect x="714" y="126" width="150" height="10" rx="2" fill="#1a2e2c"/>
+  <text x="718" y="134" fill="#aaa" font-size="8">Ahmed Al-Rashid</text>
+  <text x="714" y="148" fill="#666" font-size="8">Phone</text>
+  <rect x="714" y="152" width="150" height="10" rx="2" fill="#1a2e2c"/>
+  <text x="718" y="160" fill="#aaa" font-size="8">+972 50 123 4567</text>
+  <text x="714" y="174" fill="#666" font-size="8">Status</text>
+  <rect x="714" y="178" width="150" height="10" rx="2" fill="#1a2e2c"/>
+  <text x="718" y="186" fill="#5eead4" font-size="8">Active · Admitted 2024-01-15</text>
+  <line x1="714" y1="196" x2="864" y2="196" stroke="#1a2e2c" stroke-width="1"/>
+  <text x="714" y="210" fill="#5eead4" font-size="8" font-weight="600">Follow-up History</text>
+  <rect x="714" y="214" width="150" height="8" rx="2" fill="#1a2e2c"/>
+  <rect x="714" y="226" width="120" height="8" rx="2" fill="#1a2e2c"/>
+  <rect x="714" y="238" width="140" height="8" rx="2" fill="#1a2e2c"/>
+  <text x="714" y="258" fill="#5eead4" font-size="8" font-weight="600">ConnectNow Records</text>
+  <rect x="714" y="262" width="150" height="8" rx="2" fill="#1a2e2c"/>
+  <rect x="714" y="274" width="100" height="8" rx="2" fill="#1a2e2c"/>
+  <!-- page number -->
+  <text x="790" y="318" text-anchor="middle" fill="#333" font-size="8">1 / 24</text>
+
+  <!-- Stack of pages behind -->
+  <rect x="895" y="100" width="180" height="250" rx="4" fill="#0a1a18" stroke="#1a2e2c" stroke-width="1" opacity="0.6"/>
+  <rect x="910" y="120" width="180" height="250" rx="4" fill="#0a1a18" stroke="#1a2e2c" stroke-width="1" opacity="0.4"/>
+  <text x="1000" y="255" text-anchor="middle" fill="#1a2e2c" font-size="11">· · ·</text>
+  <text x="1000" y="280" text-anchor="middle" fill="#1a2e2c" font-size="9">24 pages</text>
+
+  <!-- Download arrow -->
+  <text x="790" y="370" text-anchor="middle" fill="#0d9488" font-size="24">↓</text>
+  <rect x="720" y="382" width="140" height="30" rx="15" fill="#0d9488" opacity="0.8"/>
+  <text x="790" y="402" text-anchor="middle" fill="white" font-size="11" font-weight="600">Download PDF</text>
+
+  <rect x="640" y="0" width="80" height="628" fill="url(#lf)"/>
+  <rect x="1150" y="0" width="50" height="628" fill="url(#rf)"/>
+  <rect x="0" y="622" width="1200" height="6" fill="url(#tealGlow)"/>
+</svg>

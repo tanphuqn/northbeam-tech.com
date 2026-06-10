@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>WordPress Post — Company Verification and UBO Data via CreditSafe SFTP in Go</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 860px; margin: 40px auto; padding: 0 24px; color: #333; }
+    .instructions { background: #fffbe6; border: 1px solid #f0c000; border-radius: 6px; padding: 20px 24px; margin-bottom: 32px; }
+    .instructions h2 { margin-top: 0; font-size: 16px; color: #7a5c00; }
+    .instructions ol { margin: 0; padding-left: 20px; line-height: 2; }
+    .instructions code { background: #f5f5f5; padding: 2px 6px; border-radius: 3px; font-size: 13px; }
+    .divider { border: none; border-top: 2px dashed #ddd; margin: 36px 0; }
+    .meta { background: #f9f9f9; border: 1px solid #eee; border-radius: 6px; padding: 16px 20px; margin-bottom: 24px; font-size: 14px; }
+    .meta h3, .thumbnail-box h3, .prompt-box h3 { margin-top: 0; font-size: 15px; }
+    .meta table, .thumbnail-box table { border-collapse: collapse; width: 100%; }
+    .meta td, .thumbnail-box td { padding: 4px 12px 4px 0; vertical-align: top; }
+    .meta td:first-child, .thumbnail-box td:first-child { font-weight: bold; color: #555; width: 160px; }
+    .highlight { background: #fff8e1; padding: 2px 6px; border-radius: 3px; font-weight: bold; color: #7a5c00; }
+    .thumbnail-box { background: #f9f9f9; border: 1px solid #eee; border-radius: 6px; padding: 16px 20px; margin-bottom: 24px; font-size: 14px; }
+    .prompt-box { background: #f0f4ff; border: 1px solid #c0d0ff; border-radius: 6px; padding: 20px 24px; margin-bottom: 32px; font-size: 14px; }
+    .prompt-box h3 { color: #2a3f9f; }
+    .prompt-box pre { background: #fff; border: 1px solid #dde4ff; border-radius: 4px; padding: 14px 16px; font-size: 13px; line-height: 1.7; white-space: pre-wrap; word-break: break-word; margin: 0; }
+    .post-content { line-height: 1.8; font-size: 16px; }
+    .post-content h1 { font-size: 28px; font-weight: 800; margin-bottom: 8px; }
+    .post-content .tagline { color: #777; font-size: 15px; margin-bottom: 32px; }
+    .post-content h2 { font-size: 20px; font-weight: 700; margin-top: 40px; border-left: 4px solid #222; padding-left: 12px; }
+    .post-content h3 { font-size: 16px; font-weight: 700; margin-top: 24px; }
+    .post-content ul, .post-content ol { padding-left: 20px; }
+    .post-content li { margin-bottom: 8px; }
+    .post-content .diagram-wrap { text-align: center; margin: 32px 0; }
+    .post-content figcaption { font-size: 13px; color: #888; margin-top: 8px; }
+    .post-content pre { background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 6px; font-size: 13px; line-height: 1.7; overflow-x: auto; white-space: pre; }
+    .post-content code { background: #f0f0f0; padding: 2px 6px; border-radius: 3px; font-size: 13px; font-family: monospace; }
+    .post-content pre code { background: none; padding: 0; }
+    .post-content .stack-box { background: #f5f5f5; border-left: 4px solid #222; padding: 14px 18px; font-family: monospace; font-size: 14px; }
+    .post-content blockquote { border-left: 4px solid #ccc; margin: 0; padding: 8px 16px; color: #555; font-style: italic; }
+  </style>
+</head>
+<body>
+
+<div class="instructions">
+  <h2>📋 Instructions for Marketing</h2>
+  <ol>
+    <li>WordPress → <strong>Posts → Add New</strong>, category: <code>Insights</code></li>
+    <li>Switch to <strong>Code editor</strong>, paste content between <code>&lt;!-- POST CONTENT START --&gt;</code> markers</li>
+    <li>Upload <code>creditsafe-logo.png</code> → replace <code>src="creditsafe-logo.png"</code> with WordPress URL</li>
+    <li>Upload <code>verify365-creditsafe-ubo-sftp-flow-diagram.png</code> → replace src with WordPress URL</li>
+    <li>Upload <code>verify365-creditsafe-ubo-sftp-thumbnail.png</code> → set as <strong>Featured Image</strong></li>
+    <li>Fill Yoast/Rank Math fields below → Preview → Publish</li>
+  </ol>
+</div>
+
+<div class="meta">
+  <h3>Post Details</h3>
+  <table>
+    <tr><td>Post Title</td><td>Company Verification and UBO Data via CreditSafe SFTP in Go</td></tr>
+    <tr><td>Slug</td><td><span class="highlight">creditsafe-company-verification-ubo-go</span></td></tr>
+    <tr><td>Focus Keyword</td><td><span class="highlight">CreditSafe API integration Go</span></td></tr>
+    <tr><td>Meta Description</td><td><span class="highlight">How we integrated CreditSafe in Go for company credit reports and UBO data — with automatic 55-minute token refresh, SFTP host key pinning, and on-the-fly gzip decompression.</span><br/><small style="color:#888">(168 characters)</small></td></tr>
+    <tr><td>Category</td><td>Insights</td></tr>
+    <tr><td>Tags</td><td>Go, CreditSafe, KYB, UBO, SFTP, Company Verification, Compliance, Legal Tech</td></tr>
+    <tr><td>Excerpt</td><td>How we integrated CreditSafe in Go for company credit reports and UBO ownership data — automatic token refresh, SFTP with host key pinning, and on-the-fly gzip decompression.</td></tr>
+  </table>
+</div>
+
+<div class="thumbnail-box">
+  <h3>Images</h3>
+  <table>
+    <tr><td>Thumbnail</td><td><code>verify365-creditsafe-ubo-sftp-thumbnail.png</code> — 1200×628 · blue/teal · Featured Image</td></tr>
+    <tr><td>Flow diagram</td><td><code>verify365-creditsafe-ubo-sftp-flow-diagram.png</code> — 700×860 · inline in post</td></tr>
+    <tr><td>Thumbnail alt</td><td><em>CreditSafe company verification and UBO SFTP integration in Go cover image</em></td></tr>
+    <tr><td>Diagram alt</td><td><em>CreditSafe token lifecycle and UBO SFTP download flow in Go</em></td></tr>
+  </table>
+</div>
+
+<div class="prompt-box">
+  <h3>AI Rewrite Prompt</h3>
+  <pre>You are a technical content writer for Northbeam Tech (northbeam-tech.com/insights/).
+
+CONTEXT:
+- Platform: Verify365 — KYC/KYB compliance SaaS for UK law firms built in Go
+- Integration: CreditSafe API for two distinct purposes:
+  1. REST API: company search by name/reg number, full credit report download, document images,
+     UBO ownership data. Token-based auth (POST /authenticate) with a 1-hour TTL. The client
+     caches the token and refreshes it at 55 minutes using sync.Mutex to prevent concurrent
+     re-auth. makeRequest() injects the bearer token; errors return an APIError struct preserving
+     the raw JSON body so callers can proxy the response unchanged.
+  2. SFTP UBO download (monthly cron): a UBOSFTPSession dials the CreditSafe SFTP server (SSH),
+     walks "Controlling Owners V2/Monthly" for .dsv.gz files sorted newest-first, downloads to
+     a local temp directory, and opens them via a gzipReadCloser that decompresses on-the-fly.
+     Host key verification: if CreditSafeSFTPHostKey env var is set (authorized_keys format),
+     the key is pinned; otherwise TOFU mode accepts any key but logs the fingerprint for the
+     operator to copy in. A single UBOSFTPSession is reused across all files in one cron run.
+- Tech stack: Go, CreditSafe REST API, pkg/sftp, golang.org/x/crypto/ssh, compress/gzip
+- Focus keyword: "CreditSafe API integration Go"
+- Target audience: Go developers integrating credit bureau APIs or SFTP-based data feeds
+
+CURRENT POST TITLE:
+Company Verification and UBO Data via CreditSafe SFTP in Go
+
+CURRENT POST CONTENT:
+[paste post HTML here]
+
+MY INSTRUCTIONS:
+[describe changes]</pre>
+</div>
+
+<hr class="divider"/>
+
+<!-- POST CONTENT START -->
+<!-- wp:html -->
+<div class="post-content">
+
+<div style="margin-bottom:24px;">
+  <img src="creditsafe-logo.png" alt="Creditsafe logo" style="height:48px;width:auto;"/>
+</div>
+
+<h1>Company Verification and UBO Data via CreditSafe SFTP in Go</h1>
+<p class="tagline">How we integrated CreditSafe into a Go compliance platform — covering automatic token refresh with mutex protection, SFTP host key pinning, and on-the-fly gzip decompression of UBO ownership files.</p>
+
+<hr class="wp-block-separator"/>
+
+<h2>The Problem</h2>
+<p>
+  UK AML regulations require law firms to verify the identity and ownership of corporate clients — including tracing Ultimate Beneficial Owners (UBOs) through complex holding structures.
+  CreditSafe provides two separate data access mechanisms: a REST API for on-demand company lookups, and a monthly SFTP feed for the full Controlling Ownership dataset.
+  We needed both integrated reliably in a production Go service.
+</p>
+
+<h2>What We Built</h2>
+<p>
+  Two complementary integration paths in the <code>creditsafe</code> package inside the <a href="/projects/verify365-kyc-kyb-platform-uk-law-firms/">Verify365</a> backend:
+</p>
+<ol>
+  <li><strong>REST API client</strong> — token-cached HTTP client for company search, credit reports, and document images</li>
+  <li><strong>UBO SFTP session</strong> — SSH-based SFTP client for monthly bulk UBO data download with gzip streaming</li>
+</ol>
+
+<h2>How It Works</h2>
+
+<div class="diagram-wrap">
+  <figure>
+    <img src="verify365-creditsafe-ubo-sftp-flow-diagram.png"
+         alt="CreditSafe token lifecycle and UBO SFTP download flow in Go"
+         style="max-width:100%;height:auto;border:1px solid #eee;border-radius:4px;"/>
+    <figcaption>Top: API request flow with mutex-protected token cache. Bottom: monthly SFTP UBO download with gzip streaming.</figcaption>
+  </figure>
+</div>
+
+<h2>The Code</h2>
+
+<h3>Token cache with mutex protection</h3>
+<p>
+  CreditSafe tokens have a ~1 hour TTL. We cache the token and refresh it 5 minutes early to avoid a mid-request expiry.
+  <code>sync.Mutex</code> ensures concurrent goroutines don't trigger multiple simultaneous re-auth calls:
+</p>
+<pre><code>// thirdparty/creditsafe/client.go
+
+type CreditSafeClient struct {
+    logger      *zerolog.Logger
+    httpClient  *http.Client
+    baseURL     string
+    username    string
+    password    string
+    token       string
+    tokenExpiry time.Time
+    mu          sync.Mutex // protects token + tokenExpiry
+}
+
+func (c *CreditSafeClient) getToken() (string, error) {
+    c.mu.Lock()
+    defer c.mu.Unlock()
+
+    // Return cached token if still valid
+    if c.token != "" && time.Now().Before(c.tokenExpiry) {
+        return c.token, nil
+    }
+
+    // POST /authenticate to get a new token
+    payload, _ := json.Marshal(map[string]string{"username": c.username, "password": c.password})
+    req, _  := http.NewRequest(http.MethodPost, c.baseURL+"/authenticate", bytes.NewBuffer(payload))
+    req.Header.Set("Content-Type", "application/json")
+    resp, err := c.httpClient.Do(req)
+    // ... read body, check status ...
+
+    var result struct{ Token string `json:"token"` }
+    json.Unmarshal(b, &result)
+
+    c.token       = result.Token
+    c.tokenExpiry = time.Now().Add(55 * time.Minute) // 1h token, refresh at 55m
+    return c.token, nil
+}</code></pre>
+
+<h3>Injecting the bearer token on every request</h3>
+<p>
+  All API calls go through <code>makeRequest()</code>, which calls <code>getToken()</code> and attaches the bearer header.
+  Non-200 responses are wrapped in an <code>APIError</code> that preserves the raw JSON body for the caller to proxy:
+</p>
+<pre><code>// Custom error type — preserves raw JSON body for proxy responses
+type APIError struct {
+    StatusCode int
+    Body       json.RawMessage
+}
+func (e *APIError) Error() string {
+    return fmt.Sprintf("creditsafe API error %d: %s", e.StatusCode, string(e.Body))
+}
+
+func (c *CreditSafeClient) makeRequest(method, path string, body []byte) ([]byte, error) {
+    token, err := c.getToken() // acquires mutex, refreshes if needed
+    if err != nil {
+        return nil, err
+    }
+
+    req, _ := http.NewRequest(method, c.baseURL+path, bytes.NewBuffer(body))
+    req.Header.Set("Authorization", "Bearer "+token)
+    req.Header.Set("Accept", "application/json")
+
+    resp, err := c.httpClient.Do(req)
+    // ...
+    if resp.StatusCode != http.StatusOK {
+        return nil, &APIError{StatusCode: resp.StatusCode, Body: json.RawMessage(b)}
+    }
+    return b, nil
+}</code></pre>
+
+<h3>SFTP session with host key pinning</h3>
+<p>
+  The monthly UBO download uses SSH/SFTP.
+  We support two host key verification modes: pinned (production-safe) and TOFU (first-run helper):
+</p>
+<pre><code>// thirdparty/creditsafe/sftp.go
+
+func hostKeyCallback() (ssh.HostKeyCallback, error) {
+    rawKey := os.Getenv("CreditSafeSFTPHostKey") // e.g. "ssh-rsa AAAA..."
+    if rawKey != "" {
+        pub, _, _, _, err := ssh.ParseAuthorizedKey([]byte(rawKey))
+        if err != nil {
+            return nil, fmt.Errorf("parse CreditSafeSFTPHostKey: %w", err)
+        }
+        return ssh.FixedHostKey(pub), nil // reject any other key
+    }
+
+    // TOFU mode: accept any key but log the fingerprint for the operator to pin
+    return func(_ string, _ net.Addr, key ssh.PublicKey) error {
+        log.Printf("WARNING: CreditSafeSFTPHostKey not set. "+
+            "Key type=%s fingerprint=%s — copy to env to pin it.",
+            key.Type(), ssh.FingerprintSHA256(key))
+        return nil
+    }, nil
+}
+
+func NewUBOSFTPSession(host, username, password string) (*UBOSFTPSession, error) {
+    hkCallback, _ := hostKeyCallback()
+    sshConn, err := ssh.Dial("tcp", net.JoinHostPort(host, "22"),
+        &ssh.ClientConfig{
+            User:            username,
+            Auth:            []ssh.AuthMethod{ssh.Password(password)},
+            HostKeyCallback: hkCallback,
+            Timeout:         30 * time.Second,
+        })
+    client, _ := sftp.NewClient(sshConn)
+    return &UBOSFTPSession{client: client, conn: sshConn}, nil
+}</code></pre>
+
+<h3>Walking the SFTP directory and sorting by date</h3>
+<p>Files are discovered by walking the UBO directory, sorted newest-first with compressed files preferred:</p>
+<pre><code>func (s *UBOSFTPSession) ListUBOFiles() ([]string, error) {
+    type candidate struct {
+        path       string
+        modTime    time.Time
+        compressed bool
+    }
+    var files []candidate
+
+    // Walk the remote "Controlling Owners V2/Monthly" directory
+    walker := s.client.Walk("Controlling Owners V2/Monthly")
+    for walker.Step() {
+        if walker.Stat().IsDir() { continue }
+        p := walker.Path()
+        if strings.HasSuffix(p, ".dsv.gz") {
+            files = append(files, candidate{p, walker.Stat().ModTime(), true})
+        }
+    }
+
+    // Sort: compressed first, then newest-first within same type
+    sort.Slice(files, func(i, j int) bool {
+        if files[i].compressed != files[j].compressed {
+            return files[i].compressed
+        }
+        return files[i].modTime.After(files[j].modTime)
+    })
+
+    paths := make([]string, len(files))
+    for i, f := range files { paths[i] = f.path }
+    return paths, nil
+}</code></pre>
+
+<h3>On-the-fly gzip decompression</h3>
+<p>
+  Rather than decompressing to a separate file, we return a <code>ReadCloser</code> that decompresses as the caller reads.
+  It wraps both the gzip reader and the underlying file so both are properly closed:
+</p>
+<pre><code>func OpenLocalFile(localPath, remotePath string) (io.ReadCloser, error) {
+    f, _ := os.Open(localPath)
+    if strings.HasSuffix(remotePath, ".gz") {
+        gz, err := gzip.NewReader(f)
+        if err != nil {
+            f.Close()
+            return nil, fmt.Errorf("gzip open %s: %w", localPath, err)
+        }
+        return &gzipReadCloser{gz: gz, underlying: f}, nil
+    }
+    return f, nil
+}
+
+// Closes both gzip reader and underlying os.File
+type gzipReadCloser struct {
+    gz         *gzip.Reader
+    underlying io.Closer
+}
+func (g *gzipReadCloser) Read(p []byte) (int, error) { return g.gz.Read(p) }
+func (g *gzipReadCloser) Close() error {
+    if err := g.gz.Close(); err != nil { return err }
+    return g.underlying.Close()
+}</code></pre>
+
+<h2>Key Points</h2>
+<ul>
+  <li><strong>Mutex-protected token refresh.</strong> Without the mutex, two concurrent requests arriving when the token is expired would both attempt to re-authenticate simultaneously. The lock ensures only one goroutine fetches a new token; others wait and then reuse it.</li>
+  <li><strong>55-minute refresh window.</strong> CreditSafe tokens last ~1 hour. Refreshing at 55 minutes means no request ever hits an expired token mid-flight — the 5-minute buffer covers network latency and clock skew.</li>
+  <li><strong>APIError preserves raw JSON.</strong> When CreditSafe returns an error (e.g. company not found), the JSON body often contains a structured error message useful for the client. Wrapping it in a typed error lets the controller proxy it to the user unchanged.</li>
+  <li><strong>Reuse the SFTP session across files.</strong> Opening a new SSH connection per file would be slow and likely rate-limited. The <code>UBOSFTPSession</code> struct keeps the connection open for the entire cron run and is explicitly closed at the end.</li>
+  <li><strong>TOFU on first run, pinned in production.</strong> Setting <code>CreditSafeSFTPHostKey</code> is optional — the system will accept any key the first time and log the fingerprint. The operator copies the fingerprint into the env var to pin it for subsequent runs, preventing MITM attacks.</li>
+</ul>
+
+<h2>Stack</h2>
+<div class="stack-box">Go · CreditSafe REST API · pkg/sftp · golang.org/x/crypto/ssh · compress/gzip · robfig/cron · PostgreSQL</div>
+
+<hr class="wp-block-separator"/>
+<blockquote>Integrating a credit bureau or SFTP data feed into your compliance platform? <a href="/contact">Get in touch →</a></blockquote>
+
+</div>
+<!-- /wp:html -->
+<!-- POST CONTENT END -->
+
+<hr class="divider"/>
+<p style="text-align:center;color:#aaa;font-size:13px">— End of post file — send the entire folder to marketing —</p>
+</body>
+</html>

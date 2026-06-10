@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="760" height="1120" viewBox="0 0 760 1120" xmlns="http://www.w3.org/2000/svg" font-family="'Courier New', Courier, monospace">
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#222"/>
+    </marker>
+  </defs>
+
+  <rect width="760" height="1120" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="380" y="28" text-anchor="middle" font-size="14" font-weight="bold" fill="#111" letter-spacing="0.5">WhatsApp Two-Way Messaging Flow — Known Students</text>
+  <line x1="60" y1="36" x2="700" y2="36" stroke="#222" stroke-width="1"/>
+
+  <!-- ── SECTION LABEL: OUTBOUND ── -->
+  <rect x="60" y="48" width="120" height="20" rx="3" fill="#222"/>
+  <text x="120" y="62" text-anchor="middle" fill="white" font-size="10" font-weight="bold">OUTBOUND</text>
+  <text x="200" y="62" fill="#888" font-size="10">Admin → Student</text>
+
+  <!-- START -->
+  <rect x="220" y="76" width="320" height="34" rx="17" fill="#222"/>
+  <text x="380" y="88" text-anchor="middle" fill="white" font-size="10" font-weight="bold">START</text>
+  <text x="380" y="102" text-anchor="middle" fill="white" font-size="11">Admin opens Student record in SugarCRM</text>
+
+  <line x1="380" y1="110" x2="380" y2="132" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- PROCESS: Open chat popup -->
+  <rect x="200" y="134" width="360" height="38" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="230" y="150" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="380" y="164" text-anchor="middle" fill="#111" font-size="11">Opens WhatsApp chat popup from CRM UI</text>
+
+  <line x1="380" y1="172" x2="380" y2="194" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- DECISION: Within 24h? -->
+  <polygon points="380,198 510,222 380,246 250,222" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="380" y="218" text-anchor="middle" fill="#111" font-size="11">Within 24h of last</text>
+  <text x="380" y="232" text-anchor="middle" fill="#111" font-size="11">student reply?</text>
+
+  <!-- YES → left: free text or template -->
+  <line x1="250" y1="222" x2="110" y2="222" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="178" y="215" text-anchor="middle" fill="#444" font-size="10">YES</text>
+  <rect x="30" y="206" width="78" height="34" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="69" y="221" text-anchor="middle" fill="#111" font-size="9">Free text</text>
+  <text x="69" y="233" text-anchor="middle" fill="#111" font-size="9">or template</text>
+
+  <!-- NO → right: template only -->
+  <line x1="510" y1="222" x2="618" y2="222" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="561" y="215" text-anchor="middle" fill="#444" font-size="10">NO</text>
+  <rect x="620" y="206" width="100" height="34" rx="4" fill="#f0f0f0" stroke="#222" stroke-width="1.5"/>
+  <text x="670" y="221" text-anchor="middle" fill="#111" font-size="9">Approved</text>
+  <text x="670" y="233" text-anchor="middle" fill="#111" font-size="9">template only</text>
+
+  <!-- Both branches merge down -->
+  <!-- Left box arrow down -->
+  <line x1="69" y1="240" x2="69" y2="290" stroke="#222" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="69" y1="290" x2="198" y2="290" stroke="#222" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+  <!-- Right box arrow down -->
+  <line x1="670" y1="240" x2="670" y2="290" stroke="#222" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="670" y1="290" x2="562" y2="290" stroke="#222" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+
+  <!-- PROCESS: Template variable substitution -->
+  <rect x="200" y="272" width="360" height="38" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="230" y="288" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="380" y="302" text-anchor="middle" fill="#111" font-size="11">Substitute variables: {student_name}, {worker_name}…</text>
+
+  <line x1="380" y1="310" x2="380" y2="332" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- PROCESS: Send via Twilio -->
+  <rect x="200" y="334" width="360" height="38" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="230" y="350" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="380" y="364" text-anchor="middle" fill="#111" font-size="11">Send via Twilio API (whatsapp:+number)</text>
+
+  <line x1="380" y1="372" x2="380" y2="394" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- DECISION: Twilio API success? -->
+  <polygon points="380,398 510,420 380,442 250,420" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="380" y="416" text-anchor="middle" fill="#111" font-size="11">Twilio API</text>
+  <text x="380" y="430" text-anchor="middle" fill="#111" font-size="11">success?</text>
+
+  <!-- NO → right: error -->
+  <line x1="510" y1="420" x2="618" y2="420" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="561" y="413" text-anchor="middle" fill="#444" font-size="10">NO</text>
+  <rect x="620" y="404" width="100" height="34" rx="4" fill="#f0f0f0" stroke="#222" stroke-width="1.5"/>
+  <text x="670" y="419" text-anchor="middle" fill="#111" font-size="9">Log error,</text>
+  <text x="670" y="431" text-anchor="middle" fill="#111" font-size="9">notify admin</text>
+
+  <!-- YES → down -->
+  <line x1="380" y1="442" x2="380" y2="464" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="391" y="458" fill="#444" font-size="10">YES</text>
+
+  <!-- PROCESS: Store sent message -->
+  <rect x="200" y="466" width="360" height="38" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="230" y="482" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="380" y="496" text-anchor="middle" fill="#111" font-size="11">Store message in CRM (type=Sent, status=Delivered)</text>
+
+  <line x1="380" y1="504" x2="380" y2="526" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- PROCESS: Twilio delivery callback -->
+  <rect x="200" y="528" width="360" height="38" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="230" y="544" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="380" y="558" text-anchor="middle" fill="#111" font-size="11">Twilio callback → update delivery status in CRM</text>
+
+  <!-- Divider -->
+  <line x1="60" y1="590" x2="700" y2="590" stroke="#aaa" stroke-width="1" stroke-dasharray="6,4"/>
+
+  <!-- ── SECTION LABEL: INBOUND ── -->
+  <rect x="60" y="600" width="120" height="20" rx="3" fill="#555"/>
+  <text x="120" y="614" text-anchor="middle" fill="white" font-size="10" font-weight="bold">INBOUND</text>
+  <text x="200" y="614" fill="#888" font-size="10">Student → CRM</text>
+
+  <!-- START inbound -->
+  <rect x="220" y="628" width="320" height="34" rx="17" fill="#222"/>
+  <text x="380" y="640" text-anchor="middle" fill="white" font-size="10" font-weight="bold">TRIGGER</text>
+  <text x="380" y="654" text-anchor="middle" fill="white" font-size="11">Student sends WhatsApp reply</text>
+
+  <line x1="380" y1="662" x2="380" y2="684" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- PROCESS: Twilio webhook -->
+  <rect x="200" y="686" width="360" height="38" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="230" y="702" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="380" y="716" text-anchor="middle" fill="#111" font-size="11">Twilio webhook delivers payload to SugarCRM</text>
+
+  <line x1="380" y1="724" x2="380" y2="746" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- PROCESS: Normalize phone -->
+  <rect x="200" y="748" width="360" height="38" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="230" y="764" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="380" y="778" text-anchor="middle" fill="#111" font-size="11">Normalize phone number → lookup in isa_students</text>
+
+  <line x1="380" y1="786" x2="380" y2="808" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- DECISION: Student found? -->
+  <polygon points="380,812 510,834 380,856 250,834" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="380" y="830" text-anchor="middle" fill="#111" font-size="11">Student found</text>
+  <text x="380" y="844" text-anchor="middle" fill="#111" font-size="11">in CRM?</text>
+
+  <!-- NO → right -->
+  <line x1="510" y1="834" x2="618" y2="834" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="561" y="827" text-anchor="middle" fill="#444" font-size="10">NO</text>
+  <rect x="620" y="818" width="100" height="34" rx="4" fill="#f0f0f0" stroke="#222" stroke-width="1.5"/>
+  <text x="670" y="833" text-anchor="middle" fill="#111" font-size="9">Route to new</text>
+  <text x="670" y="845" text-anchor="middle" fill="#111" font-size="9">student flow</text>
+
+  <!-- YES → down -->
+  <line x1="380" y1="856" x2="380" y2="878" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="391" y="872" fill="#444" font-size="10">YES</text>
+
+  <!-- PROCESS: Store reply -->
+  <rect x="200" y="880" width="360" height="38" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="230" y="896" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="380" y="910" text-anchor="middle" fill="#111" font-size="11">Store reply (type=Reply) + link to student record</text>
+
+  <line x1="380" y1="918" x2="380" y2="940" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- DECISION: Audio or text? -->
+  <polygon points="380,944 510,964 380,984 250,964" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="380" y="960" text-anchor="middle" fill="#111" font-size="11">Message</text>
+  <text x="380" y="974" text-anchor="middle" fill="#111" font-size="11">type?</text>
+
+  <!-- AUDIO → right -->
+  <line x1="510" y1="964" x2="618" y2="964" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="561" y="957" text-anchor="middle" fill="#444" font-size="10">AUDIO</text>
+  <rect x="620" y="948" width="100" height="34" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="670" y="963" text-anchor="middle" fill="#111" font-size="9">Download MP3</text>
+  <text x="670" y="975" text-anchor="middle" fill="#111" font-size="9">from Twilio</text>
+  <!-- merge back -->
+  <line x1="670" y1="982" x2="670" y2="1020" stroke="#222" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="670" y1="1020" x2="562" y2="1020" stroke="#222" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+
+  <!-- TEXT → down -->
+  <line x1="380" y1="984" x2="380" y2="1006" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="391" y="1000" fill="#444" font-size="10">TEXT</text>
+
+  <!-- PROCESS: Visible in CRM -->
+  <rect x="200" y="1008" width="360" height="38" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="230" y="1024" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="380" y="1038" text-anchor="middle" fill="#111" font-size="11">Reply visible in CRM chat history</text>
+
+  <line x1="380" y1="1046" x2="380" y2="1068" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- END -->
+  <rect x="220" y="1070" width="320" height="34" rx="17" fill="#222"/>
+  <text x="380" y="1082" text-anchor="middle" fill="white" font-size="10" font-weight="bold">END</text>
+  <text x="380" y="1096" text-anchor="middle" fill="white" font-size="11">Conversation logged, admin notified</text>
+
+  <!-- LEGEND -->
+  <rect x="60" y="1110" width="0" height="0"/>
+  <!-- inline legend skipped for height — see flow-diagram legend -->
+
+  <!-- Footer -->
+  <text x="380" y="1115" text-anchor="middle" font-size="10" fill="#aaa">fac4fac · SugarCRM + Twilio WhatsApp — Known Student Follow-up</text>
+
+</svg>

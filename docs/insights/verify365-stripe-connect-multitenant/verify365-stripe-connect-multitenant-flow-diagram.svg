@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="700" height="820" viewBox="0 0 700 820" xmlns="http://www.w3.org/2000/svg" font-family="'Courier New', Courier, monospace">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#222"/>
+    </marker>
+  </defs>
+  <rect width="700" height="820" fill="#fff"/>
+  <text x="350" y="28" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">Stripe Connect — Multi-Tenant Payment Flow</text>
+  <line x1="40" y1="36" x2="660" y2="36" stroke="#222" stroke-width="1"/>
+
+  <!-- START -->
+  <rect x="165" y="52" width="370" height="34" rx="17" fill="#222"/>
+  <text x="350" y="64" text-anchor="middle" fill="white" font-size="10" font-weight="bold">START</text>
+  <text x="350" y="78" text-anchor="middle" fill="white" font-size="11">User initiates payment in Verify365</text>
+  <line x1="350" y1="86" x2="350" y2="108" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Init client -->
+  <rect x="155" y="110" width="390" height="38" rx="3" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="185" y="126" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="140" text-anchor="middle" fill="#111" font-size="11">NewStripeClient(logger, partner) — init per request</text>
+  <line x1="350" y1="148" x2="350" y2="170" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Decision: partner or platform -->
+  <polygon points="350,174 460,194 350,214 240,194" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="350" y="191" text-anchor="middle" fill="#111" font-size="11">Partner account</text>
+  <text x="350" y="205" text-anchor="middle" fill="#111" font-size="11">or default?</text>
+
+  <!-- YES: partner branch -->
+  <line x1="460" y1="194" x2="548" y2="194" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="501" y="187" text-anchor="middle" fill="#444" font-size="10">PARTNER</text>
+  <rect x="550" y="178" width="110" height="34" rx="3" fill="#f0f0f0" stroke="#222" stroke-width="1.2"/>
+  <text x="605" y="193" text-anchor="middle" fill="#111" font-size="9">Use partner.</text>
+  <text x="605" y="205" text-anchor="middle" fill="#111" font-size="9">StripeSecret</text>
+
+  <!-- NO: default branch -->
+  <line x1="350" y1="214" x2="350" y2="236" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="360" y="230" fill="#444" font-size="10">DEFAULT</text>
+
+  <!-- Merge: both paths →  create customer -->
+  <line x1="605" y1="212" x2="605" y2="256" stroke="#222" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <line x1="605" y1="256" x2="352" y2="256" stroke="#222" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arrow)"/>
+
+  <rect x="155" y="238" width="390" height="38" rx="3" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="185" y="254" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="268" text-anchor="middle" fill="#111" font-size="11">CreateCustomer → Stripe Customers.New(email, name)</text>
+  <line x1="350" y1="276" x2="350" y2="298" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Fee calc decision -->
+  <polygon points="350,302 460,322 350,342 240,322" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="350" y="319" text-anchor="middle" fill="#111" font-size="11">IsDefault</text>
+  <text x="350" y="333" text-anchor="middle" fill="#111" font-size="11">platform?</text>
+
+  <!-- YES: no fee deduction -->
+  <line x1="460" y1="322" x2="548" y2="322" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="501" y="315" text-anchor="middle" fill="#444" font-size="10">YES</text>
+  <rect x="550" y="306" width="110" height="34" rx="3" fill="#f0f0f0" stroke="#222" stroke-width="1.2"/>
+  <text x="605" y="321" text-anchor="middle" fill="#111" font-size="9">netAmount =</text>
+  <text x="605" y="333" text-anchor="middle" fill="#111" font-size="9">fullAmount</text>
+
+  <!-- NO: calc fee -->
+  <line x1="350" y1="342" x2="350" y2="364" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="360" y="358" fill="#444" font-size="10">NO</text>
+
+  <rect x="155" y="366" width="390" height="48" rx="3" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="185" y="382" font-size="9" fill="#888" font-weight="bold">PROCESS — fee calc</text>
+  <text x="350" y="396" text-anchor="middle" fill="#111" font-size="11">platformFee = (amount × 1.85%) + £0.20</text>
+  <text x="350" y="408" text-anchor="middle" fill="#111" font-size="11">netAmount = (amount − fee) × 100 pence</text>
+
+  <line x1="605" y1="340" x2="605" y2="424" stroke="#222" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <line x1="605" y1="424" x2="352" y2="424" stroke="#222" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arrow)"/>
+  <line x1="350" y1="414" x2="350" y2="424" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="155" y="426" width="390" height="48" rx="3" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="185" y="442" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="456" text-anchor="middle" fill="#111" font-size="11">CreateCheckoutSession → TransferData.Destination =</text>
+  <text x="350" y="468" text-anchor="middle" fill="#111" font-size="11">stripeAccountId · Amount = netAmount</text>
+  <line x1="350" y1="474" x2="350" y2="496" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="155" y="498" width="390" height="38" rx="3" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="185" y="514" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="528" text-anchor="middle" fill="#111" font-size="11">Customer completes payment on Stripe Checkout page</text>
+  <line x1="350" y1="536" x2="350" y2="558" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="155" y="560" width="390" height="38" rx="3" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="185" y="576" font-size="9" fill="#888" font-weight="bold">WEBHOOK</text>
+  <text x="350" y="590" text-anchor="middle" fill="#111" font-size="11">Stripe fires event → verify signature → update Payment.status</text>
+  <line x1="350" y1="598" x2="350" y2="620" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="155" y="622" width="390" height="38" rx="3" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="185" y="638" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="652" text-anchor="middle" fill="#111" font-size="11">UpdatePaymentTransfers — update description on charge</text>
+  <line x1="350" y1="660" x2="350" y2="682" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="165" y="684" width="370" height="34" rx="17" fill="#222"/>
+  <text x="350" y="696" text-anchor="middle" fill="white" font-size="10" font-weight="bold">END</text>
+  <text x="350" y="710" text-anchor="middle" fill="white" font-size="11">Payment recorded · funds routed to connected account</text>
+
+  <text x="350" y="770" text-anchor="middle" font-size="10" fill="#aaa">Verify365 · Go · Stripe Connect — Multi-Tenant Payments</text>
+</svg>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="700" height="860" viewBox="0 0 700 860" xmlns="http://www.w3.org/2000/svg" font-family="'Courier New', Courier, monospace">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#222"/>
+    </marker>
+  </defs>
+  <rect width="700" height="860" fill="#fff"/>
+  <text x="350" y="28" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">CreditSafe — Token Lifecycle &amp; UBO SFTP Download</text>
+  <line x1="40" y1="36" x2="660" y2="36" stroke="#222" stroke-width="1"/>
+
+  <!-- SECTION: API REQUESTS -->
+  <rect x="40" y="46" width="160" height="20" rx="3" fill="#222"/>
+  <text x="120" y="60" text-anchor="middle" fill="white" font-size="10" font-weight="bold">API REQUESTS</text>
+  <text x="210" y="60" fill="#888" font-size="10">token lifecycle on every call</text>
+
+  <rect x="155" y="70" width="390" height="34" rx="17" fill="#222"/>
+  <text x="350" y="82" text-anchor="middle" fill="white" font-size="10" font-weight="bold">START</text>
+  <text x="350" y="96" text-anchor="middle" fill="white" font-size="11">KYBService calls makeRequest(method, path, body)</text>
+  <line x1="350" y1="104" x2="350" y2="126" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- getToken -->
+  <rect x="155" y="128" width="390" height="38" rx="3" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="185" y="144" font-size="9" fill="#888" font-weight="bold">PROCESS — getToken()</text>
+  <text x="350" y="158" text-anchor="middle" fill="#111" font-size="11">Acquire mutex lock (sync.Mutex)</text>
+  <line x1="350" y1="166" x2="350" y2="188" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <polygon points="350,192 460,212 350,232 240,212" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="350" y="208" text-anchor="middle" fill="#111" font-size="11">Token valid</text>
+  <text x="350" y="222" text-anchor="middle" fill="#111" font-size="11">(within 55 min)?</text>
+
+  <line x1="460" y1="212" x2="548" y2="212" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="501" y="205" text-anchor="middle" fill="#444" font-size="10">YES</text>
+  <rect x="550" y="196" width="100" height="34" rx="3" fill="#f0f0f0" stroke="#222" stroke-width="1.2"/>
+  <text x="600" y="218" text-anchor="middle" fill="#111" font-size="9">Return cached</text>
+
+  <line x1="350" y1="232" x2="350" y2="254" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="360" y="248" fill="#444" font-size="10">NO</text>
+
+  <rect x="155" y="256" width="390" height="38" rx="3" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="185" y="272" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="286" text-anchor="middle" fill="#111" font-size="11">POST /authenticate → cache token + expiry (55 min)</text>
+
+  <line x1="600" y1="230" x2="600" y2="304" stroke="#222" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <line x1="600" y1="304" x2="352" y2="304" stroke="#222" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arrow)"/>
+  <line x1="350" y1="294" x2="350" y2="304" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="155" y="306" width="390" height="38" rx="3" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="185" y="322" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="336" text-anchor="middle" fill="#111" font-size="11">Add Authorization: Bearer {token} header → execute request</text>
+  <line x1="350" y1="344" x2="350" y2="366" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="155" y="368" width="390" height="38" rx="3" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="185" y="384" font-size="9" fill="#888" font-weight="bold">RESULT</text>
+  <text x="350" y="398" text-anchor="middle" fill="#111" font-size="11">Response bytes or APIError{StatusCode, raw JSON body}</text>
+
+  <!-- DIVIDER -->
+  <line x1="40" y1="420" x2="660" y2="420" stroke="#aaa" stroke-width="1" stroke-dasharray="6,4"/>
+  <rect x="40" y="428" width="160" height="20" rx="3" fill="#555"/>
+  <text x="120" y="442" text-anchor="middle" fill="white" font-size="10" font-weight="bold">UBO SFTP CRON</text>
+  <text x="210" y="442" fill="#888" font-size="10">1st of month, 14:00 UTC</text>
+
+  <rect x="155" y="452" width="390" height="34" rx="17" fill="#222"/>
+  <text x="350" y="464" text-anchor="middle" fill="white" font-size="10" font-weight="bold">CRON TRIGGER</text>
+  <text x="350" y="478" text-anchor="middle" fill="white" font-size="11">Monthly job fires → CreditSafe SFTP UBO download</text>
+  <line x1="350" y1="486" x2="350" y2="508" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="155" y="510" width="390" height="38" rx="3" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="185" y="526" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="540" text-anchor="middle" fill="#111" font-size="11">NewUBOSFTPSession → SSH dial (port 22) + sftp.NewClient</text>
+  <line x1="350" y1="548" x2="350" y2="570" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="155" y="572" width="390" height="38" rx="3" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="185" y="588" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="602" text-anchor="middle" fill="#111" font-size="11">Verify host key (pinned or TOFU fingerprint log)</text>
+  <line x1="350" y1="610" x2="350" y2="632" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="155" y="634" width="390" height="38" rx="3" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="185" y="650" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="664" text-anchor="middle" fill="#111" font-size="11">Walk "Controlling Owners V2/Monthly" → sort .dsv.gz newest-first</text>
+  <line x1="350" y1="672" x2="350" y2="694" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="155" y="696" width="390" height="38" rx="3" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="185" y="712" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="726" text-anchor="middle" fill="#111" font-size="11">DownloadToDir → stream to local tmp · OpenLocalFile (gzip reader)</text>
+  <line x1="350" y1="734" x2="350" y2="756" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="155" y="758" width="390" height="34" rx="17" fill="#222"/>
+  <text x="350" y="770" text-anchor="middle" fill="white" font-size="10" font-weight="bold">END</text>
+  <text x="350" y="784" text-anchor="middle" fill="white" font-size="11">Parse CSV rows → store UBO ownership data in DB</text>
+
+  <text x="350" y="840" text-anchor="middle" font-size="10" fill="#aaa">Verify365 · Go · CreditSafe — Token Refresh &amp; SFTP UBO</text>
+</svg>

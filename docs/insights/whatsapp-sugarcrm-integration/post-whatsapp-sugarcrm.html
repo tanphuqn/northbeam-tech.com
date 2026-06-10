@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>WordPress Post — WhatsApp Auto-Onboarding in SugarCRM</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 860px; margin: 40px auto; padding: 0 24px; color: #333; }
+    .instructions { background: #fffbe6; border: 1px solid #f0c000; border-radius: 6px; padding: 20px 24px; margin-bottom: 40px; }
+    .instructions h2 { margin-top: 0; font-size: 16px; color: #7a5c00; }
+    .instructions ol { margin: 0; padding-left: 20px; line-height: 2; }
+    .instructions code { background: #f5f5f5; padding: 2px 6px; border-radius: 3px; font-size: 13px; }
+    .divider { border: none; border-top: 2px dashed #ddd; margin: 40px 0; }
+    .meta { background: #f9f9f9; border: 1px solid #eee; border-radius: 6px; padding: 16px 20px; margin-bottom: 32px; font-size: 14px; }
+    .meta table { border-collapse: collapse; width: 100%; }
+    .meta td { padding: 4px 12px 4px 0; vertical-align: top; }
+    .meta td:first-child { font-weight: bold; color: #555; width: 160px; }
+    .meta .highlight { background: #fff8e1; padding: 2px 6px; border-radius: 3px; font-weight: bold; color: #7a5c00; }
+    .prompt-box { background: #f0f4ff; border: 1px solid #c0d0ff; border-radius: 6px; padding: 20px 24px; margin-bottom: 32px; font-size: 14px; }
+    .prompt-box h3 { margin-top: 0; font-size: 15px; color: #2a3f9f; }
+    .prompt-box pre { background: #fff; border: 1px solid #dde4ff; border-radius: 4px; padding: 14px 16px; font-size: 13px; line-height: 1.7; white-space: pre-wrap; word-break: break-word; margin: 0; }
+    .thumbnail-box { background: #f9f9f9; border: 1px solid #eee; border-radius: 6px; padding: 16px 20px; margin-bottom: 32px; font-size: 14px; }
+    .thumbnail-box h3 { margin-top: 0; font-size: 15px; color: #333; }
+    .thumbnail-box ul { margin: 0; padding-left: 20px; line-height: 2; }
+    /* --- Post content styles (preview) --- */
+    .post-content { line-height: 1.8; font-size: 16px; }
+    .post-content h1 { font-size: 28px; font-weight: 800; margin-bottom: 8px; }
+    .post-content .tagline { color: #777; font-size: 15px; margin-bottom: 32px; }
+    .post-content h2 { font-size: 20px; font-weight: 700; margin-top: 40px; border-left: 4px solid #222; padding-left: 12px; }
+    .post-content ul { padding-left: 20px; }
+    .post-content li { margin-bottom: 8px; }
+    .post-content .diagram-wrap { text-align: center; margin: 32px 0; }
+    .post-content .diagram-wrap figcaption { font-size: 13px; color: #888; margin-top: 8px; }
+    .post-content .stack-box { background: #f5f5f5; border-left: 4px solid #222; padding: 14px 18px; font-family: monospace; font-size: 14px; }
+    .post-content blockquote { border-left: 4px solid #ccc; margin: 0; padding: 8px 16px; color: #555; font-style: italic; }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     INSTRUCTIONS FOR MARKETING
+     ═══════════════════════════════════════════════════════════ -->
+<div class="instructions">
+  <h2>📋 Instructions for Marketing — How to publish this post</h2>
+  <ol>
+    <li>Log in to WordPress and go to <strong>Posts → Add New</strong></li>
+    <li>Copy the <strong>Post Title</strong> from the meta table below into the title field</li>
+    <li>Switch the editor to <strong>HTML / Code editor</strong> mode (top-right ⋮ menu → Code editor)</li>
+    <li>Copy everything inside the <code>&lt;!-- POST CONTENT START --&gt;</code> block and paste it into the editor</li>
+    <li>Upload <code>whatsapp-sugarcrm-integration-flow-diagram.png</code> via <strong>Media → Add New</strong>, copy its URL, then in the post HTML find <code>src="whatsapp-sugarcrm-integration-flow-diagram.png"</code> and replace it with the full WordPress URL</li>
+    <li>Upload <code>whatsapp-sugarcrm-integration-thumbnail.png</code> via <strong>Media → Add New</strong> and set it as the <strong>Featured Image</strong></li>
+    <li>Set <strong>Category</strong> → <code>Insights</code></li>
+    <li>Add the <strong>Tags</strong> listed below</li>
+    <li>In Yoast SEO / Rank Math: paste the <strong>Focus Keyword</strong>, <strong>Slug</strong>, and <strong>Meta Description</strong> from the table below</li>
+    <li>Paste the <strong>Excerpt</strong> into the Excerpt field</li>
+    <li>Preview → <strong>Publish</strong></li>
+  </ol>
+</div>
+
+<!-- ═══ POST META ═══ -->
+<div class="meta">
+  <h3 style="margin-top:0;font-size:15px;color:#333">Post Details</h3>
+  <table>
+    <tr><td>Post Title</td><td>Automating Student Onboarding via WhatsApp in SugarCRM</td></tr>
+    <tr><td>Slug</td><td><span class="highlight">whatsapp-student-onboarding-sugarcrm</span></td></tr>
+    <tr><td>Focus Keyword</td><td><span class="highlight">WhatsApp SugarCRM integration</span></td></tr>
+    <tr><td>Meta Description</td><td><span class="highlight">How we built a multi-step WhatsApp conversation flow that automatically captures and creates student records in SugarCRM — no manual data entry required. Built with Twilio + PHP.</span><br/><small style="color:#888">(156 characters — within the 160-char limit)</small></td></tr>
+    <tr><td>Category</td><td>Insights</td></tr>
+    <tr><td>Tags</td><td>SugarCRM, WhatsApp, Twilio, CRM Integration, Automation, PHP</td></tr>
+    <tr><td>Excerpt</td><td>How we built a multi-step WhatsApp conversation flow that automatically captures and creates student records in SugarCRM — no manual data entry required.</td></tr>
+  </table>
+</div>
+
+<!-- ═══ THUMBNAIL ═══ -->
+<div class="thumbnail-box">
+  <h3>Thumbnail / Featured Image</h3>
+  <table style="width:100%;border-collapse:collapse;font-size:14px">
+    <tr>
+      <td style="font-weight:bold;color:#555;width:160px;padding:4px 12px 4px 0;vertical-align:top">Thumbnail file</td>
+      <td><code>whatsapp-sugarcrm-integration-thumbnail.png</code><br/><small style="color:#888">1200×628 px · dark branded cover · set as WordPress Featured Image</small></td>
+    </tr>
+    <tr>
+      <td style="font-weight:bold;color:#555;padding:4px 12px 4px 0;vertical-align:top">Flow diagram file</td>
+      <td><code>whatsapp-sugarcrm-integration-flow-diagram.png</code><br/><small style="color:#888">700×1060 px · technical flowchart · embedded inside post content</small></td>
+    </tr>
+    <tr>
+      <td style="font-weight:bold;color:#555;padding:4px 12px 4px 0;vertical-align:top">Thumbnail alt text</td>
+      <td><em>WhatsApp to SugarCRM automated student onboarding cover image</em></td>
+    </tr>
+    <tr>
+      <td style="font-weight:bold;color:#555;padding:4px 12px 4px 0;vertical-align:top">Diagram alt text</td>
+      <td><em>WhatsApp SugarCRM integration flow diagram — automated student onboarding</em></td>
+    </tr>
+  </table>
+</div>
+
+<!-- ═══ AI REWRITE PROMPT ═══ -->
+<div class="prompt-box">
+  <h3>AI Rewrite / Update Prompt</h3>
+  <p style="margin:0 0 12px;color:#444">Copy this prompt into ChatGPT or Claude to rewrite or adjust the post content:</p>
+  <pre>You are a technical content writer for a software consultancy called Northbeam Tech (northbeam-tech.com/insights/).
+
+Here is a blog post draft about a WhatsApp + SugarCRM integration project. Please rewrite or adjust it based on my instructions below.
+
+---
+CONTEXT:
+- The project is called fac4fac, built on SugarCRM
+- Integration uses Twilio WhatsApp API
+- When an unknown phone number sends a WhatsApp message, a multi-step conversation flow collects the student's details and automatically creates a student record in SugarCRM
+- Key features: state machine (step-by-step questions), phone number normalization, media guard, partial completion with reminders (2h and 24h), multi-number Twilio support, admin UI in SugarCRM
+- Tech stack: PHP, SugarCRM custom modules, Twilio WhatsApp API, MySQL
+- Focus keyword for SEO: "WhatsApp SugarCRM integration"
+- Target audience: education sector businesses using SugarCRM, or businesses looking to automate WhatsApp lead capture
+
+---
+CURRENT POST TITLE:
+Automating Student Onboarding via WhatsApp in SugarCRM
+
+---
+CURRENT POST CONTENT:
+[paste the post HTML content here]
+
+---
+MY INSTRUCTIONS:
+[describe what you want to change — e.g. "make it shorter", "add a section about pricing", "make the tone more casual", "translate to Vietnamese", etc.]
+</pre>
+</div>
+
+<hr class="divider"/>
+
+<!-- ═══════════════════════════════════════════════════════════
+     POST CONTENT — PASTE THIS INTO WORDPRESS CODE EDITOR
+     ═══════════════════════════════════════════════════════════ -->
+
+<!-- POST CONTENT START -->
+<!-- wp:html -->
+<div class="post-content">
+
+<h1>Automating Student Onboarding via WhatsApp in SugarCRM</h1>
+<p class="tagline">A multi-step conversation engine that captures leads and creates CRM records automatically — no staff required.</p>
+
+<!-- wp:separator --><hr class="wp-block-separator"/><!-- /wp:separator -->
+
+<h2>The Problem</h2>
+<p>
+  When prospective students first contact the school via WhatsApp, staff had to manually collect their details
+  and create a record in SugarCRM by hand. There was no way to capture a lead from WhatsApp without a person
+  in the loop — meaning leads that arrived outside business hours were missed or delayed.
+</p>
+<p>
+  The school was already using Twilio to send outbound WhatsApp messages from SugarCRM, but there was no
+  system to handle replies from unknown numbers and turn them into student records automatically.
+</p>
+
+<h2>What We Built</h2>
+<p>
+  A multi-step conversation engine built directly into SugarCRM. When an unknown number sends a WhatsApp
+  message, the system intercepts it, guides the student through a configurable intake questionnaire, validates
+  each answer, and creates the student record — with zero admin involvement.
+</p>
+<p>
+  Known students are still routed through the existing follow-up flow without any disruption.
+</p>
+
+<h2>How It Works</h2>
+
+<div class="diagram-wrap">
+  <!-- MARKETING: after uploading to WordPress, replace src with the Media Library URL -->
+  <figure>
+    <img
+      src="whatsapp-sugarcrm-integration-flow-diagram.png"
+      alt="WhatsApp SugarCRM integration flow diagram — automated student onboarding"
+      style="max-width:100%;height:auto;border:1px solid #eee;border-radius:4px;"
+    />
+    <figcaption>End-to-end flow: from WhatsApp message to SugarCRM student record</figcaption>
+  </figure>
+</div>
+
+<p>The flow works like this:</p>
+<ol>
+  <li>A student sends any WhatsApp message to the school's number</li>
+  <li>Twilio delivers it to the webhook in SugarCRM</li>
+  <li>The system checks whether the phone number already exists as a student record</li>
+  <li>If yes → routed to the existing follow-up flow (no change)</li>
+  <li>If no → the Conversation Engine takes over, loads or creates a session, and sends the first question</li>
+  <li>The student answers each question one by one; invalid answers trigger an error message and the question is resent</li>
+  <li>Once all questions are answered, a Student record is created in SugarCRM and the student receives a thank-you message</li>
+</ol>
+
+<h2>Key Technical Decisions</h2>
+<ul>
+  <li>
+    <strong>State machine, not a script.</strong> Each conversation is a session with a current step number.
+    Questions can be reordered, enabled/disabled, or mapped to any CRM field without changing code.
+    Admins manage the question bank directly from SugarCRM.
+  </li>
+  <li>
+    <strong>Phone number normalization.</strong> The system handles Israeli, US, and Vietnamese number formats
+    before matching, so duplicate records from format variations are avoided.
+  </li>
+  <li>
+    <strong>Media guard.</strong> If a student sends a photo or voice message, the system replies politely
+    that only text is supported and resends the current question automatically.
+  </li>
+  <li>
+    <strong>Partial completion.</strong> If a student stops responding mid-flow, automated reminders are sent
+    at 2 hours and 24 hours. If minimum data (name + phone) has been collected and the student still doesn't
+    respond, a partial student record is created so the lead isn't lost.
+  </li>
+  <li>
+    <strong>Multi-number support.</strong> Multiple Twilio sender numbers can be registered in SugarCRM.
+    Each conversation session locks to the number the student first contacted.
+  </li>
+</ul>
+
+<h2>What Changed</h2>
+<ul>
+  <li>Student record creation from WhatsApp is now fully automated for new contacts</li>
+  <li>Leads that arrive outside business hours are captured without any staff intervention</li>
+  <li>Admins can view full chat history, manually resume sessions, or override any step from inside SugarCRM</li>
+  <li>The existing outbound messaging workflow for known students is completely unchanged</li>
+</ul>
+
+<h2>Stack</h2>
+<div class="stack-box">
+  PHP &nbsp;·&nbsp; SugarCRM (custom modules) &nbsp;·&nbsp; Twilio WhatsApp API &nbsp;·&nbsp; MySQL
+</div>
+
+<!-- wp:separator --><hr class="wp-block-separator"/><!-- /wp:separator -->
+
+<blockquote>
+  Building a similar integration? We work with SugarCRM and custom CRM automations.
+  <a href="/contact">Get in touch →</a>
+</blockquote>
+
+</div>
+<!-- /wp:html -->
+<!-- POST CONTENT END -->
+
+<hr class="divider"/>
+<p style="text-align:center;color:#aaa;font-size:13px">— End of post file — whatsapp-sugarcrm-flow.svg is in the same folder as this file —</p>
+
+</body>
+</html>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="920" viewBox="0 0 800 920" xmlns="http://www.w3.org/2000/svg" font-family="'Courier New', Courier, monospace">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#222"/>
+    </marker>
+    <marker id="arrowgray" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#aaa"/>
+    </marker>
+  </defs>
+  <rect width="800" height="920" fill="#fff"/>
+
+  <!-- Title -->
+  <text x="400" y="28" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">fac4fac.com — System Architecture Overview</text>
+  <line x1="40" y1="36" x2="760" y2="36" stroke="#222" stroke-width="1"/>
+
+  <!-- ===== ROW 1: Users ===== -->
+  <!-- Admin/Staff -->
+  <rect x="60" y="52" width="140" height="44" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="130" y="71" text-anchor="middle" fill="#111" font-size="10" font-weight="bold">Admin / Staff</text>
+  <text x="130" y="85" text-anchor="middle" fill="#888" font-size="9">SugarCRM UI</text>
+
+  <!-- Students (WhatsApp) -->
+  <rect x="310" y="52" width="180" height="44" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="400" y="71" text-anchor="middle" fill="#111" font-size="10" font-weight="bold">Students / Candidates</text>
+  <text x="400" y="85" text-anchor="middle" fill="#888" font-size="9">WhatsApp Mobile</text>
+
+  <!-- Management -->
+  <rect x="600" y="52" width="140" height="44" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="670" y="71" text-anchor="middle" fill="#111" font-size="10" font-weight="bold">Management</text>
+  <text x="670" y="85" text-anchor="middle" fill="#888" font-size="9">Reports &amp; Exports</text>
+
+  <!-- Arrows down -->
+  <line x1="130" y1="96" x2="130" y2="122" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="400" y1="96" x2="400" y2="122" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="670" y1="96" x2="670" y2="122" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ===== ROW 2: Core Platform ===== -->
+  <rect x="40" y="58" width="0" height="0"/>
+  <!-- SugarCRM box spanning full width -->
+  <rect x="40" y="124" width="720" height="60" rx="4" fill="#111" stroke="#222" stroke-width="1.5"/>
+  <text x="400" y="148" text-anchor="middle" fill="white" font-size="11" font-weight="bold">SugarCRM 6.5.23 — fac4fac.com</text>
+  <text x="400" y="164" text-anchor="middle" fill="#aaa" font-size="9">Custom PHP modules · Logic hooks · Controllers · Views · REST API</text>
+
+  <!-- Arrow down center -->
+  <line x1="400" y1="184" x2="400" y2="210" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ===== ROW 3: Core Custom Modules ===== -->
+  <text x="400" y="226" text-anchor="middle" fill="#555" font-size="9" font-weight="bold">CUSTOM MODULES</text>
+  <line x1="40" y1="232" x2="760" y2="232" stroke="#ddd" stroke-width="1"/>
+
+  <!-- Module grid: 3 columns -->
+  <!-- Col 1 -->
+  <rect x="40" y="238" width="228" height="40" rx="3" fill="white" stroke="#222" stroke-width="1.2"/>
+  <text x="154" y="255" text-anchor="middle" fill="#3b82f6" font-size="9" font-weight="bold">isa_students</text>
+  <text x="154" y="269" text-anchor="middle" fill="#888" font-size="8">Student records, status, history</text>
+
+  <rect x="40" y="284" width="228" height="40" rx="3" fill="white" stroke="#222" stroke-width="1.2"/>
+  <text x="154" y="301" text-anchor="middle" fill="#a78bfa" font-size="9" font-weight="bold">isa_workers</text>
+  <text x="154" y="315" text-anchor="middle" fill="#888" font-size="8">Staff, assignments, daily reports</text>
+
+  <rect x="40" y="330" width="228" height="40" rx="3" fill="white" stroke="#222" stroke-width="1.2"/>
+  <text x="154" y="347" text-anchor="middle" fill="#fbbf24" font-size="9" font-weight="bold">isa_activities / isa_followups</text>
+  <text x="154" y="361" text-anchor="middle" fill="#888" font-size="8">Activity types, follow-up records</text>
+
+  <rect x="40" y="376" width="228" height="40" rx="3" fill="white" stroke="#222" stroke-width="1.2"/>
+  <text x="154" y="393" text-anchor="middle" fill="#f472b6" font-size="9" font-weight="bold">isa_donation</text>
+  <text x="154" y="407" text-anchor="middle" fill="#888" font-size="8">Donation tracking per student</text>
+
+  <!-- Col 2 -->
+  <rect x="286" y="238" width="228" height="40" rx="3" fill="white" stroke="#222" stroke-width="1.2"/>
+  <text x="400" y="255" text-anchor="middle" fill="#34d399" font-size="9" font-weight="bold">wsf_whatsapp_follow_up</text>
+  <text x="400" y="269" text-anchor="middle" fill="#888" font-size="8">Inbound/outbound WA messages</text>
+
+  <rect x="286" y="284" width="228" height="40" rx="3" fill="white" stroke="#222" stroke-width="1.2"/>
+  <text x="400" y="301" text-anchor="middle" fill="#e879f9" font-size="9" font-weight="bold">wsmt_whatsapp_message_template</text>
+  <text x="400" y="315" text-anchor="middle" fill="#888" font-size="8">Template mgmt + approval sync</text>
+
+  <rect x="286" y="330" width="228" height="40" rx="3" fill="white" stroke="#222" stroke-width="1.2"/>
+  <text x="400" y="347" text-anchor="middle" fill="#fb923c" font-size="9" font-weight="bold">htp_connectnow</text>
+  <text x="400" y="361" text-anchor="middle" fill="#888" font-size="8">Connection/meeting records</text>
+
+  <rect x="286" y="376" width="228" height="40" rx="3" fill="white" stroke="#222" stroke-width="1.2"/>
+  <text x="400" y="393" text-anchor="middle" fill="#38bdf8" font-size="9" font-weight="bold">htp_avreichem_followup</text>
+  <text x="400" y="407" text-anchor="middle" fill="#888" font-size="8">Avreichem follow-up + PDF template</text>
+
+  <!-- Col 3 -->
+  <rect x="532" y="238" width="228" height="40" rx="3" fill="white" stroke="#222" stroke-width="1.2"/>
+  <text x="646" y="255" text-anchor="middle" fill="#fbbf24" font-size="9" font-weight="bold">PT_weekly_report</text>
+  <text x="646" y="269" text-anchor="middle" fill="#888" font-size="8">Color-coded Excel export</text>
+
+  <rect x="532" y="284" width="228" height="40" rx="3" fill="white" stroke="#222" stroke-width="1.2"/>
+  <text x="646" y="301" text-anchor="middle" fill="#4ade80" font-size="9" font-weight="bold">zr2_Report / zr2_QueryTemplate</text>
+  <text x="646" y="315" text-anchor="middle" fill="#888" font-size="8">Custom report builder engine</text>
+
+  <rect x="532" y="330" width="228" height="40" rx="3" fill="white" stroke="#222" stroke-width="1.2"/>
+  <text x="646" y="347" text-anchor="middle" fill="#a78bfa" font-size="9" font-weight="bold">rt_workers_followup</text>
+  <text x="646" y="361" text-anchor="middle" fill="#888" font-size="8">Worker follow-up tracking</text>
+
+  <rect x="532" y="376" width="228" height="40" rx="3" fill="white" stroke="#222" stroke-width="1.2"/>
+  <text x="646" y="393" text-anchor="middle" fill="#60a5fa" font-size="9" font-weight="bold">iso_workersdailyreport</text>
+  <text x="646" y="407" text-anchor="middle" fill="#888" font-size="8">Daily activity reports</text>
+
+  <!-- ===== Connector line to integrations ===== -->
+  <line x1="40" y1="422" x2="760" y2="422" stroke="#ddd" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="400" y="440" text-anchor="middle" fill="#555" font-size="9" font-weight="bold">INTEGRATIONS</text>
+
+  <!-- Arrows down from modules -->
+  <line x1="154" y1="416" x2="154" y2="456" stroke="#bbb" stroke-width="1.2" marker-end="url(#arrowgray)" stroke-dasharray="3,2"/>
+  <line x1="400" y1="416" x2="400" y2="456" stroke="#bbb" stroke-width="1.2" marker-end="url(#arrowgray)" stroke-dasharray="3,2"/>
+  <line x1="646" y1="416" x2="646" y2="456" stroke="#bbb" stroke-width="1.2" marker-end="url(#arrowgray)" stroke-dasharray="3,2"/>
+
+  <!-- ===== ROW 4: Integrations ===== -->
+  <!-- Twilio -->
+  <rect x="40" y="458" width="220" height="56" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="150" y="479" text-anchor="middle" fill="#111" font-size="10" font-weight="bold">Twilio WhatsApp API</text>
+  <text x="150" y="493" text-anchor="middle" fill="#888" font-size="8">Content API · Webhook callbacks</text>
+  <text x="150" y="506" text-anchor="middle" fill="#888" font-size="8">Template approval · Bulk messaging</text>
+
+  <!-- TCPDF -->
+  <rect x="290" y="458" width="220" height="56" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="400" y="479" text-anchor="middle" fill="#111" font-size="10" font-weight="bold">TCPDF</text>
+  <text x="400" y="493" text-anchor="middle" fill="#888" font-size="8">Multi-page PDF generation</text>
+  <text x="400" y="506" text-anchor="middle" fill="#888" font-size="8">RTL Hebrew · HTML templates</text>
+
+  <!-- Excel / Reports -->
+  <rect x="540" y="458" width="220" height="56" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="650" y="479" text-anchor="middle" fill="#111" font-size="10" font-weight="bold">Spreadsheet_Excel_Writer</text>
+  <text x="650" y="493" text-anchor="middle" fill="#888" font-size="8">Dynamic .xls export</text>
+  <text x="650" y="506" text-anchor="middle" fill="#888" font-size="8">Color-coded merged headers</text>
+
+  <!-- Arrow down to infra -->
+  <line x1="400" y1="514" x2="400" y2="540" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ===== ROW 5: Infrastructure ===== -->
+  <text x="400" y="556" text-anchor="middle" fill="#555" font-size="9" font-weight="bold">INFRASTRUCTURE</text>
+  <line x1="40" y1="562" x2="760" y2="562" stroke="#ddd" stroke-width="1"/>
+
+  <!-- AWS EC2 -->
+  <rect x="40" y="570" width="220" height="44" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="150" y="589" text-anchor="middle" fill="#111" font-size="10" font-weight="bold">AWS EC2</text>
+  <text x="150" y="603" text-anchor="middle" fill="#888" font-size="8">Ubuntu · Apache · PHP 7.x</text>
+
+  <!-- AWS RDS -->
+  <rect x="290" y="570" width="220" height="44" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="400" y="589" text-anchor="middle" fill="#111" font-size="10" font-weight="bold">AWS RDS (MySQL)</text>
+  <text x="400" y="603" text-anchor="middle" fill="#888" font-size="8">Managed DB · Multi-instance</text>
+
+  <!-- Two instances -->
+  <rect x="540" y="570" width="220" height="44" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="650" y="589" text-anchor="middle" fill="#111" font-size="10" font-weight="bold">Two CRM Instances</text>
+  <text x="650" y="603" text-anchor="middle" fill="#888" font-size="8">fac4fac.com · anafil.info</text>
+
+  <!-- ===== ROW 6: Key Features ===== -->
+  <line x1="40" y1="630" x2="760" y2="630" stroke="#ddd" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="400" y="648" text-anchor="middle" fill="#555" font-size="9" font-weight="bold">KEY FEATURES BUILT</text>
+
+  <rect x="40" y="656" width="340" height="32" rx="3" fill="white" stroke="#222" stroke-width="1.2"/>
+  <text x="210" y="668" text-anchor="middle" fill="#111" font-size="9" font-weight="bold">WhatsApp Automation</text>
+  <text x="210" y="681" text-anchor="middle" fill="#888" font-size="8">Auto-onboarding · 2-way messaging · Template approval sync · Bulk send</text>
+
+  <rect x="420" y="656" width="340" height="32" rx="3" fill="white" stroke="#222" stroke-width="1.2"/>
+  <text x="590" y="668" text-anchor="middle" fill="#111" font-size="9" font-weight="bold">Smart Reporting</text>
+  <text x="590" y="681" text-anchor="middle" fill="#888" font-size="8">Excel weekly reports · Student PDF export · Custom report builder</text>
+
+  <rect x="40" y="696" width="340" height="32" rx="3" fill="white" stroke="#222" stroke-width="1.2"/>
+  <text x="210" y="708" text-anchor="middle" fill="#111" font-size="9" font-weight="bold">Student Lifecycle CRM</text>
+  <text x="210" y="721" text-anchor="middle" fill="#888" font-size="8">Intake · Follow-ups · Activities · ConnectNow · Donations</text>
+
+  <rect x="420" y="696" width="340" height="32" rx="3" fill="white" stroke="#222" stroke-width="1.2"/>
+  <text x="590" y="708" text-anchor="middle" fill="#111" font-size="9" font-weight="bold">Hebrew RTL Support</text>
+  <text x="590" y="721" text-anchor="middle" fill="#888" font-size="8">Full UI + PDF generation in Hebrew right-to-left layout</text>
+
+  <rect x="40" y="736" width="340" height="32" rx="3" fill="white" stroke="#222" stroke-width="1.2"/>
+  <text x="210" y="748" text-anchor="middle" fill="#111" font-size="9" font-weight="bold">Worker Management</text>
+  <text x="210" y="761" text-anchor="middle" fill="#888" font-size="8">Daily reports · Worker follow-ups · Activity metrics</text>
+
+  <rect x="420" y="736" width="340" height="32" rx="3" fill="white" stroke="#222" stroke-width="1.2"/>
+  <text x="590" y="748" text-anchor="middle" fill="#111" font-size="9" font-weight="bold">Webhook Infrastructure</text>
+  <text x="590" y="761" text-anchor="middle" fill="#888" font-size="8">Twilio delivery callbacks · Template approval events</text>
+
+  <!-- Footer -->
+  <line x1="40" y1="780" x2="760" y2="780" stroke="#222" stroke-width="1"/>
+  <text x="400" y="800" text-anchor="middle" font-size="10" fill="#aaa">fac4fac.com · SugarCRM 6.5.23 · PHP · MySQL · AWS · Twilio · TCPDF</text>
+  <text x="400" y="820" text-anchor="middle" font-size="10" fill="#ccc">Built by Northbeam Tech — northbeam-tech.com</text>
+</svg>

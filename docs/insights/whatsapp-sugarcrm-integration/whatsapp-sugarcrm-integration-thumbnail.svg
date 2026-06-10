@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="628" viewBox="0 0 1200 628" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="1200" height="628" fill="#0f1117"/>
+
+  <!-- Subtle grid texture -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-width="0.3" opacity="0.06"/>
+    </pattern>
+    <linearGradient id="greenGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#25D366;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#128C7E;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="leftFade" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0f1117;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#0f1117;stop-opacity:0"/>
+    </linearGradient>
+    <linearGradient id="rightFade" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0f1117;stop-opacity:0"/>
+      <stop offset="100%" style="stop-color:#0f1117;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="628" fill="url(#grid)"/>
+
+  <!-- Green accent bar left -->
+  <rect x="0" y="0" width="6" height="628" fill="url(#greenGlow)"/>
+
+  <!-- Glow blob behind visual -->
+  <ellipse cx="900" cy="314" rx="320" ry="260" fill="#25D366" opacity="0.05"/>
+
+  <!-- ─── LEFT: TEXT CONTENT ─── -->
+
+  <!-- Category label -->
+  <rect x="60" y="90" width="130" height="28" rx="14" fill="#25D366" opacity="0.15"/>
+  <text x="125" y="109" text-anchor="middle" fill="#25D366" font-size="13" font-weight="600" letter-spacing="1">INSIGHTS</text>
+
+  <!-- Main title line 1 -->
+  <text x="60" y="192" fill="#ffffff" font-size="54" font-weight="800" letter-spacing="-1">Automating Student</text>
+
+  <!-- Main title line 2 -->
+  <text x="60" y="256" fill="#ffffff" font-size="54" font-weight="800" letter-spacing="-1">Onboarding via</text>
+
+  <!-- Main title line 3 — highlighted keyword -->
+  <text x="60" y="320" fill="#ffffff" font-size="54" font-weight="800" letter-spacing="-1">
+    <tspan fill="#25D366">WhatsApp</tspan>
+    <tspan fill="#ffffff"> in SugarCRM</tspan>
+  </text>
+
+  <!-- Divider -->
+  <line x1="60" y1="348" x2="440" y2="348" stroke="#25D366" stroke-width="2" opacity="0.5"/>
+
+  <!-- Subtitle -->
+  <text x="60" y="380" fill="#aaaaaa" font-size="18" font-weight="400">Multi-step conversation flow · Twilio · PHP · MySQL</text>
+
+  <!-- Tags -->
+  <rect x="60" y="408" width="140" height="28" rx="14" fill="#1e2230" stroke="#333" stroke-width="1"/>
+  <text x="130" y="427" text-anchor="middle" fill="#888" font-size="12">CRM Integration</text>
+
+  <rect x="212" y="408" width="100" height="28" rx="14" fill="#1e2230" stroke="#333" stroke-width="1"/>
+  <text x="262" y="427" text-anchor="middle" fill="#888" font-size="12">Automation</text>
+
+  <rect x="324" y="408" width="100" height="28" rx="14" fill="#1e2230" stroke="#333" stroke-width="1"/>
+  <text x="374" y="427" text-anchor="middle" fill="#888" font-size="12">SugarCRM</text>
+
+  <!-- Company URL -->
+  <text x="60" y="540" fill="#555" font-size="14">northbeam-tech.com/insights</text>
+
+  <!-- ─── RIGHT: VISUAL ─── -->
+
+  <!-- WhatsApp phone mockup -->
+  <rect x="730" y="100" width="180" height="320" rx="22" fill="#1e2230" stroke="#333" stroke-width="1.5"/>
+  <!-- Phone screen -->
+  <rect x="742" y="120" width="156" height="280" rx="10" fill="#111820"/>
+  <!-- Chat bubbles -->
+  <!-- Incoming (left) -->
+  <rect x="750" y="135" width="110" height="32" rx="10" fill="#1e2d1e"/>
+  <text x="758" y="149" fill="#aaa" font-size="9">What is your name?</text>
+  <text x="758" y="161" fill="#25D366" font-size="9">→ Conversation Engine</text>
+  <!-- Outgoing (right) -->
+  <rect x="800" y="178" width="90" height="26" rx="10" fill="#25D366"/>
+  <text x="808" y="194" fill="#fff" font-size="9" font-weight="600">John Smith</text>
+  <!-- Incoming -->
+  <rect x="750" y="215" width="110" height="26" rx="10" fill="#1e2d1e"/>
+  <text x="758" y="231" fill="#aaa" font-size="9">What is your email?</text>
+  <!-- Outgoing -->
+  <rect x="790" y="252" width="100" height="26" rx="10" fill="#25D366"/>
+  <text x="798" y="268" fill="#fff" font-size="9" font-weight="600">john@mail.com</text>
+  <!-- Incoming -->
+  <rect x="750" y="289" width="110" height="26" rx="10" fill="#1e2d1e"/>
+  <text x="758" y="305" fill="#aaa" font-size="9">What is your phone?</text>
+  <!-- Outgoing -->
+  <rect x="800" y="326" width="90" height="26" rx="10" fill="#25D366"/>
+  <text x="808" y="342" fill="#fff" font-size="9" font-weight="600">+972 50 000 000</text>
+  <!-- Tick / complete -->
+  <rect x="750" y="363" width="148" height="26" rx="10" fill="#0d3320"/>
+  <text x="824" y="379" text-anchor="middle" fill="#25D366" font-size="9" font-weight="600">✓ Record created in CRM</text>
+  <!-- Phone notch -->
+  <rect x="795" y="124" width="30" height="6" rx="3" fill="#333"/>
+
+  <!-- Arrow connector -->
+  <line x1="920" y1="260" x2="975" y2="260" stroke="#25D366" stroke-width="2.5" stroke-dasharray="5,3" marker-end="url(#arrowGreen)"/>
+  <defs>
+    <marker id="arrowGreen" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#25D366"/>
+    </marker>
+  </defs>
+
+  <!-- SugarCRM box -->
+  <rect x="978" y="180" width="170" height="160" rx="12" fill="#1e2230" stroke="#334" stroke-width="1.5"/>
+  <!-- SugarCRM logo area -->
+  <rect x="994" y="196" width="138" height="30" rx="6" fill="#c91535" opacity="0.9"/>
+  <text x="1063" y="216" text-anchor="middle" fill="white" font-size="12" font-weight="700">SugarCRM</text>
+  <!-- Fields -->
+  <text x="994" y="248" fill="#666" font-size="9">Name</text>
+  <rect x="994" y="254" width="138" height="14" rx="3" fill="#262d3d"/>
+  <text x="1000" y="264" fill="#aaa" font-size="9">John Smith</text>
+
+  <text x="994" y="282" fill="#666" font-size="9">Email</text>
+  <rect x="994" y="288" width="138" height="14" rx="3" fill="#262d3d"/>
+  <text x="1000" y="298" fill="#aaa" font-size="9">john@mail.com</text>
+
+  <text x="994" y="316" fill="#666" font-size="9">Phone</text>
+  <rect x="994" y="322" width="138" height="14" rx="3" fill="#262d3d"/>
+  <text x="1000" y="332" fill="#aaa" font-size="9">+972 50 000 000</text>
+
+  <!-- "Auto-created" badge -->
+  <rect x="994" y="250" width="70" height="0" rx="3" fill="none"/>
+  <rect x="1080" y="198" width="50" height="14" rx="7" fill="#25D366"/>
+  <text x="1105" y="208" text-anchor="middle" fill="#fff" font-size="8" font-weight="700">AUTO</text>
+
+  <!-- Left fade over visual area -->
+  <rect x="680" y="0" width="80" height="628" fill="url(#leftFade)"/>
+  <!-- Right fade -->
+  <rect x="1150" y="0" width="50" height="628" fill="url(#rightFade)"/>
+
+  <!-- Bottom border line -->
+  <rect x="0" y="622" width="1200" height="6" fill="url(#greenGlow)"/>
+
+</svg>

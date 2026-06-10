@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="700" height="900" viewBox="0 0 700 900" xmlns="http://www.w3.org/2000/svg" font-family="'Courier New', Courier, monospace">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#222"/>
+    </marker>
+  </defs>
+  <rect width="700" height="900" fill="#fff"/>
+  <text x="350" y="28" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">PEP &amp; Sanctions Monitoring — KYC6 + Cron Flow</text>
+  <line x1="40" y1="36" x2="660" y2="36" stroke="#222" stroke-width="1"/>
+
+  <!-- SECTION: ONE-OFF SEARCH -->
+  <rect x="40" y="46" width="180" height="20" rx="3" fill="#222"/>
+  <text x="130" y="60" text-anchor="middle" fill="white" font-size="10" font-weight="bold">ONE-OFF SEARCH</text>
+  <text x="220" y="60" fill="#888" font-size="10">instant PEP/sanctions check</text>
+
+  <rect x="165" y="70" width="370" height="34" rx="17" fill="#222"/>
+  <text x="350" y="82" text-anchor="middle" fill="white" font-size="10" font-weight="bold">START</text>
+  <text x="350" y="96" text-anchor="middle" fill="white" font-size="11">User initiates PEP/Sanctions check</text>
+  <line x1="350" y1="104" x2="350" y2="126" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <polygon points="350,130 460,150 350,170 240,150" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="350" y="147" text-anchor="middle" fill="#111" font-size="11">Individual or</text>
+  <text x="350" y="161" text-anchor="middle" fill="#111" font-size="11">Company?</text>
+
+  <line x1="240" y1="150" x2="100" y2="150" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="168" y="143" text-anchor="middle" fill="#444" font-size="10">INDIVIDUAL</text>
+  <rect x="40" y="128" width="58" height="44" rx="3" fill="#f0f0f0" stroke="#222" stroke-width="1.2"/>
+  <text x="69" y="148" text-anchor="middle" fill="#111" font-size="8">Search</text>
+  <text x="69" y="160" text-anchor="middle" fill="#111" font-size="8">Individuals</text>
+
+  <line x1="460" y1="150" x2="600" y2="150" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="530" y="143" text-anchor="middle" fill="#444" font-size="10">COMPANY</text>
+  <rect x="602" y="128" width="58" height="44" rx="3" fill="#f0f0f0" stroke="#222" stroke-width="1.2"/>
+  <text x="631" y="148" text-anchor="middle" fill="#111" font-size="8">Search</text>
+  <text x="631" y="160" text-anchor="middle" fill="#111" font-size="8">Businesses</text>
+
+  <line x1="69" y1="172" x2="69" y2="196" stroke="#222" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <line x1="631" y1="172" x2="631" y2="196" stroke="#222" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <line x1="69" y1="196" x2="350" y2="196" stroke="#222" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arrow)"/>
+  <line x1="631" y1="196" x2="352" y2="196" stroke="#222" stroke-width="1.5" stroke-dasharray="3,2"/>
+
+  <rect x="155" y="202" width="390" height="38" rx="3" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="185" y="218" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="232" text-anchor="middle" fill="#111" font-size="11">Check DB cache (name + country + type)</text>
+  <line x1="350" y1="240" x2="350" y2="262" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <polygon points="350,266 460,284 350,302 240,284" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="350" y="280" text-anchor="middle" fill="#111" font-size="11">Cache</text>
+  <text x="350" y="294" text-anchor="middle" fill="#111" font-size="11">hit?</text>
+
+  <line x1="460" y1="284" x2="548" y2="284" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="501" y="277" text-anchor="middle" fill="#444" font-size="10">YES</text>
+  <rect x="550" y="268" width="100" height="34" rx="3" fill="#f0f0f0" stroke="#222" stroke-width="1.2"/>
+  <text x="600" y="290" text-anchor="middle" fill="#111" font-size="9">Return cached</text>
+
+  <line x1="350" y1="302" x2="350" y2="324" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="360" y="318" fill="#444" font-size="10">NO</text>
+
+  <rect x="155" y="326" width="390" height="38" rx="3" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="185" y="342" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="356" text-anchor="middle" fill="#111" font-size="11">POST /individuals or /businesses (SEARCH API key)</text>
+  <line x1="350" y1="364" x2="350" y2="386" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="155" y="388" width="390" height="38" rx="3" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="185" y="404" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="418" text-anchor="middle" fill="#111" font-size="11">Get profile per resourceId → extract evidences</text>
+  <line x1="350" y1="426" x2="350" y2="448" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="155" y="450" width="390" height="38" rx="3" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="185" y="466" font-size="9" fill="#888" font-weight="bold">RESULT</text>
+  <text x="350" y="480" text-anchor="middle" fill="#111" font-size="11">Status: "Clear" (no evidences) / "Review" (evidences found)</text>
+
+  <!-- Divider -->
+  <line x1="40" y1="502" x2="660" y2="502" stroke="#aaa" stroke-width="1" stroke-dasharray="6,4"/>
+  <rect x="40" y="510" width="180" height="20" rx="3" fill="#555"/>
+  <text x="130" y="524" text-anchor="middle" fill="white" font-size="10" font-weight="bold">ONGOING MONITORING</text>
+  <text x="220" y="524" fill="#888" font-size="10">365-day cron-driven</text>
+
+  <rect x="165" y="534" width="370" height="34" rx="17" fill="#222"/>
+  <text x="350" y="546" text-anchor="middle" fill="white" font-size="10" font-weight="bold">TRIGGER</text>
+  <text x="350" y="560" text-anchor="middle" fill="white" font-size="11">Firm creates monitoring request → DB record</text>
+  <line x1="350" y1="568" x2="350" y2="590" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="155" y="592" width="390" height="38" rx="3" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="185" y="608" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="622" text-anchor="middle" fill="#111" font-size="11">PUT /worklists/{id} + add individual/business record</text>
+  <line x1="350" y1="630" x2="350" y2="652" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="155" y="654" width="390" height="38" rx="3" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="185" y="670" font-size="9" fill="#888" font-weight="bold">CRON  20:00 UTC daily</text>
+  <text x="350" y="684" text-anchor="middle" fill="#111" font-size="11">GET /worklists/{id}/individuals|businesses/{id}/matches</text>
+  <line x1="350" y1="692" x2="350" y2="714" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="155" y="716" width="390" height="38" rx="3" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="185" y="732" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="746" text-anchor="middle" fill="#111" font-size="11">Filter matches → update status → email MLRO on hit</text>
+  <line x1="350" y1="754" x2="350" y2="776" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="165" y="778" width="370" height="34" rx="17" fill="#222"/>
+  <text x="350" y="790" text-anchor="middle" fill="white" font-size="10" font-weight="bold">END</text>
+  <text x="350" y="804" text-anchor="middle" fill="white" font-size="11">Repeat daily for 365 days · warning at day 30 &amp; 1</text>
+
+  <text x="350" y="860" text-anchor="middle" font-size="10" fill="#aaa">Verify365 · Go · KYC6 — PEP/Sanctions Monitoring</text>
+</svg>

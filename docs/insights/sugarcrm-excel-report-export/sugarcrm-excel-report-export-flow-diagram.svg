@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="700" height="760" viewBox="0 0 700 760" xmlns="http://www.w3.org/2000/svg" font-family="'Courier New', Courier, monospace">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#222"/>
+    </marker>
+  </defs>
+  <rect width="700" height="760" fill="#fff"/>
+  <text x="350" y="28" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">Dynamic Excel Report Generation — SugarCRM</text>
+  <line x1="60" y1="36" x2="640" y2="36" stroke="#222" stroke-width="1"/>
+
+  <!-- START -->
+  <rect x="215" y="52" width="270" height="34" rx="17" fill="#222"/>
+  <text x="350" y="64" text-anchor="middle" fill="white" font-size="10" font-weight="bold">START</text>
+  <text x="350" y="78" text-anchor="middle" fill="white" font-size="11">Admin clicks "Export Weekly Report"</text>
+  <line x1="350" y1="86" x2="350" y2="108" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- PROCESS: init workbook -->
+  <rect x="185" y="110" width="330" height="38" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="215" y="126" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="140" text-anchor="middle" fill="#111" font-size="11">Init Spreadsheet_Excel_Writer workbook + formats</text>
+  <line x1="350" y1="148" x2="350" y2="170" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- PROCESS: write fixed headers -->
+  <rect x="185" y="172" width="330" height="38" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="215" y="188" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="202" text-anchor="middle" fill="#111" font-size="11">Write fixed columns: Name, Students, Called, Hours…</text>
+  <line x1="350" y1="210" x2="350" y2="232" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- PROCESS: query activities -->
+  <rect x="185" y="234" width="330" height="38" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="215" y="250" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="264" text-anchor="middle" fill="#111" font-size="11">Query isa_activities → write ACTIVITIES header (blue)</text>
+  <line x1="350" y1="272" x2="350" y2="294" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- PROCESS: wait_for_connect header -->
+  <rect x="185" y="296" width="330" height="38" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="215" y="312" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="326" text-anchor="middle" fill="#111" font-size="11">Write WAIT FOR CONNECT columns (orange) + merge header</text>
+  <line x1="350" y1="334" x2="350" y2="356" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- PROCESS: time header -->
+  <rect x="185" y="358" width="330" height="38" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="215" y="374" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="388" text-anchor="middle" fill="#111" font-size="11">Write TIME UNTIL CONNECTED columns (green) + merge</text>
+  <line x1="350" y1="396" x2="350" y2="418" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- PROCESS: query workers -->
+  <text x="135" y="452" text-anchor="middle" fill="#aaa" font-size="9" font-style="italic">← loop</text>
+  <rect x="185" y="420" width="330" height="38" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="215" y="436" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="450" text-anchor="middle" fill="#111" font-size="11">For each worker: write basic metrics row</text>
+  <line x1="350" y1="458" x2="350" y2="480" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- PROCESS: per-activity count -->
+  <rect x="185" y="482" width="330" height="38" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="215" y="498" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="512" text-anchor="middle" fill="#111" font-size="11">For each activity: COUNT joined students → write cell</text>
+  <line x1="350" y1="520" x2="350" y2="542" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- PROCESS: wait/time counts -->
+  <rect x="185" y="544" width="330" height="38" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="215" y="560" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="574" text-anchor="middle" fill="#111" font-size="11">Tally wait_for_connect + time_until_connected per student</text>
+
+  <!-- loop arrow -->
+  <line x1="185" y1="563" x2="110" y2="563" stroke="#222" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="110" y1="563" x2="110" y2="439" stroke="#222" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="110" y1="439" x2="184" y2="439" stroke="#222" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+
+  <!-- DECISION: more workers? -->
+  <polygon points="350,602 460,620 350,638 240,620" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="350" y="616" text-anchor="middle" fill="#111" font-size="11">More</text>
+  <text x="350" y="630" text-anchor="middle" fill="#111" font-size="11">workers?</text>
+  <!-- YES loop -->
+  <line x1="240" y1="620" x2="110" y2="620" stroke="#222" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="172" y="613" text-anchor="middle" fill="#444" font-size="10">YES</text>
+  <line x1="185" y1="582" x2="185" y2="582" stroke="none"/>
+
+  <!-- NO → down -->
+  <line x1="350" y1="638" x2="350" y2="660" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="361" y="654" fill="#444" font-size="10">NO</text>
+
+  <!-- END -->
+  <rect x="215" y="662" width="270" height="34" rx="17" fill="#222"/>
+  <text x="350" y="674" text-anchor="middle" fill="white" font-size="10" font-weight="bold">END</text>
+  <text x="350" y="688" text-anchor="middle" fill="white" font-size="11">Stream .xls file to browser for download</text>
+
+  <text x="350" y="740" text-anchor="middle" font-size="10" fill="#aaa">fac4fac · SugarCRM + Spreadsheet_Excel_Writer — Weekly Report</text>
+</svg>

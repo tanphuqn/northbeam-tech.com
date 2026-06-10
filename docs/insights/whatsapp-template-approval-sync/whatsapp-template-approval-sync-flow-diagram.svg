@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="700" height="900" viewBox="0 0 700 900" xmlns="http://www.w3.org/2000/svg" font-family="'Courier New', Courier, monospace">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#222"/>
+    </marker>
+  </defs>
+  <rect width="700" height="900" fill="#fff"/>
+  <text x="350" y="28" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">WhatsApp Template Approval Sync — Twilio + SugarCRM</text>
+  <line x1="60" y1="36" x2="640" y2="36" stroke="#222" stroke-width="1"/>
+
+  <!-- SECTION: ON SAVE -->
+  <rect x="60" y="46" width="140" height="20" rx="3" fill="#222"/>
+  <text x="130" y="60" text-anchor="middle" fill="white" font-size="10" font-weight="bold">ON TEMPLATE SAVE</text>
+  <text x="210" y="60" fill="#888" font-size="10">beforeSave logic hook fires</text>
+
+  <!-- START -->
+  <rect x="215" y="72" width="270" height="34" rx="17" fill="#222"/>
+  <text x="350" y="84" text-anchor="middle" fill="white" font-size="10" font-weight="bold">START</text>
+  <text x="350" y="98" text-anchor="middle" fill="white" font-size="11">Admin saves template in SugarCRM</text>
+  <line x1="350" y1="106" x2="350" y2="128" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- DECISION: existing SID? -->
+  <polygon points="350,132 460,152 350,172 240,152" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="350" y="148" text-anchor="middle" fill="#111" font-size="11">Existing template</text>
+  <text x="350" y="162" text-anchor="middle" fill="#111" font-size="11">SID in CRM?</text>
+  <!-- YES → right: delete old -->
+  <line x1="460" y1="152" x2="528" y2="152" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="491" y="145" text-anchor="middle" fill="#444" font-size="10">YES</text>
+  <rect x="530" y="136" width="110" height="34" rx="4" fill="#f0f0f0" stroke="#222" stroke-width="1.5"/>
+  <text x="585" y="151" text-anchor="middle" fill="#111" font-size="10">DELETE old</text>
+  <text x="585" y="163" text-anchor="middle" fill="#111" font-size="10">template from Twilio</text>
+  <line x1="585" y1="170" x2="585" y2="206" stroke="#222" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="585" y1="206" x2="516" y2="206" stroke="#222" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+  <!-- NO → down -->
+  <line x1="350" y1="172" x2="350" y2="194" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="361" y="188" fill="#444" font-size="10">NO</text>
+
+  <!-- PROCESS: convert placeholders -->
+  <rect x="185" y="196" width="330" height="38" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="215" y="212" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="226" text-anchor="middle" fill="#111" font-size="11">Convert {name} → {{1}}, build variables map</text>
+  <line x1="350" y1="234" x2="350" y2="256" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- PROCESS: POST to Twilio Content API -->
+  <rect x="185" y="258" width="330" height="38" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="215" y="274" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="288" text-anchor="middle" fill="#111" font-size="11">POST → Twilio Content API (twilio/text)</text>
+  <line x1="350" y1="296" x2="350" y2="318" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- DECISION: API success? -->
+  <polygon points="350,322 460,342 350,362 240,342" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="350" y="338" text-anchor="middle" fill="#111" font-size="11">API call</text>
+  <text x="350" y="352" text-anchor="middle" fill="#111" font-size="11">success?</text>
+  <!-- NO → right -->
+  <line x1="460" y1="342" x2="528" y2="342" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="491" y="335" text-anchor="middle" fill="#444" font-size="10">NO</text>
+  <rect x="530" y="326" width="110" height="34" rx="4" fill="#f0f0f0" stroke="#222" stroke-width="1.5"/>
+  <text x="585" y="347" text-anchor="middle" fill="#111" font-size="10">Log error</text>
+  <!-- YES → down -->
+  <line x1="350" y1="362" x2="350" y2="384" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="361" y="378" fill="#444" font-size="10">YES</text>
+
+  <!-- PROCESS: Store SID + submit approval -->
+  <rect x="185" y="386" width="330" height="38" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="215" y="402" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="416" text-anchor="middle" fill="#111" font-size="11">Store SID, POST approval (category: UTILITY)</text>
+  <line x1="350" y1="424" x2="350" y2="446" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- PROCESS: fetch initial status -->
+  <rect x="185" y="448" width="330" height="38" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="215" y="464" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="478" text-anchor="middle" fill="#111" font-size="11">Wait 5s → fetch approval status from Twilio</text>
+  <line x1="350" y1="486" x2="350" y2="508" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- PROCESS: save status -->
+  <rect x="185" y="510" width="330" height="38" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="215" y="526" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="540" text-anchor="middle" fill="#111" font-size="11">Save status + rejection_reason to CRM record</text>
+
+  <!-- Divider -->
+  <line x1="60" y1="572" x2="640" y2="572" stroke="#aaa" stroke-width="1" stroke-dasharray="6,4"/>
+
+  <!-- SECTION: WEBHOOK -->
+  <rect x="60" y="580" width="140" height="20" rx="3" fill="#555"/>
+  <text x="130" y="594" text-anchor="middle" fill="white" font-size="10" font-weight="bold">TWILIO WEBHOOK</text>
+  <text x="210" y="594" fill="#888" font-size="10">AppMonitorTriggerSid event</text>
+
+  <!-- TRIGGER -->
+  <rect x="215" y="608" width="270" height="34" rx="17" fill="#222"/>
+  <text x="350" y="620" text-anchor="middle" fill="white" font-size="10" font-weight="bold">TRIGGER</text>
+  <text x="350" y="634" text-anchor="middle" fill="white" font-size="11">Twilio sends AppMonitorTriggerSid event</text>
+  <line x1="350" y1="642" x2="350" y2="664" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- PROCESS: fetch all pending templates -->
+  <rect x="185" y="666" width="330" height="38" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="215" y="682" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="696" text-anchor="middle" fill="#111" font-size="11">Query all templates with pending status</text>
+  <line x1="350" y1="704" x2="350" y2="726" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- PROCESS: fetch each status -->
+  <rect x="185" y="728" width="330" height="38" rx="4" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="215" y="744" font-size="9" fill="#888" font-weight="bold">PROCESS</text>
+  <text x="350" y="758" text-anchor="middle" fill="#111" font-size="11">GET approval_fetch_c URL → update status</text>
+  <line x1="350" y1="766" x2="350" y2="788" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- END -->
+  <rect x="215" y="790" width="270" height="34" rx="17" fill="#222"/>
+  <text x="350" y="802" text-anchor="middle" fill="white" font-size="10" font-weight="bold">END</text>
+  <text x="350" y="816" text-anchor="middle" fill="white" font-size="11">All statuses synced in SugarCRM</text>
+
+  <text x="350" y="860" text-anchor="middle" font-size="10" fill="#aaa">fac4fac · SugarCRM + Twilio Content API — Template Approval Sync</text>
+</svg>

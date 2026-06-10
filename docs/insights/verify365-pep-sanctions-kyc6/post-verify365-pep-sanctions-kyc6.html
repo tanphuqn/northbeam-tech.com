@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>WordPress Post — Automated PEP &amp; Sanctions Monitoring with KYC6 in Go</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 860px; margin: 40px auto; padding: 0 24px; color: #333; }
+    .instructions { background: #fffbe6; border: 1px solid #f0c000; border-radius: 6px; padding: 20px 24px; margin-bottom: 32px; }
+    .instructions h2 { margin-top: 0; font-size: 16px; color: #7a5c00; }
+    .instructions ol { margin: 0; padding-left: 20px; line-height: 2; }
+    .instructions code { background: #f5f5f5; padding: 2px 6px; border-radius: 3px; font-size: 13px; }
+    .divider { border: none; border-top: 2px dashed #ddd; margin: 36px 0; }
+    .meta { background: #f9f9f9; border: 1px solid #eee; border-radius: 6px; padding: 16px 20px; margin-bottom: 24px; font-size: 14px; }
+    .meta h3, .thumbnail-box h3, .prompt-box h3 { margin-top: 0; font-size: 15px; }
+    .meta table, .thumbnail-box table { border-collapse: collapse; width: 100%; }
+    .meta td, .thumbnail-box td { padding: 4px 12px 4px 0; vertical-align: top; }
+    .meta td:first-child, .thumbnail-box td:first-child { font-weight: bold; color: #555; width: 160px; }
+    .highlight { background: #fff8e1; padding: 2px 6px; border-radius: 3px; font-weight: bold; color: #7a5c00; }
+    .thumbnail-box { background: #f9f9f9; border: 1px solid #eee; border-radius: 6px; padding: 16px 20px; margin-bottom: 24px; font-size: 14px; }
+    .prompt-box { background: #f0f4ff; border: 1px solid #c0d0ff; border-radius: 6px; padding: 20px 24px; margin-bottom: 32px; font-size: 14px; }
+    .prompt-box h3 { color: #2a3f9f; }
+    .prompt-box pre { background: #fff; border: 1px solid #dde4ff; border-radius: 4px; padding: 14px 16px; font-size: 13px; line-height: 1.7; white-space: pre-wrap; word-break: break-word; margin: 0; }
+    .post-content { line-height: 1.8; font-size: 16px; }
+    .post-content h1 { font-size: 28px; font-weight: 800; margin-bottom: 8px; }
+    .post-content .tagline { color: #777; font-size: 15px; margin-bottom: 32px; }
+    .post-content h2 { font-size: 20px; font-weight: 700; margin-top: 40px; border-left: 4px solid #222; padding-left: 12px; }
+    .post-content h3 { font-size: 16px; font-weight: 700; margin-top: 24px; }
+    .post-content ul, .post-content ol { padding-left: 20px; }
+    .post-content li { margin-bottom: 8px; }
+    .post-content .diagram-wrap { text-align: center; margin: 32px 0; }
+    .post-content figcaption { font-size: 13px; color: #888; margin-top: 8px; }
+    .post-content pre { background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 6px; font-size: 13px; line-height: 1.7; overflow-x: auto; white-space: pre; }
+    .post-content code { background: #f0f0f0; padding: 2px 6px; border-radius: 3px; font-size: 13px; font-family: monospace; }
+    .post-content pre code { background: none; padding: 0; }
+    .post-content .stack-box { background: #f5f5f5; border-left: 4px solid #222; padding: 14px 18px; font-family: monospace; font-size: 14px; }
+    .post-content blockquote { border-left: 4px solid #ccc; margin: 0; padding: 8px 16px; color: #555; font-style: italic; }
+  </style>
+</head>
+<body>
+
+<div class="instructions">
+  <h2>📋 Instructions for Marketing</h2>
+  <ol>
+    <li>WordPress → <strong>Posts → Add New</strong>, set category to <code>Insights</code></li>
+    <li>Switch to <strong>Code editor</strong>, paste content between <code>&lt;!-- POST CONTENT START --&gt;</code> markers</li>
+    <li>Upload <code>kyc6-logo.png</code> → replace <code>src="kyc6-logo.png"</code> with WordPress URL</li>
+    <li>Upload <code>verify365-pep-sanctions-kyc6-flow-diagram.png</code> → replace <code>src="verify365-pep-sanctions-kyc6-flow-diagram.png"</code> with WordPress URL</li>
+    <li>Upload <code>verify365-pep-sanctions-kyc6-thumbnail.png</code> → set as <strong>Featured Image</strong></li>
+    <li>Fill Yoast/Rank Math fields below</li>
+    <li>Preview → Publish</li>
+  </ol>
+</div>
+
+<div class="meta">
+  <h3>Post Details</h3>
+  <table>
+    <tr><td>Post Title</td><td>Automated PEP &amp; Sanctions Monitoring with KYC6 in Go</td></tr>
+    <tr><td>Slug</td><td><span class="highlight">pep-sanctions-monitoring-kyc6-go</span></td></tr>
+    <tr><td>Focus Keyword</td><td><span class="highlight">PEP sanctions monitoring API Go</span></td></tr>
+    <tr><td>Meta Description</td><td><span class="highlight">How we built 365-day automated PEP and sanctions monitoring in Go using the KYC6 API — dual API keys, worklist management, cron-driven daily checks, and MLRO email alerts.</span><br/><small style="color:#888">(167 characters)</small></td></tr>
+    <tr><td>Category</td><td>Insights</td></tr>
+    <tr><td>Tags</td><td>Go, KYC6, PEP, Sanctions, Compliance, Legal Tech, Cron Jobs, KYC, AML</td></tr>
+    <tr><td>Excerpt</td><td>How we built 365-day automated PEP and sanctions monitoring in Go using the KYC6 API — dual API keys, worklist management, cron-driven daily checks, and MLRO alerts.</td></tr>
+  </table>
+</div>
+
+<div class="thumbnail-box">
+  <h3>Images</h3>
+  <table>
+    <tr><td>Thumbnail</td><td><code>verify365-pep-sanctions-kyc6-thumbnail.png</code> — 1200×628 · red/orange · Featured Image</td></tr>
+    <tr><td>Flow diagram</td><td><code>verify365-pep-sanctions-kyc6-flow-diagram.png</code> — 700×900 · inline in post</td></tr>
+    <tr><td>Thumbnail alt</td><td><em>Automated PEP and sanctions monitoring with KYC6 in Go cover image</em></td></tr>
+    <tr><td>Diagram alt</td><td><em>KYC6 PEP sanctions monitoring flow — one-off search and 365-day cron-driven worklist</em></td></tr>
+  </table>
+</div>
+
+<div class="prompt-box">
+  <h3>AI Rewrite Prompt</h3>
+  <pre>You are a technical content writer for Northbeam Tech (northbeam-tech.com/insights/).
+
+CONTEXT:
+- Platform: Verify365 — a KYC/KYB compliance SaaS for UK law firms built in Go
+- Integration: KYC6 API (Acuris Risk Intelligence) for PEP/Sanctions screening
+- Feature: Two distinct KYC6 use cases:
+  1. One-off search: given a customer name + country + optional DOB, the system queries the KYC6
+     search API (/individuals or /businesses), checks a local DB cache first, fetches the full
+     profile per resourceId, and returns "Clear" (no evidences) or "Review" (evidences found).
+  2. Ongoing 365-day monitoring: when a firm activates monitoring, the platform creates a KYC6
+     worklist, adds the individual/business as a monitor record, then a daily cron job (20:00 UTC)
+     calls the monitor API to get matches and emails the MLRO contact on any hit. A separate cron
+     sends weekly MLRO summary reports. Expiry warnings fire at 30 days and 1 day.
+- Dual API keys: KYC6_SEARCH_APIKEY (for /individuals, /businesses) and KYC6_MONITOR_APIKEY
+  (for /worklists/* monitor endpoints) on different base URLs
+- Match threshold: 98% confidence · fuzzy matching · datasets: PEP, SAN, RRE, REL, POI, DD, INS, SOE
+- Country normalisation: ISO alpha-3 → alpha-2, UK country variants → "GB"
+- Tech stack: Go, KYC6 REST API, PostgreSQL, robfig/cron
+- Focus keyword: "PEP sanctions monitoring API Go"
+- Target audience: Go developers building compliance or AML/KYC systems
+
+CURRENT POST TITLE:
+Automated PEP &amp; Sanctions Monitoring with KYC6 in Go
+
+CURRENT POST CONTENT:
+[paste post HTML here]
+
+MY INSTRUCTIONS:
+[describe changes]</pre>
+</div>
+
+<hr class="divider"/>
+
+<!-- POST CONTENT START -->
+<!-- wp:html -->
+<div class="post-content">
+
+<div style="margin-bottom:24px;">
+  <img src="kyc6-logo.png" alt="KYC6 logo" style="height:48px;width:auto;"/>
+</div>
+
+<h1>Automated PEP &amp; Sanctions Monitoring with KYC6 in Go</h1>
+<p class="tagline">How we built 365-day continuous PEP and sanctions monitoring into a Go compliance platform — using KYC6's dual API architecture, worklist management, and daily cron-driven checks.</p>
+
+<hr class="wp-block-separator"/>
+
+<h2>The Problem</h2>
+<p>
+  UK anti-money laundering regulations require law firms to screen clients not just at onboarding, but continuously throughout the relationship.
+  A client who was clean last year may appear on a sanctions list today.
+  We needed a system that could: run an instant check at onboarding, then keep watching quietly in the background for up to a year — and alert the firm's compliance officer the moment anything changes.
+</p>
+
+<h2>What We Built</h2>
+<p>
+  Two complementary flows using the KYC6 API inside the Go backend of <a href="/projects/verify365-kyc-kyb-platform-uk-law-firms/">Verify365</a>:
+</p>
+<ol>
+  <li><strong>One-off search</strong> — instant PEP/sanctions result at client onboarding</li>
+  <li><strong>Ongoing monitoring</strong> — 365-day worklist-based daily polling with MLRO alerts</li>
+</ol>
+
+<h2>How It Works</h2>
+
+<div class="diagram-wrap">
+  <figure>
+    <img src="verify365-pep-sanctions-kyc6-flow-diagram.png"
+         alt="KYC6 PEP sanctions monitoring flow — one-off search and 365-day cron-driven worklist"
+         style="max-width:100%;height:auto;border:1px solid #eee;border-radius:4px;"/>
+    <figcaption>Top: one-off search flow with DB cache. Bottom: 365-day cron-driven monitoring via KYC6 worklists.</figcaption>
+  </figure>
+</div>
+
+<h2>The Code</h2>
+
+<h3>Dual API key client</h3>
+<p>
+  KYC6 uses separate API keys and different base URLs for search vs monitoring.
+  The client holds both and routes requests accordingly:
+</p>
+<pre><code>// thirdparty/kyc6/Kyc6.go
+
+const THRESHOLD_VALUE = 98 // minimum match confidence (%)
+
+type Kyc6Client struct {
+    Logger        *zerolog.Logger
+    ApiUrl        string
+    SearchApiKey  string  // KYC6_SEARCH_APIKEY
+    MonitorApiKey string  // KYC6_MONITOR_APIKEY
+    database      *db.Database
+}
+
+// Search API: uses base URL  e.g. https://api.kyc6.com/individuals
+func (c *Kyc6Client) MakeComplianceRequest(path, method, contentType string, body []byte) ([]byte, error) {
+    url := fmt.Sprintf(`%s/%s`, c.ApiUrl, path)
+    request, _ := http.NewRequest(method, url, bytes.NewBuffer(body))
+    request.Header.Add("x-api-key", c.SearchApiKey)
+    // ...
+}
+
+// Monitor API: uses base URL  e.g. https://api.kyc6.com-monitor/worklists/...
+func (c *Kyc6Client) MakeComplianceMonitorRequest(path, method, contentType string, body []byte) ([]byte, error) {
+    url := fmt.Sprintf(`%s-monitor/%s`, c.ApiUrl, path) // note: "-monitor" suffix
+    request, _ := http.NewRequest(method, url, bytes.NewBuffer(body))
+    request.Header.Add("x-api-key", c.MonitorApiKey)
+    // ...
+}</code></pre>
+
+<h3>One-off search with DB cache</h3>
+<p>
+  Searches are cached in the database to avoid duplicate API calls for the same name + country + type combination.
+  Individual and company searches use different datasets and endpoints:
+</p>
+<pre><code>func (c *Kyc6Client) SearchIndividualProfile(searchTerm, year, countryCode string) ([]byte, error) {
+    // Check DB cache first (name + DOB year + country + type)
+    m := domain.KYC6{}
+    err := c.database.Where("name = ? AND date_of_birthday = ? AND country_code = ? AND type = ?",
+        searchTerm, year, countryCode, "individuals").First(&m).Error
+    if err == nil {
+        return []byte(*m.Response), nil // cache hit — no API call needed
+    }
+
+    // Build request — only include dob and countries if provided
+    reqMap := map[string]interface{}{
+        "name":      searchTerm,
+        "datasets":  enums.GetAllowedDatasetStringsForIndividual(), // PEP, SAN, RRE, REL...
+        "threshold": THRESHOLD_VALUE, // 98%
+        "matching":  "fuzzy",
+    }
+    if year != "" {
+        reqMap["dobMatching"] = "exact"
+        reqMap["dob"] = year
+    }
+    if countryCode != "" {
+        reqMap["countryRequired"] = true
+        reqMap["countries"] = []string{countryCode}
+    }
+
+    rawDataBytes, _ := json.Marshal(reqMap)
+    body, err := c.MakeComplianceRequest("individuals", http.MethodPost, "application/json", rawDataBytes)
+
+    // Cache result in DB for future calls
+    res := string(body)
+    c.database.Create(&domain.KYC6{Name: searchTerm, DateOfBirthday: year, CountryCode: countryCode, Response: &res, Type: "individuals"})
+
+    return body, nil
+}</code></pre>
+
+<h3>Extracting PEP status from results</h3>
+<p>
+  After searching, we fetch the full profile for each match and check for evidences.
+  Having evidences means the person is flagged — the status becomes "Review":
+</p>
+<pre><code>func (c *Kyc6Client) GetPEPSanction(firmID uuid.UUID, customer *domain.Customer, brand *domain.Brand) (map[string]interface{}, string) {
+    pepsStatus := "Review"
+
+    resp, err := c.SearchIndividualProfile(searchTerm, year, countryCode)
+    if err == nil {
+        json.Unmarshal(resp, &body)
+        results := body["results"].(map[string]interface{})
+        matches  := results["matches"].([]interface{})
+
+        pepsStatus = "Clear" // assume clear until an evidence is found
+        for _, match := range matches {
+            matchMap := match.(map[string]interface{})
+            resourceId := matchMap["resourceId"].(string)
+
+            profileResp, _ := c.GetIndividualProfile(resourceId)
+            json.Unmarshal(profileResp, &profile)
+
+            evidences := profile["evidences"].([]interface{})
+            if len(evidences) > 0 {
+                pepsStatus = "Review" // at least one flagged profile
+                break
+            }
+        }
+    }
+    return body, pepsStatus // "Clear" or "Review"
+}</code></pre>
+
+<h3>Creating a monitoring worklist</h3>
+<p>
+  When ongoing monitoring is activated, we create a KYC6 worklist (once per firm) and add the client as a monitor record:
+</p>
+<pre><code>// Create the worklist (PUT is idempotent — safe to retry)
+func (c *Kyc6Client) CreateWorklist(worklistId, name string, datasets []string) error {
+    if len(datasets) == 0 {
+        datasets = []string{"PEP", "SAN", "RRE", "REL", "POI", "DD", "INS", "SOE"}
+    }
+    reqBody := map[string]interface{}{
+        "name":        name,
+        "datasets":    datasets,
+        "dobMatching": "exact",
+        "threshold":   THRESHOLD_VALUE, // 98%
+        "frequency":   "daily",
+    }
+    rawData, _ := json.Marshal(reqBody)
+    url := fmt.Sprintf(`worklists/%s`, worklistId)
+    body, err := c.MakeComplianceMonitorRequest(url, http.MethodPut, "application/json", rawData)
+    // KYC6 returns "OK" as plain text on success (not JSON)
+    if strings.TrimSpace(string(body)) == "OK" {
+        return nil
+    }
+    return err
+}
+
+// Add individual to the worklist
+func (c *Kyc6Client) CreateMonitorRecordIndividuals(worklistId, monitorRecordId, name, countryCode, year, city, gender string) error {
+    requestBody := map[string]interface{}{"name": name}
+
+    // KYC6 does NOT allow "countries" + "addresses" together — prefer addresses when city is known
+    if city != "" {
+        address := map[string]string{"city": city}
+        if countryCode != "" { address["geography"] = countryCode }
+        requestBody["addresses"] = []map[string]string{address}
+    } else if countryCode != "" {
+        requestBody["countries"] = []string{countryCode}
+    }
+
+    if year != "" { requestBody["dob"] = year }
+
+    rawData, _ := json.Marshal(requestBody)
+    url := fmt.Sprintf(`worklists/%s/individuals/%s`, worklistId, monitorRecordId)
+    _, err := c.MakeComplianceMonitorRequest(url, http.MethodPut, "application/json", rawData)
+    return err
+}</code></pre>
+
+<h3>Daily cron job — check all monitored records</h3>
+<p>
+  A cron job runs daily at 20:00 UTC. For each active monitoring record, it fetches the current matches from KYC6 and emails the MLRO if any evidence is found:
+</p>
+<pre><code>// In cron/CronService.go — registered at startup
+c.AddFunc("0 20 * * *", func() {
+    pepSanctionMonitoringService.CheckAllMonitoringRecords()
+})
+
+// In services/PepSanctionMonitoringService.go
+func (s *PepSanctionMonitoringService) CheckAllMonitoringRecords() {
+    // Fetch all active (non-expired) monitoring records from DB
+    var records []domain.PepSanctionMonitoring
+    s.db.Where("status = ? AND expires_at > ?", "active", time.Now()).Find(&records)
+
+    for _, record := range records {
+        // GET /worklists/{id}/individuals/{id}/matches
+        matches, err := s.kyc6Client.GetIndividualMonitorMatches(record.WorklistID, record.MonitorRecordID)
+        if err != nil {
+            continue
+        }
+
+        // Determine status from match evidences
+        newStatus := "Clear"
+        for _, match := range matches.Matches {
+            if len(match.Resource.Evidences) > 0 {
+                newStatus = "Review"
+                break
+            }
+        }
+
+        // Save report and notify MLRO if status changed to Review
+        if newStatus == "Review" {
+            s.saveReportAndNotifyMLRO(record, matches)
+        }
+    }
+}</code></pre>
+
+<h3>Country code normalisation</h3>
+<p>
+  KYC6 requires ISO alpha-2 country codes, but our data comes in many formats.
+  A normalisation helper handles the conversion:
+</p>
+<pre><code>func (c *Kyc6Client) NormalizeCountryCode(countryCode string) string {
+    countryCode = strings.ToUpper(strings.TrimSpace(countryCode))
+
+    // Convert ISO alpha-3 → alpha-2 (e.g. "GBR" → "GB")
+    iso3To2 := map[string]string{
+        "GBR": "GB", "USA": "US", "FRA": "FR", "DEU": "DE", // ... etc
+    }
+    if converted, exists := iso3To2[countryCode]; exists {
+        countryCode = converted
+    }
+
+    // Normalise all UK country variants to "GB"
+    // (handles "england", "scotland", "wales", "uk", "united kingdom", etc.)
+    if utils.Contains(enums.UK_COUNTRY, strings.ToLower(countryCode)) {
+        countryCode = "GB"
+    }
+
+    // Return empty string for anything that's still not a 2-letter code
+    if len(countryCode) != 2 {
+        return ""
+    }
+    return countryCode
+}</code></pre>
+
+<h2>Key Points</h2>
+<ul>
+  <li><strong>Two separate API keys and base URLs.</strong> KYC6 splits search and monitoring into different API tiers. Routing to <code>c.ApiUrl</code> vs <code>c.ApiUrl + "-monitor"</code> is the critical difference — getting it wrong means a 401 on the wrong endpoint.</li>
+  <li><strong>Cache first, then API.</strong> Identical searches return cached results from the database. This prevents duplicate API charges and speeds up repeat lookups for the same client.</li>
+  <li><strong>Countries OR addresses — not both.</strong> KYC6 returns MAPI-217 if both <code>countries</code> and <code>addresses</code> are set. When city is available, we use <code>addresses</code> with <code>geography</code>; otherwise we fall back to <code>countries</code>.</li>
+  <li><strong>Plain text "OK" success response.</strong> KYC6's monitor API returns the string <code>"OK"</code> on success, not JSON. Attempting to parse it as JSON silently fails — we handle both cases explicitly.</li>
+  <li><strong>MLRO alerts + weekly reports.</strong> Three separate cron jobs handle the compliance communication: daily match checks, weekly summary emails, and expiry warnings at 30 and 1 day.</li>
+</ul>
+
+<h2>Stack</h2>
+<div class="stack-box">Go · KYC6 REST API · robfig/cron · PostgreSQL · GORM · zerolog · SendGrid</div>
+
+<hr class="wp-block-separator"/>
+<blockquote>Building AML or compliance screening into your platform? <a href="/contact">Get in touch →</a></blockquote>
+
+</div>
+<!-- /wp:html -->
+<!-- POST CONTENT END -->
+
+<hr class="divider"/>
+<p style="text-align:center;color:#aaa;font-size:13px">— End of post file — send the entire folder to marketing —</p>
+</body>
+</html>

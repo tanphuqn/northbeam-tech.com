@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>WordPress Post — Multi-Tenant Stripe Connect Payments in a Go SaaS Platform</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 860px; margin: 40px auto; padding: 0 24px; color: #333; }
+    .instructions { background: #fffbe6; border: 1px solid #f0c000; border-radius: 6px; padding: 20px 24px; margin-bottom: 32px; }
+    .instructions h2 { margin-top: 0; font-size: 16px; color: #7a5c00; }
+    .instructions ol { margin: 0; padding-left: 20px; line-height: 2; }
+    .instructions code { background: #f5f5f5; padding: 2px 6px; border-radius: 3px; font-size: 13px; }
+    .divider { border: none; border-top: 2px dashed #ddd; margin: 36px 0; }
+    .meta { background: #f9f9f9; border: 1px solid #eee; border-radius: 6px; padding: 16px 20px; margin-bottom: 24px; font-size: 14px; }
+    .meta h3, .thumbnail-box h3, .prompt-box h3 { margin-top: 0; font-size: 15px; }
+    .meta table, .thumbnail-box table { border-collapse: collapse; width: 100%; }
+    .meta td, .thumbnail-box td { padding: 4px 12px 4px 0; vertical-align: top; }
+    .meta td:first-child, .thumbnail-box td:first-child { font-weight: bold; color: #555; width: 160px; }
+    .highlight { background: #fff8e1; padding: 2px 6px; border-radius: 3px; font-weight: bold; color: #7a5c00; }
+    .thumbnail-box { background: #f9f9f9; border: 1px solid #eee; border-radius: 6px; padding: 16px 20px; margin-bottom: 24px; font-size: 14px; }
+    .prompt-box { background: #f0f4ff; border: 1px solid #c0d0ff; border-radius: 6px; padding: 20px 24px; margin-bottom: 32px; font-size: 14px; }
+    .prompt-box h3 { color: #2a3f9f; }
+    .prompt-box pre { background: #fff; border: 1px solid #dde4ff; border-radius: 4px; padding: 14px 16px; font-size: 13px; line-height: 1.7; white-space: pre-wrap; word-break: break-word; margin: 0; }
+    .post-content { line-height: 1.8; font-size: 16px; }
+    .post-content h1 { font-size: 28px; font-weight: 800; margin-bottom: 8px; }
+    .post-content .tagline { color: #777; font-size: 15px; margin-bottom: 32px; }
+    .post-content h2 { font-size: 20px; font-weight: 700; margin-top: 40px; border-left: 4px solid #222; padding-left: 12px; }
+    .post-content h3 { font-size: 16px; font-weight: 700; margin-top: 24px; }
+    .post-content ul, .post-content ol { padding-left: 20px; }
+    .post-content li { margin-bottom: 8px; }
+    .post-content .diagram-wrap { text-align: center; margin: 32px 0; }
+    .post-content figcaption { font-size: 13px; color: #888; margin-top: 8px; }
+    .post-content pre { background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 6px; font-size: 13px; line-height: 1.7; overflow-x: auto; white-space: pre; }
+    .post-content code { background: #f0f0f0; padding: 2px 6px; border-radius: 3px; font-size: 13px; font-family: monospace; }
+    .post-content pre code { background: none; padding: 0; }
+    .post-content .stack-box { background: #f5f5f5; border-left: 4px solid #222; padding: 14px 18px; font-family: monospace; font-size: 14px; }
+    .post-content blockquote { border-left: 4px solid #ccc; margin: 0; padding: 8px 16px; color: #555; font-style: italic; }
+  </style>
+</head>
+<body>
+
+<div class="instructions">
+  <h2>📋 Instructions for Marketing</h2>
+  <ol>
+    <li>WordPress → <strong>Posts → Add New</strong>, category: <code>Insights</code></li>
+    <li>Switch to <strong>Code editor</strong>, paste content between <code>&lt;!-- POST CONTENT START --&gt;</code> markers</li>
+    <li>Upload <code>stripe-logo.png</code> → replace <code>src="stripe-logo.png"</code> with WordPress URL</li>
+    <li>Upload <code>verify365-stripe-connect-multitenant-flow-diagram.png</code> → replace src with WordPress URL</li>
+    <li>Upload <code>verify365-stripe-connect-multitenant-thumbnail.png</code> → set as <strong>Featured Image</strong></li>
+    <li>Fill Yoast/Rank Math fields below → Preview → Publish</li>
+  </ol>
+</div>
+
+<div class="meta">
+  <h3>Post Details</h3>
+  <table>
+    <tr><td>Post Title</td><td>Multi-Tenant Stripe Connect Payments in a Go SaaS Platform</td></tr>
+    <tr><td>Slug</td><td><span class="highlight">stripe-connect-multi-tenant-go-saas</span></td></tr>
+    <tr><td>Focus Keyword</td><td><span class="highlight">Stripe Connect multi-tenant payments Go</span></td></tr>
+    <tr><td>Meta Description</td><td><span class="highlight">How we implemented multi-tenant Stripe Connect payments in Go — per-partner API clients, dynamic fee calculation (1.85% + 20p), transfer routing, and dual webhook endpoints.</span><br/><small style="color:#888">(165 characters)</small></td></tr>
+    <tr><td>Category</td><td>Insights</td></tr>
+    <tr><td>Tags</td><td>Go, Stripe, Stripe Connect, Payments, SaaS, Multi-tenant, Webhooks</td></tr>
+    <tr><td>Excerpt</td><td>How we implemented multi-tenant Stripe Connect payments in Go — per-partner API clients, dynamic fee calculation, transfer routing to connected accounts, and dual webhook endpoints.</td></tr>
+  </table>
+</div>
+
+<div class="thumbnail-box">
+  <h3>Images</h3>
+  <table>
+    <tr><td>Thumbnail</td><td><code>verify365-stripe-connect-multitenant-thumbnail.png</code> — 1200×628 · purple · Featured Image</td></tr>
+    <tr><td>Flow diagram</td><td><code>verify365-stripe-connect-multitenant-flow-diagram.png</code> — 700×820 · inline in post</td></tr>
+    <tr><td>Thumbnail alt</td><td><em>Multi-tenant Stripe Connect payments in Go SaaS cover image</em></td></tr>
+    <tr><td>Diagram alt</td><td><em>Stripe Connect multi-tenant payment flow — per-partner client, fee calculation, transfer routing</em></td></tr>
+  </table>
+</div>
+
+<div class="prompt-box">
+  <h3>AI Rewrite Prompt</h3>
+  <pre>You are a technical content writer for Northbeam Tech (northbeam-tech.com/insights/).
+
+CONTEXT:
+- Platform: Verify365 — a KYC/KYB SaaS for UK law firms built in Go
+- Feature: Multi-tenant Stripe Connect payments. The platform serves multiple partner firms, each
+  with their own Stripe connected account. When a payment is initiated, NewStripeClient(logger,
+  partner) is called per request. If partner.StripeSecret is set (IsDefault=false), the client
+  uses the partner's own Stripe credentials; otherwise it falls back to the platform default.
+  For partner accounts, a platform fee is calculated: (amount × 1.85%) + £0.20, and the net
+  amount = (amount - fee) × 100 pence is routed to the connected account via CheckoutSession
+  TransferData.Destination. For the default platform account, full amount transfers (platform
+  absorbs Stripe fees). Dual webhooks: STRIPE_WEBHOOK for platform events and STRIPE_WEBHOOK_CONNECT
+  for connected account events. UpdatePaymentTransfers syncs descriptions on the charge and transfer.
+- Tech stack: Go, stripe-go/v72, Stripe Connect Express accounts
+- Focus keyword: "Stripe Connect multi-tenant payments Go"
+- Target audience: Go SaaS developers implementing multi-tenant payment routing
+
+CURRENT POST TITLE:
+Multi-Tenant Stripe Connect Payments in a Go SaaS Platform
+
+CURRENT POST CONTENT:
+[paste post HTML here]
+
+MY INSTRUCTIONS:
+[describe changes]</pre>
+</div>
+
+<hr class="divider"/>
+
+<!-- POST CONTENT START -->
+<!-- wp:html -->
+<div class="post-content">
+
+<div style="margin-bottom:24px;">
+  <img src="stripe-logo.png" alt="Stripe logo" style="height:48px;width:auto;"/>
+</div>
+
+<h1>Multi-Tenant Stripe Connect Payments in a Go SaaS Platform</h1>
+<p class="tagline">How Verify365 routes payments to different law firm Stripe accounts — with per-request client initialisation, dynamic fee calculation, and dual webhook endpoints.</p>
+
+<hr class="wp-block-separator"/>
+
+<h2>The Problem</h2>
+<p>
+  Verify365 is a white-label SaaS platform used by multiple law firms under different brands.
+  Each partner firm needs to receive payments directly into their own Stripe account — not a shared platform account.
+  At the same time, the platform needs to collect a processing fee before routing funds to the partner.
+  We solved this with Stripe Connect and a per-partner client pattern in Go.
+</p>
+
+<h2>What We Built</h2>
+<p>
+  A <code>stripe365</code> package that wraps Stripe's Go SDK.
+  The core design: <strong>one <code>Client365</code> instance per request</strong>, initialised with the correct partner credentials or falling back to the platform default.
+  Fee calculation and transfer routing are handled differently depending on which account is active.
+</p>
+
+<h2>How It Works</h2>
+
+<div class="diagram-wrap">
+  <figure>
+    <img src="verify365-stripe-connect-multitenant-flow-diagram.png"
+         alt="Stripe Connect multi-tenant payment flow — per-partner client, fee calculation, transfer routing"
+         style="max-width:100%;height:auto;border:1px solid #eee;border-radius:4px;"/>
+    <figcaption>From client initialisation to funds landing in the connected account.</figcaption>
+  </figure>
+</div>
+
+<h2>The Code</h2>
+
+<h3>Per-request client initialisation</h3>
+<p>
+  The client is initialised fresh for each payment request.
+  If the partner has their own Stripe credentials, those are used; otherwise we fall back to the platform's env vars:
+</p>
+<pre><code>// thirdparty/stripe365/Stripe365.go
+
+func NewStripeClient(logger *zerolog.Logger, partner *domain.Partner) Client365 {
+    stripeKey    := ""
+    stripeSecret := ""
+    stripeWebhook        := ""
+    stripeWebhookConnect := ""
+    isDefault := false
+
+    if partner == nil || partner.StripeSecret == "" {
+        // Platform default — env vars
+        stripeKey             = os.Getenv("STRIPE_KEY")
+        stripeSecret          = os.Getenv("STRIPE_SECRET")
+        stripeWebhook         = os.Getenv("STRIPE_WEBHOOK")
+        stripeWebhookConnect  = os.Getenv("STRIPE_WEBHOOK_CONNECT")
+        isDefault = true
+    } else {
+        // Partner-specific Stripe account
+        stripeKey             = partner.StripeKey
+        stripeSecret          = partner.StripeSecret
+        stripeWebhook         = partner.StripeWebhook
+        stripeWebhookConnect  = partner.StripeWebhookConnect
+    }
+
+    stripeClient := &client.API{}
+    stripeClient.Init(stripeSecret, nil)
+
+    return &client365{
+        StripeClient:         stripeClient,
+        IsDefault:            isDefault,
+        StripeWebhook:        stripeWebhook,
+        StripeWebhookConnect: stripeWebhookConnect,
+        // ...
+    }
+}</code></pre>
+
+<h3>Dynamic fee calculation and transfer routing</h3>
+<p>
+  For partner accounts, a platform fee is deducted before routing the net amount.
+  For the default platform account, the full amount is transferred (Stripe's fee is absorbed by the platform):
+</p>
+<pre><code>// Fee constants (UK pricing basis)
+const (
+    StripeFeePercentage = 0.0185 // 1.85% — to be confirmed with client
+    StripeFeeFixed      = 0.20   // £0.20 fixed per transaction
+)
+
+func (c *client365) CreateCheckoutSession(...) (*stripe.CheckoutSession, error) {
+    amount        := payment.Amount * 100 // convert pounds → pence
+    roundedResult := math.Round(amount)
+    netAmount     := roundedResult
+    platformFee   := 0.0
+
+    if !c.IsDefault {
+        // Partner account: deduct platform fee before routing
+        platformFee = (payment.Amount * StripeFeePercentage) + StripeFeeFixed
+        netAmount   = math.Round((payment.Amount - platformFee) * 100)
+    }
+    // IsDefault: netAmount = full amount (platform covers Stripe fees)
+
+    params := &stripe.CheckoutSessionParams{
+        // ...line items, mode, URLs...
+        PaymentIntentData: &stripe.CheckoutSessionPaymentIntentDataParams{
+            StatementDescriptor: stripe.String(fmt.Sprintf("V365 %s", payment.DisplayId)),
+            Description:         stripe.String(description),
+            TransferData: &stripe.CheckoutSessionPaymentIntentDataTransferDataParams{
+                Amount:      stripe.Int64(int64(netAmount)),
+                Destination: stripe.String(stripeAccountId), // the connected account ID
+            },
+        },
+    }
+    return c.StripeClient.CheckoutSessions.New(params)
+}</code></pre>
+
+<h3>Onboarding a new partner's connected account</h3>
+<p>
+  When a new partner firm onboards, we create an Express account and generate an onboarding link:
+</p>
+<pre><code>func (c *client365) CreateAccount(request domain.StripeAccountInfo, user domain.User) (*stripe.Account, error) {
+    params := &stripe.AccountParams{
+        Capabilities: &stripe.AccountCapabilitiesParams{
+            CardPayments: &stripe.AccountCapabilitiesCardPaymentsParams{Requested: stripe.Bool(true)},
+            Transfers:    &stripe.AccountCapabilitiesTransfersParams{Requested: stripe.Bool(true)},
+        },
+        Country: stripe.String(request.Country),
+        Email:   stripe.String(user.Email),
+        Type:    stripe.String(string(stripe.AccountTypeExpress)), // Express onboarding
+        Settings: &stripe.AccountSettingsParams{
+            Payouts: &stripe.AccountSettingsPayoutsParams{
+                Schedule: &stripe.PayoutScheduleParams{
+                    Interval: stripe.String(string(stripe.PayoutIntervalDaily)),
+                },
+            },
+        },
+    }
+    return c.StripeClient.Account.New(params)
+}
+
+func (c *client365) CreateAccountLink(id string, request domain.StripeAccountInfo) (*stripe.AccountLink, error) {
+    params := &stripe.AccountLinkParams{
+        Account:    stripe.String(id),
+        RefreshURL: stripe.String(request.RefreshURL),
+        ReturnURL:  stripe.String(request.ReturnURL),
+        Type:       stripe.String("account_onboarding"),
+    }
+    return c.StripeClient.AccountLinks.New(params)
+}</code></pre>
+
+<h3>Dual webhook endpoints</h3>
+<p>
+  We run two separate Stripe webhook endpoints: one for platform-level events and one for connected account events.
+  Each uses its own webhook secret for signature verification:
+</p>
+<pre><code>// Webhook routing — both registered in Gin router
+router.POST("/webhook/stripe",         paymentController.HandleStripeWebhook)
+router.POST("/webhook/stripe/connect", paymentController.HandleStripeConnectWebhook)
+
+// In PaymentService:
+func (s *PaymentService) HandleWebhook(payload []byte, signature string, isConnect bool) error {
+    webhookSecret := s.stripeClient.GetStripeWebhook()
+    if isConnect {
+        webhookSecret = s.stripeClient.GetStripeWebhookConnect()
+    }
+    event, err := webhook.ConstructEvent(payload, signature, webhookSecret)
+    if err != nil {
+        return fmt.Errorf("stripe webhook signature verification failed: %w", err)
+    }
+
+    switch event.Type {
+    case "checkout.session.completed":
+        // Update Payment.status → "paid"
+    case "payment_intent.payment_failed":
+        // Update Payment.status → "failed"
+    case "transfer.created":
+        // Reconcile connected account transfer
+    }
+    return nil
+}</code></pre>
+
+<h2>Key Points</h2>
+<ul>
+  <li><strong>One client per request, not one client per app.</strong> Because each partner has different Stripe credentials, we instantiate the client inside the service call — not at startup. This makes the logic stateless and avoids credential leakage between requests.</li>
+  <li><strong>Fee logic only on partner accounts.</strong> The <code>IsDefault</code> flag controls whether the fee formula runs. On the default platform account, the full amount transfers and the platform absorbs Stripe's fee — a deliberate accounting decision.</li>
+  <li><strong>Express accounts for partner onboarding.</strong> Stripe Express gives partners a simplified onboarding UI without building a full KYC flow ourselves. Daily payouts keep cash flow clean for law firms.</li>
+  <li><strong>Two webhook secrets.</strong> <code>STRIPE_WEBHOOK</code> verifies platform events; <code>STRIPE_WEBHOOK_CONNECT</code> verifies connected account events. Using the wrong secret returns a verification failure — this is a common source of silent bugs.</li>
+  <li><strong>Pence precision.</strong> All amounts are converted to integer pence before passing to Stripe. <code>math.Round()</code> prevents floating-point drift from producing amounts like £10.000000001.</li>
+</ul>
+
+<h2>Stack</h2>
+<div class="stack-box">Go · stripe-go/v72 · Stripe Connect · Stripe Express Accounts · PostgreSQL · Gin</div>
+
+<hr class="wp-block-separator"/>
+<blockquote>Implementing multi-tenant payments in your Go SaaS? <a href="/contact">Get in touch →</a></blockquote>
+
+</div>
+<!-- /wp:html -->
+<!-- POST CONTENT END -->
+
+<hr class="divider"/>
+<p style="text-align:center;color:#aaa;font-size:13px">— End of post file — send the entire folder to marketing —</p>
+</body>
+</html>
