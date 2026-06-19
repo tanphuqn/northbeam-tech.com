@@ -1,0 +1,228 @@
+<!-- ============================================================
+  INSTRUCTIONS FOR MARKETING
+  ============================================================ -->
+<div style="background:#fffbe6;border:2px solid #f0c000;padding:20px 24px;margin-bottom:32px;border-radius:6px;font-family:Arial,sans-serif;">
+  <h2 style="margin-top:0;">📋 Instructions for Marketing</h2>
+  <ol>
+    <li>WordPress → <strong>Posts → Add New</strong>, set category to <code>Insights</code></li>
+    <li>Paste the title below</li>
+    <li>Switch to <strong>Code editor</strong>, paste content between <code>&lt;!-- POST CONTENT START --&gt;</code> markers</li>
+    <li>Upload <code>searcheye-logo.png</code> → replace <code>src="searcheye-logo.png"</code> with WordPress URL</li>
+    <li>Upload <code>searcheye-stripe-paypal-multi-tenant-payments-flow-diagram.png</code> → replace <code>src="searcheye-stripe-paypal-multi-tenant-payments-flow-diagram.png"</code> with WordPress URL</li>
+    <li>Upload <code>searcheye-stripe-paypal-multi-tenant-payments-thumbnail.png</code> → set as <strong>Featured Image</strong></li>
+    <li>Fill Yoast/Rank Math with Focus Keyword, Slug, Meta Description below</li>
+    <li>Category + Tags below → Preview → Publish</li>
+  </ol>
+</div>
+
+<!-- ============================================================
+  POST META
+  ============================================================ -->
+<table style="width:100%;border-collapse:collapse;font-family:Arial,sans-serif;margin-bottom:32px;">
+  <tr style="background:#f5f5f5;"><td style="padding:8px 12px;font-weight:700;width:200px;">Title</td><td style="padding:8px 12px;">Stripe + PayPal: Supporting Two Payment Providers in One Laravel App</td></tr>
+  <tr><td style="padding:8px 12px;font-weight:700;">Slug</td><td style="padding:8px 12px;">searcheye-stripe-paypal-multi-tenant-payments</td></tr>
+  <tr style="background:#f5f5f5;"><td style="padding:8px 12px;font-weight:700;">Focus Keyword</td><td style="padding:8px 12px;">Stripe PayPal Laravel dual payment</td></tr>
+  <tr><td style="padding:8px 12px;font-weight:700;">Meta Description</td><td style="padding:8px 12px;">How SearchEye supports both Stripe and PayPal on the same invoice in Laravel — using a PaymentProcessorInterface, Laravel Cashier, and srmklive/paypal for multi-tenant agency billing.</td></tr>
+  <tr style="background:#f5f5f5;"><td style="padding:8px 12px;font-weight:700;">Excerpt</td><td style="padding:8px 12px;">We wired Stripe and PayPal side-by-side on the same invoice using a shared interface — agencies choose their provider, we handle the rest.</td></tr>
+  <tr><td style="padding:8px 12px;font-weight:700;">Category</td><td style="padding:8px 12px;">Insights</td></tr>
+  <tr style="background:#f5f5f5;"><td style="padding:8px 12px;font-weight:700;">Tags</td><td style="padding:8px 12px;">Stripe, PayPal, Laravel, Laravel Cashier, PHP, Payments, SaaS, Multi-tenant</td></tr>
+</table>
+
+<!-- ============================================================
+  IMAGES TABLE
+  ============================================================ -->
+<table style="width:100%;border-collapse:collapse;font-family:Arial,sans-serif;margin-bottom:32px;">
+  <thead><tr style="background:#1a1000;color:white;"><th style="padding:10px 12px;text-align:left;">File</th><th style="padding:10px 12px;text-align:left;">Size</th><th style="padding:10px 12px;text-align:left;">Alt Text</th></tr></thead>
+  <tbody>
+    <tr><td style="padding:8px 12px;"><code>searcheye-logo.png</code></td><td style="padding:8px 12px;">auto × 48px</td><td style="padding:8px 12px;">SearchEye logo</td></tr>
+    <tr style="background:#f9f9f9;"><td style="padding:8px 12px;"><code>searcheye-stripe-paypal-multi-tenant-payments-thumbnail.png</code></td><td style="padding:8px 12px;">1200 × 628 px</td><td style="padding:8px 12px;">Stripe PayPal dual payment Laravel cover image</td></tr>
+    <tr><td style="padding:8px 12px;"><code>searcheye-stripe-paypal-multi-tenant-payments-flow-diagram.png</code></td><td style="padding:8px 12px;">~700 px wide</td><td style="padding:8px 12px;">Stripe and PayPal dual payment provider flow diagram</td></tr>
+  </tbody>
+</table>
+
+<!-- ============================================================
+  AI REWRITE PROMPT
+  ============================================================ -->
+<div style="background:#fffdf0;border-left:4px solid #f59e0b;padding:16px 20px;margin-bottom:32px;font-family:Arial,sans-serif;border-radius:4px;">
+  <strong>AI Rewrite Prompt for Marketing:</strong><br><br>
+  You are writing a technical Insights post for Northbeam Tech. The post explains how SearchEye supports both Stripe and PayPal as payment providers on the same invoice in a multi-tenant Laravel SaaS application.<br><br>
+  Context: <code>PaymentProcessorInterface</code> defines a common contract (getCustomer, createCard, getCards, etc.). <code>StripeService</code> implements it using Laravel Cashier. PayPal uses <code>srmklive/paypal</code> (PayPalClient) invoked directly on the <code>Invoice</code> model's <code>getPaypalOrderUrl()</code> method. The <code>StripeServiceProvider</code> binds the interface to <code>StripeService</code> via Laravel's service container. Invoices store <code>paypal_order_id</code> and <code>paypal_approve_url</code> columns. Stripe customer IDs are stored on the Agency model via Cashier.<br><br>
+  Tone: technical, practical. Audience: senior Laravel developers. Keep code snippets exactly as shown. Keep H2 headings unchanged.
+</div>
+
+<!-- ============================================================
+  POST CONTENT START
+  ============================================================ -->
+<!-- POST CONTENT START -->
+
+<div style="margin-bottom:24px;">
+  <img src="searcheye-logo.png" alt="SearchEye logo" style="height:48px;width:auto;"/>
+</div>
+
+<h1>Stripe + PayPal: Supporting Two Payment Providers in One Laravel App</h1>
+
+<p><strong>How SearchEye uses a shared PaymentProcessorInterface, Laravel Cashier, and srmklive/paypal to let agencies pay via Stripe or PayPal on the same invoice — without duplicating billing logic.</strong></p>
+
+<hr/>
+
+<h2>The Problem</h2>
+
+<p>SearchEye's agencies come from diverse markets. Some want to pay by saved card via Stripe; others — particularly in regions where PayPal is dominant — want to use their PayPal account. We needed both options to work for the same invoice, without building two separate billing systems or letting payment logic scatter across controllers.</p>
+
+<p>Requirements:</p>
+<ul>
+  <li>Agencies can pay any invoice using either Stripe or PayPal</li>
+  <li>Stripe and PayPal should be swappable via config, not code changes</li>
+  <li>Invoice model must track the PayPal order ID and approval URL across redirects</li>
+  <li>Stripe customer creation and card management must flow through one consistent API</li>
+</ul>
+
+<h2>What We Built</h2>
+
+<p>We defined a <code>PaymentProcessorInterface</code> that describes all the billing operations we need. <code>StripeService</code> implements this interface using Laravel Cashier. PayPal, which has a different flow (redirect-based approval), is invoked directly on the <code>Invoice</code> model using the <code>srmklive/paypal</code> package.</p>
+
+<h2>How It Works</h2>
+
+<img src="searcheye-stripe-paypal-multi-tenant-payments-flow-diagram.png" alt="Stripe and PayPal dual payment provider flow diagram" style="width:100%;max-width:700px;display:block;margin:24px auto;border-radius:8px;"/>
+
+<h2>Key Technical Decisions</h2>
+
+<h3>The PaymentProcessorInterface</h3>
+
+<p>The interface defines every card and customer operation we perform, keeping controllers decoupled from the specific payment SDK.</p>
+
+<pre style="background:#0f0a00;color:#e2e8f0;padding:20px;border-radius:8px;overflow-x:auto;font-size:13px;line-height:1.6;"><code>// app/Contracts/PaymentProcessorInterface.php
+interface PaymentProcessorInterface
+{
+    public function setAgency(Agency $agency);
+    public function getCustomer();
+    public function createCard($source);
+    public function getCards();
+    public function updateCard($card_id, $parameters);
+    public function removeCard($card_id);
+    public function setDefaultCard($card_id);
+    public function setCustomerName($new_name);
+    public function setCustomerEmail($email);
+    public function reCreateStripeCustomer();
+    public function adjustmentToStripeCredits($amount);
+}</code></pre>
+
+<h3>Binding Stripe via the Service Container</h3>
+
+<p>The <code>StripeServiceProvider</code> binds the interface to <code>StripeService</code>. Any controller that type-hints <code>PaymentProcessorInterface</code> automatically gets the Stripe implementation — swapping providers later requires only a one-line change here.</p>
+
+<pre style="background:#0f0a00;color:#e2e8f0;padding:20px;border-radius:8px;overflow-x:auto;font-size:13px;line-height:1.6;"><code>// app/Providers/StripeServiceProvider.php
+class StripeServiceProvider extends ServiceProvider
+{
+    public function register()
+    {
+        $this->app->bind(
+            \App\Contracts\PaymentProcessorInterface::class,
+            \App\Services\StripeService::class
+        );
+    }
+}</code></pre>
+
+<h3>StripeService with Laravel Cashier</h3>
+
+<p><code>StripeService</code> wraps Laravel Cashier's billable methods and adds SearchEye-specific logic: it fetches or creates Stripe customers lazily, stores the <code>stripe_id</code> on the <code>Agency</code> model, and formats card responses consistently.</p>
+
+<pre style="background:#0f0a00;color:#e2e8f0;padding:20px;border-radius:8px;overflow-x:auto;font-size:13px;line-height:1.6;"><code>// app/Services/StripeService.php
+class StripeService implements PaymentProcessorInterface
+{
+    public function __construct()
+    {
+        $mode = config('services.stripe.mode');
+        $this->stripe = new StripeClient(config('services.stripe.' . $mode . '.secret_key'));
+        Stripe::setApiKey(config('services.stripe.' . $mode . '.secret_key'));
+    }
+
+    public function getCustomer()
+    {
+        $billable = $this->getBillable(); // returns Agency or Client
+        if (!empty($billable->stripe_id)) {
+            $customer = $billable->createOrGetStripeCustomer();
+            if (isset($customer->id) && !isset($customer->deleted)) {
+                return $this->formatCustomerInfo($customer);
+            }
+        }
+        $customer = $billable->createAsStripeCustomer(['name' => $billable->company_name]);
+        $billable->stripe_id = $customer->id;
+        $billable->save();
+        return $this->formatCustomerInfo($customer);
+    }
+}</code></pre>
+
+<h3>PayPal — Redirect-Based Flow on the Invoice Model</h3>
+
+<p>PayPal uses a redirect flow rather than a card form. The <code>Invoice</code> model stores <code>paypal_order_id</code> and <code>paypal_approve_url</code> so that if the browser session is interrupted, the existing order is reused rather than creating a duplicate charge.</p>
+
+<pre style="background:#0f0a00;color:#e2e8f0;padding:20px;border-radius:8px;overflow-x:auto;font-size:13px;line-height:1.6;"><code>// app/Models/Invoice.php
+use Srmklive\PayPal\Services\PayPal as PayPalClient;
+
+public function getPaypalOrderUrl(bool $create = false): ?string
+{
+    $provider = new PayPalClient;
+    $provider->getAccessToken();
+
+    $amount_to_be_paid = floatval($this->getFinalPaymentDetails()['to_be_paid'] / 100);
+
+    if ($this->paypal_order_id) {
+        $order = $provider->showOrderDetails($this->paypal_order_id);
+        if (!isset($order['id'])) {
+            $this->paypal_order_id   = null;
+            $this->paypal_approve_url = null;
+            $this->save();
+        }
+    }
+
+    if (!$this->paypal_order_id) {
+        $order = $provider->createOrder([
+            'intent' => 'CAPTURE',
+            'purchase_units' => [[
+                'amount' => ['currency_code' => 'USD', 'value' => $amount_to_be_paid],
+            ]],
+            'application_context' => [
+                'shipping_preference' => 'NO_SHIPPING',
+                'user_action'         => 'PAY_NOW',
+                'return_url'          => config('paypal.base_url') . '/paypal/order-capture/invoice/' . $this->id,
+                'cancel_url'          => config('paypal.base_url') . '/agents/link-order-review',
+            ],
+        ]);
+        $this->paypal_order_id = $order['id'];
+    }
+
+    foreach ($order['links'] as $link) {
+        if ($link['rel'] === 'approve') {
+            $this->paypal_approve_url = $link['href'];
+            break;
+        }
+    }
+    $this->save();
+    return $this->paypal_approve_url;
+}</code></pre>
+
+<h2>Results / What Changed</h2>
+
+<ul>
+  <li>Agencies in PayPal-heavy markets can now pay without entering a card — adoption improved in those regions</li>
+  <li>The interface pattern means controllers never import Stripe classes directly — payment methods are swappable</li>
+  <li>PayPal order IDs are persisted per invoice, so partial sessions don't create duplicate charges</li>
+  <li>Stripe's test/live mode is config-driven — no code changes needed to switch environments</li>
+  <li>A webhook handler captures PayPal capture events and updates invoice status automatically</li>
+</ul>
+
+<h2>Stack</h2>
+
+<div style="background:#0f0a00;color:#e2e8f0;padding:16px 20px;border-radius:8px;margin:24px 0;font-family:monospace;font-size:13px;line-height:2;">
+  Laravel 9.52 · PHP 8.0 · Stripe PHP SDK · Laravel Cashier · srmklive/paypal · MySQL
+</div>
+
+<hr/>
+
+<blockquote style="border-left:4px solid #f59e0b;padding:16px 20px;margin:32px 0;background:#fffdf0;border-radius:0 8px 8px 0;">
+  <strong>Need multi-provider billing in your SaaS product?</strong><br/>
+  <a href="/contact">Talk to us about your project →</a>
+</blockquote>
+
+<!-- POST CONTENT END -->

@@ -1,0 +1,228 @@
+<!-- ============================================================
+  INSTRUCTIONS FOR MARKETING
+  ============================================================ -->
+<div style="background:#fffbe6;border:2px solid #f0c000;padding:20px 24px;margin-bottom:32px;border-radius:6px;font-family:Arial,sans-serif;">
+  <h2 style="margin-top:0;">📋 Instructions for Marketing</h2>
+  <ol>
+    <li>WordPress → <strong>Posts → Add New</strong>, set category to <code>Insights</code></li>
+    <li>Paste the title below</li>
+    <li>Switch to <strong>Code editor</strong>, paste content between <code>&lt;!-- POST CONTENT START --&gt;</code> markers</li>
+    <li>Upload <code>searcheye-logo.png</code> → replace <code>src="searcheye-logo.png"</code> with WordPress URL</li>
+    <li>Upload <code>searcheye-openai-content-generation-laravel-flow-diagram.png</code> → replace <code>src="searcheye-openai-content-generation-laravel-flow-diagram.png"</code> with WordPress URL</li>
+    <li>Upload <code>searcheye-openai-content-generation-laravel-thumbnail.png</code> → set as <strong>Featured Image</strong></li>
+    <li>Fill Yoast/Rank Math with Focus Keyword, Slug, Meta Description below</li>
+    <li>Category + Tags below → Preview → Publish</li>
+  </ol>
+</div>
+
+<!-- ============================================================
+  POST META
+  ============================================================ -->
+<table style="width:100%;border-collapse:collapse;font-family:Arial,sans-serif;margin-bottom:32px;">
+  <tr style="background:#f5f5f5;"><td style="padding:8px 12px;font-weight:700;width:200px;">Title</td><td style="padding:8px 12px;">OpenAI + ChatCells: Database-Driven Content Generation in Laravel</td></tr>
+  <tr><td style="padding:8px 12px;font-weight:700;">Slug</td><td style="padding:8px 12px;">searcheye-openai-content-generation-laravel</td></tr>
+  <tr style="background:#f5f5f5;"><td style="padding:8px 12px;font-weight:700;">Focus Keyword</td><td style="padding:8px 12px;">OpenAI content generation Laravel</td></tr>
+  <tr><td style="padding:8px 12px;font-weight:700;">Meta Description</td><td style="padding:8px 12px;">How SearchEye built a composable AI content generation system using OpenAI's Chat API in Laravel — with database-stored prompts, token substitution, and automatic retry logic.</td></tr>
+  <tr style="background:#f5f5f5;"><td style="padding:8px 12px;font-weight:700;">Excerpt</td><td style="padding:8px 12px;">We built ChatCells — a database-driven abstraction over OpenAI — so non-engineers can swap prompts and models without deployments.</td></tr>
+  <tr><td style="padding:8px 12px;font-weight:700;">Category</td><td style="padding:8px 12px;">Insights</td></tr>
+  <tr style="background:#f5f5f5;"><td style="padding:8px 12px;font-weight:700;">Tags</td><td style="padding:8px 12px;">OpenAI, Laravel, PHP, AI, GPT-4, Content Generation, SaaS, ChatGPT</td></tr>
+</table>
+
+<!-- ============================================================
+  IMAGES TABLE
+  ============================================================ -->
+<table style="width:100%;border-collapse:collapse;font-family:Arial,sans-serif;margin-bottom:32px;">
+  <thead><tr style="background:#0a1f0a;color:white;"><th style="padding:10px 12px;text-align:left;">File</th><th style="padding:10px 12px;text-align:left;">Size</th><th style="padding:10px 12px;text-align:left;">Alt Text</th></tr></thead>
+  <tbody>
+    <tr><td style="padding:8px 12px;"><code>searcheye-logo.png</code></td><td style="padding:8px 12px;">auto × 48px</td><td style="padding:8px 12px;">SearchEye logo</td></tr>
+    <tr style="background:#f9f9f9;"><td style="padding:8px 12px;"><code>searcheye-openai-content-generation-laravel-thumbnail.png</code></td><td style="padding:8px 12px;">1200 × 628 px</td><td style="padding:8px 12px;">OpenAI content generation Laravel cover image</td></tr>
+    <tr><td style="padding:8px 12px;"><code>searcheye-openai-content-generation-laravel-flow-diagram.png</code></td><td style="padding:8px 12px;">~700 px wide</td><td style="padding:8px 12px;">ChatCell content generation flow diagram</td></tr>
+  </tbody>
+</table>
+
+<!-- ============================================================
+  AI REWRITE PROMPT
+  ============================================================ -->
+<div style="background:#f0fff4;border-left:4px solid #10a37f;padding:16px 20px;margin-bottom:32px;font-family:Arial,sans-serif;border-radius:4px;">
+  <strong>AI Rewrite Prompt for Marketing:</strong><br><br>
+  You are writing a technical Insights post for Northbeam Tech. The post explains how SearchEye's "ChatCells" AI system works — a database-driven, composable abstraction over OpenAI's Chat API built in Laravel.<br><br>
+  Context: The abstract <code>ChatCell</code> class defines <code>run()</code>, <code>callAPI()</code>, <code>swapTokens()</code>, <code>verifyOutput()</code>, and <code>formatOutput()</code>. Subclasses override <code>buildConversation()</code> and <code>getTokenDefinitions()</code>. System prompts are stored in the <code>ai_scripts</code> DB table (loaded by slug). Token placeholders use the format <code>&lt;{|keyword|}></code>. The system retries up to <code>max_tries = 3</code>. Models are configured per AiScript record — operators can switch <code>gpt-3.5-turbo</code> to <code>gpt-4</code> in the database without code changes.<br><br>
+  Tone: technical, practical. Audience: senior Laravel developers. Keep all code snippets exactly as shown. Keep H2 headings unchanged.
+</div>
+
+<!-- ============================================================
+  POST CONTENT START
+  ============================================================ -->
+<!-- POST CONTENT START -->
+
+<div style="margin-bottom:24px;">
+  <img src="searcheye-logo.png" alt="SearchEye logo" style="height:48px;width:auto;"/>
+</div>
+
+<h1>OpenAI + ChatCells: Database-Driven Content Generation in Laravel</h1>
+
+<p><strong>How SearchEye built a composable AI pipeline where system prompts, model selection, and token substitution are all controlled from a database — no deployments needed to update AI behaviour.</strong></p>
+
+<hr/>
+
+<h2>The Problem</h2>
+
+<p>SearchEye generates SEO content as part of backlink order fulfilment — article outlines, content briefs, and keyword-optimised descriptions. Early prototypes hardcoded prompts and model names into PHP classes. Every prompt change required a pull request, a review, and a deployment.</p>
+
+<p>As the product matured we needed:</p>
+<ul>
+  <li>Non-engineers (content leads, operations) to adjust prompts without touching code</li>
+  <li>Easy A/B testing of different system prompts for the same task</li>
+  <li>The ability to swap <code>gpt-3.5-turbo</code> for <code>gpt-4</code> per use-case without refactoring</li>
+  <li>A consistent retry strategy when the model returns malformed or low-quality output</li>
+</ul>
+
+<h2>What We Built</h2>
+
+<p>We built <strong>ChatCells</strong> — an abstract base class that wraps OpenAI's Chat Completions API. Each concrete <code>ChatCell</code> subclass defines what kind of content it generates; everything else (prompt loading, token substitution, API call, retry logic) is inherited.</p>
+
+<p>System prompts are stored in the <code>ai_scripts</code> database table, keyed by a <code>slug</code> that matches <code>const slug</code> on the ChatCell class. This means an operator can update the prompt, switch the model, or change the response format in the database — the PHP code stays unchanged.</p>
+
+<h2>How It Works</h2>
+
+<img src="searcheye-openai-content-generation-laravel-flow-diagram.png" alt="ChatCell content generation flow diagram" style="width:100%;max-width:700px;display:block;margin:24px auto;border-radius:8px;"/>
+
+<h2>Key Technical Decisions</h2>
+
+<h3>The ChatCell Base Class</h3>
+
+<p>The <code>run()</code> method orchestrates validation, API call, output verification, and retry — all in one place. Subclasses only override the parts specific to their use-case.</p>
+
+<pre style="background:#080f08;color:#e2e8f0;padding:20px;border-radius:8px;overflow-x:auto;font-size:13px;line-height:1.6;"><code>// app/ChatCells/ChatCell.php
+abstract class ChatCell
+{
+    protected $language_model = "gpt-3.5-turbo";
+    const max_tries = 3;
+    const slug = 'chat-cell-base';
+
+    public function __construct(
+        array|null $tokens = null,
+        array|null $options = null,
+        array|null $history = null
+    ) {
+        $this->loadScriptConfiguration(); // load prompt from DB
+        $this->setOptions($this->getDefaultOptions(), true);
+        if ($options) $this->setOptions($options);
+        if ($tokens) $this->setTokens($tokens);
+        if ($history) $this->setHistory($history);
+        $this->ai = new OpenAIService();
+    }
+
+    public function run(int $current_try = 1): mixed
+    {
+        $result = $this->callAPI();
+        if (isset($result->choices) && !empty($result->choices)) {
+            if ($this->verifyOutput($this->history, $result->choices)) {
+                return $this->formatOutput($this->history, $result->choices);
+            }
+        }
+        if ($current_try === static::max_tries) {
+            return $this->getFailureOutput($this->history, $result->choices ?? []);
+        }
+        return $this->run($current_try + 1);
+    }
+}</code></pre>
+
+<h3>Token Substitution</h3>
+
+<p>Prompts contain placeholders in the format <code>&lt;{|keyword|}></code>. Callers inject runtime values using <code>setTokens()</code>; the <code>swapTokens()</code> method replaces all placeholders in the conversation history before the API call.</p>
+
+<pre style="background:#080f08;color:#e2e8f0;padding:20px;border-radius:8px;overflow-x:auto;font-size:13px;line-height:1.6;"><code>protected function swapTokens(): self
+{
+    foreach ($this->history as $index => $item) {
+        foreach ($this->tokens as $key => $value) {
+            if (is_array($value)) {
+                $value = implode(', ', $value);
+            }
+            $item['content'] = str_replace(
+                '&lt;{|' . $key . '|}&gt;',
+                $value,
+                $item['content']
+            );
+        }
+        $this->history[$index]['content'] = $item['content'];
+    }
+    return $this;
+}</code></pre>
+
+<p>For example, a system prompt might contain <code>&lt;{|target_keyword|}></code> and <code>&lt;{|domain_name|}></code>. The calling job sets these from the order record — the prompt template itself never changes.</p>
+
+<h3>Database-Driven Script Loading</h3>
+
+<pre style="background:#080f08;color:#e2e8f0;padding:20px;border-radius:8px;overflow-x:auto;font-size:13px;line-height:1.6;"><code>protected function loadScriptConfiguration()
+{
+    $this->scriptConfiguration = AiScript::where('slug', static::slug)->first();
+    if ($this->scriptConfiguration) {
+        $this->title          = $this->scriptConfiguration['title'];
+        $this->language_model = $this->scriptConfiguration['language_model'];
+        $this->response_type  = $this->scriptConfiguration['response_type'];
+        $this->user_script    = $this->scriptConfiguration['user_script'];
+        return $this->scriptConfiguration['system_script'];
+    }
+    return null;
+}</code></pre>
+
+<p>The <code>ai_scripts</code> table stores <code>system_script</code>, <code>language_model</code>, <code>response_type</code>, and <code>response_format</code> per slug. Changing a model from <code>gpt-3.5-turbo</code> to <code>gpt-4</code> is a one-row database update.</p>
+
+<h3>Concrete Cell Example</h3>
+
+<p>A concrete cell only needs to implement <code>buildConversation()</code> and <code>getTokenDefinitions()</code>. The base class handles everything else.</p>
+
+<pre style="background:#080f08;color:#e2e8f0;padding:20px;border-radius:8px;overflow-x:auto;font-size:13px;line-height:1.6;"><code>// Example concrete cell
+class ContentBriefCell extends ChatCell
+{
+    const slug = 'content-brief';
+    const link_text = 'Content Brief';
+
+    protected static function getTokenDefinitions(): array
+    {
+        return [
+            'target_keyword' => ['rules' => 'required|string', 'type' => 'text'],
+            'word_count'     => ['rules' => 'required|integer', 'type' => 'number'],
+            'domain_name'    => ['rules' => 'nullable|string',  'type' => 'text'],
+        ];
+    }
+
+    protected function buildConversation(): array
+    {
+        return [
+            ['role' => 'system', 'content' => $this->loadScriptConfiguration()],
+            ['role' => 'user',   'content' => 'Generate a brief for &lt;{|target_keyword|}> targeting &lt;{|word_count|}> words.'],
+        ];
+    }
+
+    protected function formatOutput(array $input, array $output): mixed
+    {
+        return $output[0]->message->content ?? null;
+    }
+}</code></pre>
+
+<h2>Results / What Changed</h2>
+
+<ul>
+  <li>Content leads can update AI prompts from a simple admin form — no engineer involvement</li>
+  <li>Model upgrades (<code>gpt-3.5-turbo</code> → <code>gpt-4</code>) happen per cell with a DB update, no code change</li>
+  <li>The 3-attempt retry catches cases where the model returns truncated or off-format output</li>
+  <li>Token validation with Laravel's <code>Validator</code> catches missing required inputs early, before any API cost is incurred</li>
+  <li>The same pattern now powers briefing, outline generation, and meta description writing across SearchEye</li>
+</ul>
+
+<h2>Stack</h2>
+
+<div style="background:#080f08;color:#e2e8f0;padding:16px 20px;border-radius:8px;margin:24px 0;font-family:monospace;font-size:13px;line-height:2;">
+  Laravel 9.52 · PHP 8.0 · OpenAI Chat API · GPT-3.5-Turbo / GPT-4 · MySQL (AiScript table) · Laravel Queue
+</div>
+
+<hr/>
+
+<blockquote style="border-left:4px solid #10a37f;padding:16px 20px;margin:32px 0;background:#f0fff4;border-radius:0 8px 8px 0;">
+  <strong>Need a maintainable AI content pipeline in your Laravel product?</strong><br/>
+  <a href="/contact">Talk to us about your project →</a>
+</blockquote>
+
+<!-- POST CONTENT END -->

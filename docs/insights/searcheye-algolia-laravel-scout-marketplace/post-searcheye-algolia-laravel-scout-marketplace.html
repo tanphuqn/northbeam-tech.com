@@ -1,0 +1,162 @@
+<!-- ============================================================
+  INSTRUCTIONS FOR MARKETING
+  ============================================================ -->
+<div style="background:#fffbe6;border:2px solid #f0c000;padding:20px 24px;margin-bottom:32px;border-radius:6px;font-family:Arial,sans-serif;">
+  <h2 style="margin-top:0;">📋 Instructions for Marketing</h2>
+  <ol>
+    <li>WordPress → <strong>Posts → Add New</strong>, set category to <code>Insights</code></li>
+    <li>Paste the title below</li>
+    <li>Switch to <strong>Code editor</strong>, paste content between <code>&lt;!-- POST CONTENT START --&gt;</code> markers</li>
+    <li>Upload <code>searcheye-logo.png</code> → replace <code>src="searcheye-logo.png"</code> with WordPress URL</li>
+    <li>Upload <code>searcheye-algolia-laravel-scout-marketplace-flow-diagram.png</code> → replace <code>src="searcheye-algolia-laravel-scout-marketplace-flow-diagram.png"</code> with WordPress URL</li>
+    <li>Upload <code>searcheye-algolia-laravel-scout-marketplace-thumbnail.png</code> → set as <strong>Featured Image</strong></li>
+    <li>Fill Yoast/Rank Math with Focus Keyword, Slug, Meta Description below</li>
+    <li>Category + Tags below → Preview → Publish</li>
+  </ol>
+</div>
+
+<!-- ============================================================
+  POST META
+  ============================================================ -->
+<table style="width:100%;border-collapse:collapse;font-family:Arial,sans-serif;margin-bottom:32px;">
+  <tr style="background:#f5f5f5;"><td style="padding:8px 12px;font-weight:700;width:200px;">Title</td><td style="padding:8px 12px;">Algolia + Laravel Scout: Full-Text Search in a Link-Building Marketplace</td></tr>
+  <tr><td style="padding:8px 12px;font-weight:700;">Slug</td><td style="padding:8px 12px;">searcheye-algolia-laravel-scout-marketplace</td></tr>
+  <tr style="background:#f5f5f5;"><td style="padding:8px 12px;font-weight:700;">Focus Keyword</td><td style="padding:8px 12px;">Algolia Laravel Scout marketplace</td></tr>
+  <tr><td style="padding:8px 12px;font-weight:700;">Meta Description</td><td style="padding:8px 12px;">How SearchEye uses Laravel Scout and Algolia to power a full-text backlink marketplace with instant faceted filtering by domain rating, traffic, niche, and price.</td></tr>
+  <tr style="background:#f5f5f5;"><td style="padding:8px 12px;font-weight:700;">Excerpt</td><td style="padding:8px 12px;">We replaced MySQL LIKE queries with Algolia Scout to give agencies instant, faceted backlink search — faster results, zero database pressure.</td></tr>
+  <tr><td style="padding:8px 12px;font-weight:700;">Category</td><td style="padding:8px 12px;">Insights</td></tr>
+  <tr style="background:#f5f5f5;"><td style="padding:8px 12px;font-weight:700;">Tags</td><td style="padding:8px 12px;">Algolia, Laravel Scout, Laravel, PHP, Search, Marketplace, SEO, SaaS</td></tr>
+</table>
+
+<!-- ============================================================
+  IMAGES TABLE
+  ============================================================ -->
+<table style="width:100%;border-collapse:collapse;font-family:Arial,sans-serif;margin-bottom:32px;">
+  <thead><tr style="background:#1a1a3e;color:white;"><th style="padding:10px 12px;text-align:left;">File</th><th style="padding:10px 12px;text-align:left;">Size</th><th style="padding:10px 12px;text-align:left;">Alt Text</th></tr></thead>
+  <tbody>
+    <tr><td style="padding:8px 12px;"><code>searcheye-logo.png</code></td><td style="padding:8px 12px;">auto × 48px</td><td style="padding:8px 12px;">SearchEye logo</td></tr>
+    <tr style="background:#f9f9f9;"><td style="padding:8px 12px;"><code>searcheye-algolia-laravel-scout-marketplace-thumbnail.png</code></td><td style="padding:8px 12px;">1200 × 628 px</td><td style="padding:8px 12px;">Algolia Laravel Scout marketplace search cover image</td></tr>
+    <tr><td style="padding:8px 12px;"><code>searcheye-algolia-laravel-scout-marketplace-flow-diagram.png</code></td><td style="padding:8px 12px;">~700 px wide</td><td style="padding:8px 12px;">Algolia Scout search flow diagram</td></tr>
+  </tbody>
+</table>
+
+<!-- ============================================================
+  AI REWRITE PROMPT
+  ============================================================ -->
+<div style="background:#f0f0ff;border-left:4px solid #5468ff;padding:16px 20px;margin-bottom:32px;font-family:Arial,sans-serif;border-radius:4px;">
+  <strong>AI Rewrite Prompt for Marketing:</strong><br><br>
+  You are writing a technical Insights post for Northbeam Tech, a software consultancy. The post explains how we integrated Algolia (via Laravel Scout) into SearchEye, an SEO SaaS platform, to power a searchable backlink marketplace.<br><br>
+  Context: The <code>Backlink</code> Eloquent model uses the <code>Searchable</code> trait. <code>toSearchableArray()</code> includes the model's attributes plus a resolved <code>site_type</code> relationship and a <code>no_backlink_select</code> flag. Agency users filter results by domain rating, organic traffic, niche, price, and link type. Algolia Scout replaced MySQL LIKE queries — the old approach caused slow, full-table scans.<br><br>
+  Tone: technical, practical, direct. Include the real code exactly as shown. Keep H2 headings unchanged. Audience: senior Laravel developers and technical CTOs.
+</div>
+
+<!-- ============================================================
+  POST CONTENT START
+  ============================================================ -->
+<!-- POST CONTENT START -->
+
+<div style="margin-bottom:24px;">
+  <img src="searcheye-logo.png" alt="SearchEye logo" style="height:48px;width:auto;"/>
+</div>
+
+<h1>Algolia + Laravel Scout: Full-Text Search in a Link-Building Marketplace</h1>
+
+<p><strong>How we replaced slow MySQL LIKE queries with Algolia-powered instant search, faceted filtering, and typo tolerance in SearchEye's backlink marketplace.</strong></p>
+
+<hr/>
+
+<h2>The Problem</h2>
+
+<p>SearchEye's backlink marketplace lets SEO agencies browse hundreds of publisher websites. Each site has attributes like domain rating, organic traffic, niche categories, pricing, link type, and geographic focus. Users expected sub-100ms search with multi-facet filtering — something MySQL <code>LIKE</code> queries cannot deliver at scale without heavy indexing overhead and complex query composition.</p>
+
+<p>We needed a search engine that could handle:</p>
+<ul>
+  <li>Free-text matching against site names and descriptions</li>
+  <li>Simultaneous filtering by multiple numeric ranges (DR, traffic, price)</li>
+  <li>Faceted counts per niche and site type</li>
+  <li>Typo tolerance and instant results as the user types</li>
+</ul>
+
+<h2>What We Built</h2>
+
+<p>We integrated Algolia into the <code>Backlink</code> model via <strong>Laravel Scout</strong>. Scout provides a thin driver abstraction — switching the search engine later requires only a config change. Every time a <code>Backlink</code> record is saved, Scout automatically syncs the updated document to Algolia's index in a background job.</p>
+
+<h2>How It Works</h2>
+
+<img src="searcheye-algolia-laravel-scout-marketplace-flow-diagram.png" alt="Algolia Scout search flow diagram" style="width:100%;max-width:700px;display:block;margin:24px auto;border-radius:8px;"/>
+
+<p>The flow is:</p>
+<ol>
+  <li>User types a search query in the Vue 2.7 SPA</li>
+  <li>The front-end calls the Laravel API with query + active filters</li>
+  <li><code>Backlink::search($query)-&gt;paginate(20)</code> dispatches a request to Algolia</li>
+  <li>Algolia returns ranked, faceted results in milliseconds</li>
+  <li>The API transforms results and returns them to the Vue component</li>
+</ol>
+
+<h2>Key Technical Decisions</h2>
+
+<h3>Custom <code>toSearchableArray()</code></h3>
+
+<p>The default Scout implementation indexes every column — including sensitive internal fields. We override <code>toSearchableArray()</code> to control exactly what goes into Algolia, and to resolve the <code>site_type</code> relationship eagerly at index time so search results include the type label without an extra database query at read time.</p>
+
+<pre style="background:#0a0a1a;color:#e2e8f0;padding:20px;border-radius:8px;overflow-x:auto;font-size:13px;line-height:1.6;"><code>// app/Models/Backlink.php
+use Laravel\Scout\Searchable;
+
+class Backlink extends Model
+{
+    use Searchable;
+
+    public function toSearchableArray(): array
+    {
+        $array = $this->toArray();
+        $array = $this->transform($array);
+
+        if ($this->site_type()->exists()) {
+            $array['site_type']          = $this->site_type;
+            $array['no_backlink_select'] = $this->site_type->no_backlink_select;
+        } else {
+            $array['site_type']          = null;
+            $array['no_backlink_select'] = 1;
+        }
+
+        return $array;
+    }
+}</code></pre>
+
+<p>The <code>transform()</code> method (a custom trait method) strips internal-only columns like writer notes and cost prices before the array reaches Algolia.</p>
+
+<h3>Queued Indexing via Scout</h3>
+
+<p>With <code>SCOUT_QUEUE=true</code> in <code>.env</code>, every model save dispatches a <code>MakeSearchable</code> job onto Laravel Horizon. This keeps save operations fast and prevents Algolia API latency from blocking HTTP responses. Bulk re-indexing uses Artisan's <code>scout:import App\\Models\\Backlink</code> command.</p>
+
+<h3>Faceted Filtering on the Front-End</h3>
+
+<p>Algolia's faceting is configured at the index level — <code>domain_rating</code>, <code>organic_traffic</code>, <code>site_type.name</code>, and <code>niche_ids</code> are declared as facets in the Algolia dashboard. The Vue component sends the active filter state as Algolia filter expressions:</p>
+
+<pre style="background:#0a0a1a;color:#e2e8f0;padding:20px;border-radius:8px;overflow-x:auto;font-size:13px;line-height:1.6;"><code>// filters passed to Laravel API → Scout → Algolia
+filters: 'domain_rating >= 30 AND organic_traffic >= 1000 AND no_backlink_select = 0'</code></pre>
+
+<h2>Results</h2>
+
+<ul>
+  <li>Search latency dropped from ~800ms (MySQL) to under 50ms (Algolia)</li>
+  <li>Multi-facet filtering works simultaneously across numeric ranges, enums, and arrays</li>
+  <li>Typo tolerance is on by default — agencies find sites even with misspelled domain names</li>
+  <li>Zero extra database queries for facet counts or result enrichment — all data lives in the index</li>
+</ul>
+
+<h2>Stack</h2>
+
+<div style="background:#0a0a1a;color:#e2e8f0;padding:16px 20px;border-radius:8px;margin:24px 0;font-family:monospace;font-size:13px;line-height:2;">
+  Laravel 9.52 · PHP 8.0 · Laravel Scout · Algolia Search · Vue 2.7 · Redis (queue) · Laravel Horizon
+</div>
+
+<hr/>
+
+<blockquote style="border-left:4px solid #5468ff;padding:16px 20px;margin:32px 0;background:#f4f0ff;border-radius:0 8px 8px 0;">
+  <strong>Need Algolia-powered search in your Laravel product?</strong><br/>
+  <a href="/contact">Talk to us about your project →</a>
+</blockquote>
+
+<!-- POST CONTENT END -->
