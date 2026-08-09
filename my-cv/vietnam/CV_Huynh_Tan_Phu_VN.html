@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huynh Tan Phu - Senior Software Engineer</title>
+    <style>
+        @media print {
+            @page {
+                size: A4;
+                margin: 0.9in 0.85in;
+            }
+            body {
+                margin: 0;
+            }
+            h3 {
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+            .job-header {
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+            .job-entry {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            li {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            hr {
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+        }
+        body {
+            font-family: 'Helvetica Neue', 'Arial', sans-serif;
+            font-size: 11.5pt;
+            line-height: 1.6;
+            color: #2b2b2b;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+        .name {
+            text-align: center;
+            font-size: 2.6em;
+            font-weight: 700;
+            letter-spacing: 8px;
+            color: #1a1a1a;
+            margin: 0 0 8px 0;
+        }
+        .title {
+            text-align: center;
+            font-size: 1em;
+            font-weight: 400;
+            letter-spacing: 5px;
+            color: #555;
+            text-transform: uppercase;
+            margin: 0 0 18px 0;
+        }
+        .contact-bar {
+            text-align: center;
+            color: #333;
+            font-size: 0.95em;
+            margin-bottom: 6px;
+        }
+        .contact-bar .sep {
+            color: #c9974a;
+            margin: 0 14px;
+            font-weight: bold;
+        }
+        hr.top-rule {
+            border: none;
+            border-top: 1px solid #ddd;
+            margin: 18px 0 26px 0;
+        }
+        h3.section {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #c9974a;
+            font-size: 1em;
+            font-weight: 700;
+            margin: 0 0 6px 0;
+        }
+        .section-rule {
+            border: none;
+            border-top: 1px solid #ddd;
+            margin: 6px 0 20px 0;
+        }
+        .section-block {
+            margin-bottom: 26px;
+        }
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px 40px;
+        }
+        .skills-col {
+            min-width: 150px;
+        }
+        .skills-col .label {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.78em;
+            color: #999;
+            margin-bottom: 4px;
+        }
+        .skills-col div.item {
+            color: #333;
+        }
+        .edu-entry {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 10px;
+        }
+        .edu-entry .degree {
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+        .edu-entry .school {
+            color: #666;
+            font-style: italic;
+        }
+        .edu-entry .date {
+            color: #666;
+            font-size: 0.92em;
+            white-space: nowrap;
+        }
+        .job-entry {
+            margin-bottom: 22px;
+        }
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        .job-title {
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #1a1a1a;
+            letter-spacing: 0.5px;
+        }
+        .job-date {
+            color: #666;
+            font-size: 0.92em;
+            white-space: nowrap;
+        }
+        .job-company {
+            font-weight: 700;
+            color: #333;
+            margin: 1px 0 8px 0;
+        }
+        .job-company .loc {
+            font-weight: 400;
+            color: #777;
+        }
+        ul.bullets {
+            margin: 0;
+            padding-left: 20px;
+        }
+        ul.bullets li {
+            margin: 4px 0;
+        }
+        .tech-line {
+            font-style: italic;
+            color: #666;
+        }
+        strong {
+            color: #1a1a1a;
+        }
+    </style>
+</head>
+<body>
+    <div class="name">HUYNH TAN PHU</div>
+    <div class="title">Senior Software Engineer</div>
+    <div class="contact-bar">
+        Ho Chi Minh City, VN<span class="sep">|</span>+84.983.599.071<span class="sep">|</span>tanphuqn@gmail.com
+    </div>
+
+    <hr class="top-rule">
+
+    <div class="section-block">
+        <h3 class="section">Profile Summary</h3>
+        <hr class="section-rule">
+        <ul class="bullets">
+            <li>Senior Software Engineer with 15+ years of experience building enterprise applications from scratch, including 7 years in PHP/Laravel/MySQL/JavaScript, 4 years in Python/Vue.js/MongoDB, and 3 years in Golang.</li>
+            <li>Built the ERP platform for ASOFT Corp over 7+ years, progressing from Developer to Team Leader to Project Manager, and contributed to Wambi, a healthcare platform serving US hospitals.</li>
+            <li>Experienced working across both Vietnamese and US companies with strong English proficiency in a professional environment.</li>
+        </ul>
+    </div>
+
+    <div class="section-block">
+        <h3 class="section">Skills</h3>
+        <hr class="section-rule">
+        <div class="skills-grid">
+            <div class="skills-col">
+                <div class="label">Backend</div>
+                <div class="item">PHP</div>
+                <div class="item">Laravel</div>
+                <div class="item">Golang</div>
+                <div class="item">gRPC</div>
+                <div class="item">Python</div>
+                <div class="item">C#</div>
+                <div class="item">ASP.NET</div>
+            </div>
+            <div class="skills-col">
+                <div class="label">Databases</div>
+                <div class="item">MySQL</div>
+                <div class="item">SQL Server</div>
+                <div class="item">MongoDB</div>
+                <div class="item">GraphQL</div>
+                <div class="item">PostgreSQL</div>
+            </div>
+            <div class="skills-col">
+                <div class="label">Frontend</div>
+                <div class="item">Vue.js</div>
+                <div class="item">jQuery</div>
+                <div class="item">JavaScript</div>
+                <div class="item">TypeScript</div>
+                <div class="item">Node.js</div>
+            </div>
+            <div class="skills-col">
+                <div class="label">DevOps</div>
+                <div class="item">Docker/Compose</div>
+                <div class="item">SVN / GIT</div>
+                <div class="item">GCP</div>
+                <div class="item">Kubernetes</div>
+                <div class="item">Cassandra</div>
+            </div>
+            <div class="skills-col">
+                <div class="label">Other</div>
+                <div class="item">SAML SSO</div>
+                <div class="item">Basecamp</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-block">
+        <h3 class="section">Education</h3>
+        <hr class="section-rule">
+        <div class="edu-entry">
+            <div>
+                <div class="degree">Bachelor's Degree in Management Information Systems</div>
+                <div class="school">The University of Economics in Ho Chi Minh City</div>
+            </div>
+            <div class="date">2006 – 2010</div>
+        </div>
+        <div class="edu-entry">
+            <div>
+                <div class="degree">Associate's Degree in Information Technology</div>
+                <div class="school">The University of Industry in Ho Chi Minh City</div>
+            </div>
+            <div class="date">2003 – 2006</div>
+        </div>
+    </div>
+
+    <div class="section-block">
+        <h3 class="section">Work Experience</h3>
+        <hr class="section-rule">
+
+        <div class="job-entry">
+            <div class="job-header">
+                <span class="job-title">Senior Software Engineer</span>
+                <span class="job-date">Mar 2021 – Present</span>
+            </div>
+            <div class="job-company">Sango Technologies <span class="loc">— Ho Chi Minh City, VN</span></div>
+            <ul class="bullets">
+                <li>Developed front-end website architecture and back-end web applications end-to-end</li>
+                <li>Created and managed servers and databases to support application functionality</li>
+                <li>Ensured cross-platform optimization and responsiveness for mobile and web applications</li>
+                <li>Owned projects from conception through to finished product, including API design and development</li>
+                <li class="tech-line"><strong>Tech stack:</strong> PHP, Python, Vue.js, JavaScript, MySQL, MongoDB, Golang, Docker.</li>
+            </ul>
+        </div>
+
+        <div class="job-entry">
+            <div class="job-header">
+                <span class="job-title">Senior Backend Engineer</span>
+                <span class="job-date">Apr 2020 – Feb 2022</span>
+            </div>
+            <div class="job-company">WCMS Solutions <span class="loc">— Florida, USA (Remote)</span></div>
+            <ul class="bullets">
+                <li>Built and developed products from client requirements, researching and applying new technologies</li>
+                <li>Developed backend services in Go with gRPC and GraphQL on Google Cloud Platform (GCP), with working knowledge of Kubernetes and Cassandra</li>
+                <li>Integrated Single Sign-On (SSO) with Laravel's default authentication system</li>
+                <li>Delivered responsive mobile/web interfaces using Bootstrap and custom responsive CSS</li>
+                <li><strong>Key Project:</strong> Wambi (wambi.org) — healthcare platform for hospitals in Philadelphia, PA, built with Laravel and SSO integration</li>
+                <li class="tech-line"><strong>Tech stack:</strong> PHP, Laravel, jQuery, Ajax, JavaScript, Golang, gRPC, GCP, MySQL, Docker, SVN, GIT.</li>
+            </ul>
+        </div>
+
+        <div class="job-entry">
+            <div class="job-header">
+                <span class="job-title">Senior Backend Engineer cum Project Manager</span>
+                <span class="job-date">Jul 2012 – Mar 2020</span>
+            </div>
+            <div class="job-company">ASOFT Corporation <span class="loc">— Ho Chi Minh City, VN</span></div>
+            <ul class="bullets">
+                <li>Built and developed ERP modules (sales, warehouse, HR, finance, CRM) from scratch, progressing from Developer to Team Leader to Project Manager</li>
+                <li>Studied requirements and proposed solutions for assigned modules and software projects</li>
+                <li>Fixed system bugs, reviewed application reports, and supported QA in requirement analysis</li>
+                <li class="tech-line"><strong>Tech stack:</strong> C#, ASP.NET MVC5, SQL Server, PHP, MySQL, jQuery, JavaScript, Windows Server 2012.</li>
+            </ul>
+        </div>
+
+        <div class="job-entry">
+            <div class="job-header">
+                <span class="job-title">Senior Software Engineer / Team Lead</span>
+                <span class="job-date">Feb 2010 – Jul 2012</span>
+            </div>
+            <div class="job-company">Green Sun Group (ASOFT) <span class="loc">— Ho Chi Minh City, VN</span></div>
+            <ul class="bullets">
+                <li>Built and developed ERP modules (sales, warehouse, HR, finance, CRM); researched and applied new development technologies</li>
+                <li>Fixed system bugs, reviewed application reports, and supported QA in requirement analysis</li>
+                <li class="tech-line"><strong>Tech stack:</strong> C#, ASP.NET MVC5, Java PL/SQL, SQL Server, Eclipse, Apache, IIS.</li>
+            </ul>
+        </div>
+
+        <div class="job-entry">
+            <div class="job-header">
+                <span class="job-title">Software Developer</span>
+                <span class="job-date">Aug 2006 – Jan 2010</span>
+            </div>
+            <div class="job-company">Green Sun Group <span class="loc">— Ho Chi Minh City, VN</span></div>
+            <ul class="bullets">
+                <li>Designed layouts and coding; established coding and design guidelines</li>
+                <li>Implemented the gateway enabling Flex client communication with server-side business logic</li>
+                <li>Conducted UI, system integration, and performance testing; authored unit tests and technical/deployment documentation</li>
+                <li class="tech-line"><strong>Tech stack:</strong> Java, VB.NET, PHP, MySQL, jQuery, JavaScript, Oracle PL/SQL, SQL Server, Eclipse, Apache.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
